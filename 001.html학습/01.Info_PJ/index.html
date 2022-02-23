@@ -45,9 +45,25 @@
         .box {
             width: 40em;
             margin: 0 auto;
-            padding:10px;
+            padding: 10px;
             box-sizing: border-box;
             text-align: center;
+        }
+
+        /* 공통 클래스를 미리 정의해두면 클래스를 부여하여 쉽게 속성을 지정할 수 있음 */
+        /* 다중 클래스 실습 */
+        /* 글자색 / 글자그림자 클래스 */
+        .fc {
+            color: rgb(255, 124, 124);
+            text-shadow: 1px 1px 1px #222;
+        }
+
+        /* 밑줄 */
+        .fu {
+            /* 밑줄 */
+            text-decoration: underline;
+            /* 점선 */
+            text-decoration-style: dotted;
         }
 
         /* 1. 상단영역 */
@@ -92,9 +108,9 @@
         /* 띄어쓰기는 자손선택자! */
         /* 아이디가 top인 요소의 자손 중 h1선택 */
         #top h1 {
-            padding-bottom:10px;
-            margin-top:10px;
-            margin-bottom:10px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             /* 글자색 */
             color: rgb(123, 207, 74);
             /* 글자 그림자 */
@@ -103,19 +119,22 @@
 
         /* 메뉴  */
         nav.menu {
-            color:rgb(184, 184, 184);
+            color: rgb(184, 184, 184);
         }
+
         nav.menu a {
             color: rgb(123, 207, 74);
             /* 밑줄 없에기 */
-            text-decoration: none; /* 젠 tdn */
+            text-decoration: none;
+            /* 젠(에밋) tdn */
             /* text-decoration
             - underline > 밑줄
             - overline > 윗줄
             - linethrough > 가운데줄
             - none > 없음
             */
-            font-weight: bold; /* 젠 fwb */
+            font-weight: bold;
+            /* 젠(에밋) fwb */
             /* font-weight 속성
             - bold 두껍게
             - bolder 더 두껍게
@@ -125,9 +144,13 @@
 
         }
 
+        /* 메뉴 a에 마우스 오버 시 */
+        /* 선택자 :hover -> 마우스 오버시 가상 클래스 */
         nav.menu a:hover {
-            color:hotpink;
+            text-decoration: overline;
+            color: hotpink;
         }
+
         /* 로고 이미지 */
         /* nav 태그인데 클래스가 menu인 요소 아래 자식 중 img 요소 선택 */
         /* nav.menu /= nav .menu  둘은 같지 않음 */
@@ -139,17 +162,32 @@
             width: 20px;
             height: 20px;
         }
-        footer {
+
+        footer#info address {
+            background-color: rgb(219, 219, 219);
+            padding: 20px;
+            box-sizing: border-box;
             font-family: 'Noto Sans KR', sans-serif;
+            font-size: small;
+            font-style: normal;
+            /* 글자 스타일
+            - italic 이탤릭 / 기울이기
+            - normal 특징 없음 */
+            line-height: 20px;
+            /* 줄간격 */
             /* 글자색 */
-            color: rgb(113, 199, 63);
+            color: rgb(102, 102, 102);
+        }
+
+        #info span {
+            font-style: italic;
         }
     </style>
 </head>
 
 <body>
     <!-- 상단 영역 -->
-    <header id="top"  class="box">
+    <header id="top" class="box">
         <!-- 1-1 제목 -->
         <h1>네이버 요약 뉴스</h1>
         <!-- 1-2 메뉴 -->
@@ -163,16 +201,16 @@
         </nav>
     </header>
     <!-- 메인 영역 -->
-    <main  class="box">
+    <main class="box">
         <!-- 메인이미지 -->
         <img src="/GNIT_Hana/img/main.jpg" alt="뉴스메인이미지" title="요약뉴스 보고싶다!" style="width: 600px;">
     </main>
     <!-- 하단 영역 -->
-    <footer class="box">
+    <footer id="info" class="box">
         <!-- 회사주소 및 정보 -->
-        <address >
+        <address>
             서울시 강남구 역삼동 119 대호B 8F <br>
-            대표: 원하나 <br>
+            대표: 원하나 <span class="fc fu">(Won hana)</span><br>
             전화: 111-2222-3333
         </address>
     </footer>
@@ -208,9 +246,14 @@
             _________________________
             :콜론, ;세미콜론 잘 구분하자!
         2. title 속성 - 툴팁을 띄워주는 속성
-        _______________________________
-        [ html 요소 이름 ]
-        1. id명: 요소를 구분해주는 이름(유일함!) 
+            _______________________________
+            [ html 요소 이름 ]
+            1. id명: 요소를 구분해주는 이름(유일함!) 
+            2. class명: 요소를 공통적으로 구분하는 이름
+            -> 클래스는 한 요소에 여러개 적용가능함!
+            (띄어쓰기로 구분함!)
+            예) 
+            <h1 id="my" class="rbb coo ytt">하하</h1>
      -->
 </body>
 
