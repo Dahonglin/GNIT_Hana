@@ -11,25 +11,143 @@
         /* 스타일시트를 사용하는 영역 */
         /* CSS문법만 쓸 수 있음! */
         /* 
-            기본 사용법:
-            선택자 {
-                속성명:값;
-            }
-            - 선택자: 태그명, 아이디명, 클래스명 등
-            - 속성명: 각 요소를 구성하는 상세속성들
-            - 값: 각 속성에서 사용할 수 있는 값들
-        */
+                기본 사용법:
+                선택자 {
+                    속성명:값;
+                }
+                - 선택자: 태그명, 아이디명, 클래스명 등
+                - 속성명: 각 요소를 구성하는 상세속성들
+                - 값: 각 속성에서 사용할 수 있는 값들
+                [css 선택자]
+                1. 타입 선택자 : 요소명 (body /  h1 /  a / div 등등)
+                2. 자손 선택자 : 띄어쓰기 (h1 a 등)
+                3. ID 선택자 : #아이디명 
+                4. 클래스 선택자 : .클래스명
+                5. 직계자식 선택자 : > (div>a)
+                6. 그룹 선택자 : , (a, p, div)
+                7. 종속 선택자 : 태그명+id or class (div#my / h1.my)
+                                // 띄어쓰지 않도록 주의!
+                8. 속성 선택자 : [] (ex : a[href=#])
+                9. 형제 선택자 : + (바로 다음에 나올 형제를 선택) / (li+li)
+                10. 다중 형제 선택자 : ~ (틸드 li:nth-child(2)~li)
+
+                [ 요소의 박스모델 ] - 네모난세상!
+                - 네모의 구성요소는?
+                1. 가로크기 : width
+                2. 세로크기 : height
+                3. 경계선 : border
+                4. 안쪽여백 : padding
+                5. 바깥여백 : margin
+            */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        /* 1. 상단영역 */
+        header {
+            /* 블록박스 셋팅 */
+            width: 40em;
+            height: 7em;
+            padding: 10px;
+            margin: 20px auto;
+            /* 블록박스 중앙정렬!
+                    margin: 0 auto;
+                    마영오! 씨
+                    margin: 값; (4방향)
+                    margin: 값 값; (위아래 양쪽)
+                    margin: 값 값 값; (위 양쪽 아래)
+                    margin: 값 값 값 값; (위 오른 아래 왼) -> 시계방향
+                    -> padding도 위와 같음!
+                    개별설정은
+                    margin-top, margin-bottom
+                    margin-left, margin-right
+                    -> padding도 위와 같음!
+                */
+            /* 
+                    width나 height크기를 안주면
+                    기본값 auto다!
+                    블록박스인 경우 width는 부모끝까지
+                    차지하고 height는 내용만큼 늘어남!
+                */
+            /* 내부의 텍스트/인라인요소 중앙정렬 */
+            text-align: center;
+            /* 배경색 */
+            background-color: rgb(253, 253, 237);
+            /* 보더, 패딩 사이즈 내부에 포함시키기 */
+            box-sizing: border-box;
+            /* 젠 bxb */
+            /* 원래는 보더와 패딩만큼 커지는게 기본
+            속성이지만 이것을 내부에 포함시키는
+            속성은 위와 같다! 
+            기본값은 content-box */
+            font-family: 'Noto Sans KR', sans-serif;
+            border: 1px solid rgb(113, 199, 63);
+        }
+
+        /* 띄어쓰기는 자손선택자! */
+        /* 아이디가 top인 요소의 자손 중 h1선택 */
+        #top h1 {
+            padding-top: 0.2em;
+            height: 1.7em;
+            /* 글자색 */
+            color: rgb(123, 207, 74);
+            /* 글자 그림자 */
+            text-shadow: 0px 0px 5px rgb(233, 217, 126);
+        }
+
+        /* 메뉴  */
+        nav.menu a {
+            color: rgb(123, 207, 74);
+            /* 밑줄 없에기 */
+            text-decoration: none; /* 젠 tdn */
+            /* text-decoration
+            - underline > 밑줄
+            - overline > 윗줄
+            - linethrough > 가운데줄
+            - none > 없음
+            */
+            font-weight: bold; /* 젠 fwb */
+            /* font-weight 속성
+            - bold 두껍게
+            - bolder 더 두껍게
+            - lighter 얇게
+            - 100~900 
+            > 기본적으로 글자체가 지원해야 함. */
+
+        }
+        /* 로고 이미지 */
+        /* nav 태그인데 클래스가 menu인 요소 아래 자식 중 img 요소 선택 */
+        /* nav.menu /= nav .menu  둘은 같지 않음 */
+        nav.menu img {
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        footer {
+            font-family: 'Noto Sans KR', sans-serif;
+            /* 글자색 */
+            color: rgb(113, 199, 63);
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <!-- 상단 영역 -->
-    <header>
+    <header id="top">
         <!-- 1-1 제목 -->
         <h1>네이버 요약 뉴스</h1>
         <!-- 1-2 메뉴 -->
-        <nav>
-            <a href="index.html"><img src="/GNIT_Hana/img/logo.png" alt="logo" width="30px" height="30px"></a> |
+        <nav class="menu">
+            <a href="index.html"><img src="/GNIT_Hana/img/logo.png" alt="logo"></a> |
             <a href="sub1.html">정치</a> |
             <a href="sub2.html">경제</a> |
             <a href="sub3.html">사회</a> |
