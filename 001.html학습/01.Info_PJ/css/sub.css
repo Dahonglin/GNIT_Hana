@@ -10,6 +10,7 @@ http request(웹 요청)이 많아져서
 @import url(style.css);
 
 h4 {
+    text-align: center;
     margin:0px;
 }
 
