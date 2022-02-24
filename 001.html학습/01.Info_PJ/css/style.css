@@ -58,6 +58,10 @@
     text-decoration-style: dotted;
 }
 
+.center {
+    text-align: center;
+}
+
 /* 1. 상단영역 */
 header {
     /* 블록박스 셋팅 */
@@ -109,6 +113,12 @@ header {
     /* 글자 그림자 */
     text-shadow: 0px 0px 5px rgb(233, 217, 126);
 }
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
 
 /* 메뉴  */
 nav.menu {
