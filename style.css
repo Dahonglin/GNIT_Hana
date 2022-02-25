@@ -22,6 +22,9 @@
     text-align: center;
     /* 글자 중앙 정렬 > 글자가 아니어도 인라인 요소는 중앙 정렬 */
 }
+.sub_tit {
+    color:chocolate;
+}
 
 .tit img {
     width:100px;
