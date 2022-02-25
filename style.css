@@ -38,3 +38,8 @@
     /* 배경색 반투명 흰색 */
     border-radius: 30px;
 }
+
+li a {
+    color:sienna;
+
+}
