@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+.bgimg {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* 배경 이미지 */
+    background-image:url('https://images.unsplash.com/photo-1518548235008-15c2e3a4fdd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80');
+    /* 배경 반복 x */
+    background-repeat: no-repeat;
+    /* 배경 고정 */
+    background-attachment: fixed;
+    /* 배경 가운데 */
+    background-position: center;
+    /* 배경 꽉차게 */
+    background-size : cover;
+}
+
+
+.tit {
+    color: saddlebrown;
+    text-align: center;
+    /* 글자 중앙 정렬 > 글자가 아니어도 인라인 요소는 중앙 정렬 */
+}
+
+.tit img {
+    width:100px;
+    vertical-align: middle;
+}
+.wrap {
+    width: 1200px;
+    margin: 50px auto;
+    padding:40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* 배경색 반투명 흰색 */
+    border-radius: 30px;
+}
