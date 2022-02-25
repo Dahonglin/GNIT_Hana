@@ -34,14 +34,16 @@
         <div class="prlogo"><a href="https://www.nocutnews.co.kr/" target="_blank"><img src="./img/ac1_logo.png"
                     alt="언론사 로고"></a></div>
         <!-- 2-2 기사 제목 -->
-        <h2>정부 "러시아 전면전 감행시 제재 동참"…대응 수위 상향</h2>
+        <h2 class="atit">정부 "러시아 전면전 감행시 제재 동참"…대응 수위 상향</h2>
         <!-- 2-3 기사 사진/사진 설명 -->
-        <figure>
-            <img src="./img/ac1.jpg" width="600px" alt="기사 사진">
-            <figcaption>
-                <small>러시아의 우크라이나 돈바스 독립 승인으로 전운이 최고조에 달한 가운데 정부가 23일 우크라이나 현지 교민 철수와 안전 확보를 위해 긴급회의를 열었다. 연합뉴스</small>
-            </figcaption>
-        </figure>
+        <article class="afig">
+            <figure>
+                <img src="./img/ac1.jpg" alt="기사 사진">
+                <figcaption>
+                    <small>러시아의 우크라이나 돈바스 독립 승인으로 전운이 최고조에 달한 가운데 정부가 23일 우크라이나 현지 교민 철수와 안전 확보를 위해 긴급회의를 열었다. 연합뉴스</small>
+                </figcaption>
+            </figure>
+        </article>
         <!-- 
             figure 요소 : 이미지나 표 , 그림 등을 넣는 박스
             - figcaption 요소 : 이미지 설명 박스 (옵션)
@@ -145,6 +147,65 @@
                 <li><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=079&aid=0003613951&rankingType=RANKING"
                         target="_blank">[속보]신규확진 16만명대로 감소…위중증 655명·사망 9 …</a></li>
             </ol>
+        </article>
+        <hr>
+        <!-- 분야별 주요 뉴스 -->
+        <article class="secnews">
+            <h3>분야별 주요 뉴스</h3>
+            <!-- 용어 정의 리스트
+                dl > dt + dd
+                dl : 용어 리스트 tag defines the description list
+                dt : 용어 정의 tag defines the term (name)
+                dd : 용어 설명 tag describes each term:
+                주의사항 - dl은 반드시 자식요소로 dt, dd를 한번 이상 사용 해야 한다.
+            -->
+            <dl>
+                <dt>경제</dt>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=003&aid=0011026913" target="_blank">	
+                    JW중외제약 ‘악템라’, 3월부터 코로나 치료 건강보험 적용</a></dd>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=277&aid=0005050183" target="_blank">미국, 對러 수출통제 본격화…정부 “국내 피해 최소화 위해 총력”</a></dd>
+
+                <dt>사회</dt>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=417&aid=0000788962" target="_blank">	
+                    확산세 속 잠시 주춤?… 코로나 신규 확진자 16만5890명(상보)</a></dd>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=102&oid=654&aid=0000003539" target="_blank">	
+                    3월부터 백신 미접종한 코로나19 확진자 가족 자가격리 안해도 된다</a></dd>
+
+                <dt>IT/과학</dt>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=016&aid=0001956456" target="_blank">	
+                    SK스퀘어, 출범 2개월만에 영업익 4198억</a></dd>
+                <dd><a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=005&aid=0001507964" target="_blank">	
+                    갤럭시S22 전세계 본격 출시 “사전판매량 전작 2배”</a></dd>
+            </dl>
+        </article>
+        <hr>
+        <article class="pnews">
+            <h3>사진 뉴스</h3>
+            <!-- 테이블
+                table : 테이블 박스
+                tr : 테이블 행
+                td : 테이블 테이블 데이터
+                참고 사항 > table>tr>td 로 구성한 경우
+                브라우저 분석기로 보면 table 밑에 tbody가 들어가 있다.
+                이는 테이블 본문파트로 인식하기 때문에 표시가 자동으로 된다.
+                원래 테이블은 thead, tbody, tfoot으로 구성되어 있음.
+            -->
+            <table>
+                <tr>
+                    <td class="pnew_border"><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=277&aid=0005049915&rankingType=RANKING" target="_blank">"여자 주제에 감히" 시위 중인 여성 밀친 尹 지지자…외신 …</a></td>
+                    <td><img src="./img/li1.jpg" alt="기사 이미지"></td>
+                </tr>
+                <tr>
+                    <td class="pnew_border"><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=277&aid=0005050072&rankingType=RANKING" target="_blank">오미크론의 '4대 미스터리'…인류는 아직 아는 게 별로 없 …</a></td>
+                    <td><img src="./img/li2.jpg" alt="기사 이미지"></td>
+                </tr>
+                <tr>
+                    <td class="pnew_border"><a href="https://news.naver.com/main/ranking/read.naver?mode=LSD&mid=shm&sid1=001&oid=277&aid=0005050006&rankingType=RANKING" target="_blank">러 "우크라 전역 74개 군사기지 파괴"...우크라 "국가 …</a></td>
+                    <td><img src="./img/li3.jpg" alt="기사 이미지"></td>
+                </tr>
+            </table>
+
+
         </article>
     </main>
     <!-- 하단 영역 -->
