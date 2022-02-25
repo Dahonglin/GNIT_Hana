@@ -55,6 +55,7 @@ li a {
     text-decoration: none;
 }
 li a:hover {
-    color:rgb(66, 185, 116);
+    font-weight: bold;
+    color:chocolate;
     text-decoration:overline;
 }
