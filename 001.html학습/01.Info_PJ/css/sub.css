@@ -9,56 +9,6 @@ http request(웹 요청)이 많아져서
 이 방식으로 사용할 경우 속도에 유리함. */
 @import url(style.css);
 
-h4 {
-    text-align: center;
-    margin: 10px;
-}
-
-.atit {
-    font-size:30px;
-    font-weight: normal;
-    font-family: 'Noto Sans KR', sans-serif;
-    letter-spacing: -2px; /* 자간 조정*/
-    /* word-spacing : 단어 간격 */
-    white-space : nowrap;
-    /* 박스 사이즈를 넘을 경우 줄을 바꾸지 않고 넘어가버림 */
-
-}
-
-main.box {
-    text-align: left;
-}
-
-main.box mark {
-    background-color: hotpink;
-}
-
-.afig figure{
-    margin:10px 0px;
-}
-
-.afig figure img {
-    width:100%;
-}
-
-.afig small {
-    text-align: center;
-    font-size: 11px;
-    font-family: '굴림';
-    color:#666;
-}
-
-.afig figcaption {
-    text-align:center;
-}
-/* 글자 정렬 중앙
-> 주의사항 : 글자 정렬은 블록 박스에서 적용해야
-내부의 인라인 요소의 정렬이 변경된다. (인라인에서 하면 적용 안됨) */
-
-blockquote {
-    text-align: center;
-    font-size: 0.8em;
-}
 
 .prlogo {
     text-align: left;
@@ -69,50 +19,152 @@ nav.menu a.onposition {
     color: hotpink;
 }
 
-.nownew a:hover{
-    text-decoration: underline;
-    color: hotpink;
-    font-weight: bold;
+
+.atit {
+    font-size: 30px;
+    font-weight: normal;
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -2px;
+    /* 자간 조정*/
+    /* word-spacing : 단어 간격 */
+    white-space: nowrap;
+    /* 박스 사이즈를 넘을 경우 줄을 바꾸지 않고 넘어가버림 */
+
 }
 
-.ranknew a {
-    font-weight: bold;
+main.box {
+    text-align: left;
 }
+
+main.box h3 {
+    font-family: 'gulim';
+    font-size: 14px;
+}
+
+main.box mark {
+    background-color: hotpink;
+}
+
+section {
+    text-align: justify;
+}
+
+.afig figure {
+    margin: 10px 0px;
+}
+
+.afig figure img {
+    width: 100%;
+}
+
+.afig small {
+    text-align: center;
+    font-size: 11px;
+    font-family: '굴림';
+    color: #666;
+}
+
+.afig figcaption {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* 글자 정렬 중앙
+> 주의사항 : 글자 정렬은 블록 박스에서 적용해야
+내부의 인라인 요소의 정렬이 변경된다. (인라인에서 하면 적용 안됨) */
+
+.quote {
+    text-align: center;
+    background-color: rgb(199, 199, 199);
+    background-clip: content-box;
+    padding: 10px;
+}
+
+.quote blockquote {
+    font-size: 0.8em;
+    text-align: justify;
+    /* 글자 정렬 : 양쪽 정렬 */
+}
+
+article {
+    margin-top: 15px;
+    border-top: 1px solid #aaa;
+}
+
+article a {
+    font-family: 'gulim';
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.article {
+    font-family: 'gulim';
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.tda {
+    padding: 15px;
+    text-align: center;
+    background-color: rgb(255, 208, 208);
+    background-clip: content-box;
+    /* 
+    백그라운드 클립 옵션
+    1. 컨텐츠 박스 - 컨텐츠 영역에만 배경색 넣기 (보더 / 패딩 빠짐) 
+    2. 패딩 박스 - 패딩 영역 까지 배경색 (보더 빠짐)
+    3. 보더 박스 - 보더 포함 */
+}
+
+.originnews a{
+    font-size: 16px;
+    font-weight: bold;
+    color:rgb(241, 107, 140);
+}
+
+.tda img {
+    width: 220px;
+}
+
+.nownew a:hover {
+    text-decoration: underline;
+    color: rgb(146, 89, 207);
+}
+
+
 .ranknew a:hover {
-    color:tomato;
+    color: tomato;
     text-decoration: underline;
 }
 
 .secnews dt {
+    font-style: italic;
     font-weight: bold;
-    color: olivedrab;
+    color: rgb(50, 187, 57);
+    font-size: 14px;
 }
-.secnews dd>a{
+
+.secnews dd>a {
     font-size: 0.8em;
 }
 
-.secnews dd>a:hover{
-    text-decoration:line-through;
+.secnews dd>a:hover {
+    text-decoration: underline;
 }
-.pnews table{
-    width:100%;
-    border: 1px solid #777;
-    border-bottom: 0px;
+
+.pnews table {
+    width: 100%;
 }
-.pnews td{
+
+.pnews td {
     padding-left: 10px;
     border-bottom: 1px dashed #777;
 }
+
 .pnews img {
-    padding-left:20px;
-    width:6em;
+    width: 6em;
 }
 
 .pnews a:hover {
-    color:tomato;
+    color: tomato;
     text-decoration: underline;
-    font-style: italic;
-}
-.pnew_border {
-    border-right: 1px dashed #777;
 }
