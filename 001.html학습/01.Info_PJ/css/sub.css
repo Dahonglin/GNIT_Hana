@@ -11,22 +11,47 @@ http request(웹 요청)이 많아져서
 
 h4 {
     text-align: center;
-    margin:0px;
+    margin: 10px;
 }
-
 
 main.box {
     text-align: left;
 }
 
-main.box mark{
-    background-color: aqua;
+main.box mark {
+    background-color: hotpink;
 }
 
-figure{
-    margin:0px;
+figure {
+    margin: 0;
+    text-align: center;
 }
 
-.prlogo{
+figcaption,
+blockquote {
     text-align: left;
+    font-size: 0.7em;
+}
+
+.prlogo {
+    text-align: left;
+}
+
+nav.menu a.onposition {
+    text-decoration: overline;
+    color: hotpink;
+}
+
+.nownew a:hover{
+    text-decoration: underline;
+    color: hotpink;
+    font-weight: bold;
+}
+
+.ranknew a {
+    font-weight: bold;
+}
+.ranknew a:hover {
+    color:tomato;
+    text-decoration: underline;
 }

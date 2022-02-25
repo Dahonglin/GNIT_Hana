@@ -46,8 +46,8 @@
 /* 다중 클래스 실습 */
 /* 글자색 / 글자그림자 클래스 */
 .fc {
-    color: rgb(255, 124, 124);
-    text-shadow: 1px 1px 1px #222;
+    color: hotpink;
+    font-weight: bold;
 }
 
 /* 밑줄 */
@@ -187,4 +187,10 @@ footer#info address {
 
 #info span {
     font-style: italic;
+}
+
+.email { 
+    font-style: italic;
+    color:crimson;
+    font-weight: bold;
 }
