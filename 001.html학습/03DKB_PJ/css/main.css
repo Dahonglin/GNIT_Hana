@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* 메인 css */
+
+* {
+    padding:0px;
+    margin:0px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-size : 100%;
+    /* 글자 크기 100%는 기본 글자 크기와 같아지는 세팅
+     */
+}
