@@ -30,10 +30,9 @@ body * {
 /* 컨텐츠 파트 최상위 부모 */
 body {
     /* 배경 이미지는 기본적으로 반복됨. */
-    background: url(../images/bg_mainvisual.jpg)no-repeat fixed center;
+    background: url(../images/bg_mainvisual.jpg)no-repeat fixed center/cover;
     /* 외부 css인 경우 css 파일위치에서 한단계 위 올라간 뒤
     이미지 폴더를 찾는다.(경로에 주의)  ../ 는 한단계 위로*/
-    background-size: cover;
 }
 
 /********** 공통 클래스 **********/
