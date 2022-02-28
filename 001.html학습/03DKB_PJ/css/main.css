@@ -3,11 +3,57 @@
 
 * {
     padding:0px;
-    margin:0px;
+    margin:0 auto;
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-size : 100%;
-    /* 글자 크기 100%는 기본 글자 크기와 같아지는 세팅
-     */
+/* 헤딩태그 글자크기 초기화 */
+h1,h2,h3,h4,h5,h6{
+    font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
+}
+
+
+/* 작업진행중 외곽선 */
+/* 별표시(*)는 모든요소를 선택시 사용 */
+body * {
+    outline: 1px dashed gray;
+    /* outline은 보더와 달리
+    주변요소에 전혀 영향을 주지 않는다!
+    그래서 border는 박스요소에 필수포함요소지만
+    outline은 필수요소가 아니다!!!
+    그리고 요소의 외곽선 바깥으로 보임!
+    사용법은 border와 유사함
+    outline: 두께 종류 색상; */
+}
+
+/* 컨텐츠 파트 최상위 부모 */
+body {
+    /* 배경 이미지는 기본적으로 반복됨. */
+    background: url(../images/bg_mainvisual.jpg)no-repeat fixed center;
+    /* 외부 css인 경우 css 파일위치에서 한단계 위 올라간 뒤
+    이미지 폴더를 찾는다.(경로에 주의)  ../ 는 한단계 위로*/
+    background-size: cover;
+}
+
+/********** 공통 클래스 **********/
+/* 속박스 클래스 */
+.ibx{
+    width: 1200px;
+    margin: 0 auto;/* 위아래 양쪽(auto는 등분함) */
+    /* 마영오! 블록박스 가로중앙 */
+}
+
+
+/* 1. 상단영역 */
+.top{
+    height: 125px;
+}
+/* 2. 메인 영역 */
+.cont{
+    height: 800px;
+}
+/* 3. 하단 영역 */
+.info{
+    height: 241px;
 }
