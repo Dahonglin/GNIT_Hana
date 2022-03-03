@@ -1,12 +1,21 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+}
+/* ul, ol 초기화 */
+ul, ol {
+    list-style: none;
+    /* 블릿 스타일 없앰 */
+}
 .bgimg {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     /* 배경 이미지 */
-    background-image:url('https://images.unsplash.com/photo-1414877611609-3ff962bb2c92?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    background-image:url('https://i.pinimg.com/564x/21/12/7e/21127ee5dbded3c96c4ee9abad7d61b6.jpg');
     /* 배경 반복 x */
     background-repeat: no-repeat;
     /* 배경 고정 */
@@ -36,17 +45,24 @@
     color:chocolate;
 }
 
-.tit img {
+.logo{
+    margin-bottom: -30px;
+}
+
+
+.logo img {
     width:100px;
     vertical-align: middle;
 }
 .wrap {
-    width: 1200px;
+    width: 800px;
     margin: 50px auto;
     padding:30px;
     background-color: rgba(255, 255, 255, 0.5);
     /* 배경색 반투명 흰색 */
     border-radius: 30px;
+    text-align: center;
+
 }
 
 li a {
@@ -58,4 +74,8 @@ li a:hover {
     font-weight: bold;
     color:chocolate;
     text-decoration:overline;
+}
+ul li::before{
+    content: '🌰';
+    padding-right: 5px;
 }

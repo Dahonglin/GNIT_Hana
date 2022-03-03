@@ -165,7 +165,7 @@ body {
     margin: 0 auto;
 }
 /* 가상요소로 clear 하기 */
-.gnb>ul>::after{
+.gnb>ul::after{
     content: '';
     display: block;
     clear: both;
@@ -397,22 +397,19 @@ body {
 /* 겉박스 */
 #info {
     background-color:rgba(255, 255, 255, 0.7);
-    padding: 13px;
-    box-sizing: border-box;
 }
 /* 속박스 */
 .info {
     height: 241px;
     box-sizing: border-box;
+    padding: 13px;
 }
 .blink{
     width: 785px;
     margin: 0 auto;
 }
-
-
 /* 가상요소로 clear 하기 */
-.blink>ul>::after{
+.blink>ul::after{
     content: '';
     display: block;
     clear: both;
@@ -451,6 +448,7 @@ body {
         스타일 설정을 하지 않으면 기본 normal이 적용됨. */
     padding: 10px;
     box-sizing: border-box;
+    word-spacing: -3px;
 }
 
 /* 하단 로고 박스 */
