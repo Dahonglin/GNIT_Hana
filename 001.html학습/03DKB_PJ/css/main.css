@@ -1,13 +1,19 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Noto+Serif+KR:wght@500&display=swap');
 /* 메인 css */
 
 * {
-    padding:0px;
-    margin:0 auto;
+    padding: 0px;
+    margin: 0 auto;
 }
 
 /* 헤딩태그 글자크기 초기화 */
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-size: 100%;
     /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
     기본글자크기는 16px */
@@ -29,30 +35,184 @@ body * {
 
 /* 컨텐츠 파트 최상위 부모 */
 body {
-    /* 배경 이미지는 기본적으로 반복됨. */
-    background: url(../images/bg_mainvisual.jpg)no-repeat fixed center/cover;
-    /* 외부 css인 경우 css 파일위치에서 한단계 위 올라간 뒤
-    이미지 폴더를 찾는다.(경로에 주의)  ../ 는 한단계 위로*/
+    /* 한번에 배경주기!!! */
+    /* background: 색상 이미지 반복여부 고정 위치/크기 */
+    /* background: 색이반고윙/크 */
+    background:
+        url(../images/bg_logo_a_01.png) no-repeat fixed 10% 30%/10%,
+        url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+    /* 로고가 위에 와야해서 먼저 세팅 */
+
+    /* 따로주기
+    background-image: url(../images/bg_mainvisual.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; */
+
+
+    /* 1. 배경색 */
+    /* background-color: lightpink; */
+    /* background-color: lightpink; */
+
+    /* 2. 배경이미지 - 기본적으로 반복됨(x,y방향) */
+    /* background-image: url(../images/bg_logo_a_01.png); */
+    /* background-image: url(../images/bg_logo_a_01.png); */
+    /* 외부css인 경우 css파일위치에서 한단계위로 올라간 후
+    이미지폴더를 찾는다!(경로에 주의!) ../ 는 한칸위로 */
+
+    /* 3. 배경반복여부 */
+    /* background-repeat: no-repeat; */
+    /* background-repeat: no-repeat; */
+    /* 
+        no-repeat 반복안함
+        repeat-x x축반복
+        repeat-y y축반복
+    */
+    /* 4. 배경이미지 고정하기 */
+    /* background-attachment: fixed; */
+    /* background-attachment: fixed; */
+    /* fixed는 보이는 화면에 고정함! */
+
+    /* 5. 배경이미지 위치변경 */
+    /* background-position: center; */
+    /* background-position: center; */
+    /* background-position: right bottom; */
+    /* background-position: 100px 200px; */
+    /* 
+        background-position: 가로 세로; 
+        - 가로: px, % 등 단위 또는 left, center, right
+        - 세로: px, % 등 단위 또는 top, center, bottom
+    
+    */
+    /* 6.배경이미지 크기 */
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: auto 200px; */
+    /* background-size: 100px auto; */
+    /* background-size: 100px 400px; */
+    /* 
+        background-size: 가로 세로; 
+        - 가로 : px,% 등 단위 auto
+        - 세로 : px,% 등 단위 auto
+        -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
+        경우 이미지가 고유 비율을 유지한다!
+        ->>> 특별한 값 : 
+        contain(비율유지 채우기-이미지모두 보임,빈틈있음)
+        cover(비율유지 채우기-배경박스에 빈틈없이 채움)
+    */
 }
 
 /********** 공통 클래스 **********/
 /* 속박스 클래스 */
-.ibx{
-    width: 1200px;
-    margin: 0 auto;/* 위아래 양쪽(auto는 등분함) */
-    /* 마영오! 블록박스 가로중앙 */
+.ibx {
+    /* width: 1200px; */
+    max-width: 1200px;
+    /* 최대 가로값 최대 1200이다가 화면이 작아지면 quto로 변경 */
+    margin: 0 auto;
+    /* 위아래 양쪽(auto는 등분함) */
+    /* 블록박스 가로중앙 */
 }
 
 
 /* 1. 상단영역 */
-.top{
+.top {
     height: 125px;
 }
+
 /* 2. 메인 영역 */
-.cont{
+.cont {
     height: 800px;
+    overflow: hidden;
+    /* 자식요소 마진-탑 포함 */
 }
+
+/* 캐릭터 부모박스 */
+#cbx {
+    width: 90%;
+    /* 부모 박스의 90% 가로 크기 */
+    margin: 0 auto;
+    /* 블록 가로 중앙 */
+    margin-top: 400px;
+    overflow: hidden;
+    /* float 해제를 위함 */
+}
+
+/* 캐릭터 박스 공통 */
+.cat {
+    /* 4 등분 가로 크기는 몇%? */
+    width: 24%;
+    margin: 0 .5%;
+    /* 0은 생략하고 소숫점 표기 가능 */
+    /* 양쪽 마진은 0.5%씩 2개이므로 합이 1%임 이를 크기에 반영함. */
+    float: left;
+    /* 블록 요소를 옆으로 흘러가게 하기
+    float 속성
+    > left 값은 나는 왼쪽에 너는 오른쪽에 올라와!
+    > right 값은 나는 오른쪽에 너는 왼쪽에 올라와!
+    - 자식 요소가 float 된 경우 부모 요소는 높이값 0? -
+    > 블록 자식 요소 float로 인해서 부모 요소가 높이값이 0인 경우
+    다음과 같이 해결 한다.
+    1. 부모 요소에 overflow : hidden을 준다.
+    2. float 자식 요소 중에서 float이 아닌 마지막 요소에 float 해제 속성인 clear 설정 하기.
+    */
+    cursor: pointer;
+    /* 커서 모양이 손가락 모양으로 변경 */
+}
+/* 캐릭터 이미지 */
+.ci>img {
+    width:100%
+    /* 이미지 크기를 싸고 있는 부모 박스 크기에 맞춰라
+    세로 크기를 주지 않으면 auto */
+}
+
+.ci span{
+    display: block;
+    /* 블록으로 변경해서 부모박스 끝까지 차지함. */
+    text-align: center;
+    /* 인라인 요소 중앙 정렬 */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img{
+    margin-top:-10%;
+    width:40%;
+    /* 부모박스 span의 가로크기의 40% */
+}
+/* 
+    [자식 요소 선택 가상 클래스]
+    - 전제 조건 : 자식 요소가 같은 종류 일 경우 
+    :first-child 첫번째 자식
+    :last-child 마지막 자식
+    :nth-child(순번) 몇번째 자식
+    - 전제조건 : 자식요소가 여러가지일 경우
+    :first-of-type 첫번째 자식
+    :last-of-type 마지막 자식
+    :nth-of-type (순번) 몇번째 자식
+    - 순번 1부터
+*/
+.ci span img:first-child{
+    display: none;
+}
+/* 마우스 오버 시 첫번째 이미지 보이기 */
+.cat:hover .ci span img:first-child{
+    display: inline;
+}
+/* 마우스 오버 시 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child{
+    display:none;
+}
+
+.cd h3{
+    font-family: 'Dokdo', cursive;
+    font-size: 1.7em;
+}
+.cd p {
+    font-family: 'Noto Serif KR', serif;
+    font-style: italic;
+}
+
 /* 3. 하단 영역 */
-.info{
+.info {
     height: 241px;
 }
