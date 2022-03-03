@@ -78,4 +78,5 @@ li a:hover {
 ul li::before{
     content: '🌰';
     padding-right: 5px;
+    /*  */
 }
