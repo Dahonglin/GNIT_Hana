@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* 로봇 PJ - robot.css */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공사 가이드라인 */
+body * {
+    outline: 2px dashed lime;
+}
