@@ -303,6 +303,10 @@ h1#logo {
 
 /* 로봇설명제목 */
 #dcbx h2 {
+    position: sticky;
+    top: 10px;
+    /* 스티키 + 탑 위치  스크롤 시 top 값에 도달하면
+    위치를 고정함 */
     font-size: 35px;
     text-align: center;
     color: gold;
