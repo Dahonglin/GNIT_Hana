@@ -1,5 +1,15 @@
 @charset "utf-8";
 /* 로봇 PJ - robot.css */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Zen+Dots&display=swap');
+/* 폰트 mdn */
+/* font-family: 'Russo One', sans-serif;
+font-family: 'Zen Dots', cursive; */
+
+html {
+    scroll-behavior:smooth;
+    /* 스크롤 동작 시 부드럽게 움직이도록 해줌 */
+}
+
 
 * {
     padding: 0;
@@ -8,12 +18,92 @@
 
 body {
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
+
 }
 
 /* 공사 가이드라인 */
-body * {
+/* body * {
     outline: 2px dashed lime;
+} */
+
+/* 로봇페이지로고 */
+h1#logo {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    /* 가로 중앙 */
+    line-height: 200px;
+    /* 세로 중앙 */
+    font-family: 'Russo One', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: rgb(251, 255, 0);
+    background: rgb(171, 255, 234) url(../images/robot_03.png)no-repeat;
+    background-position: center/10px;
+    background-size: 160px;
+    text-shadow: 2px 2px 2px #000;
+    box-shadow: 0 0 20px 5px rgb(0, 247, 255),
+        inset 0 0 20px 5px rgb(66, 169, 195);
 }
+
+/* 로고 360도 회전 애니메이션 */
+.img {
+    animation: rotate_image 6s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 내용 보기 링크 */
+.link {
+    position: absolute;
+    /* 부모는 ? 화면 */
+    top: 100px;
+    right: 50px;
+}
+
+.link a {
+    font-family: 'Zen Dots', cursive;
+    font-size: 30px;
+    color: rgb(255, 0, 128);
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.link a:hover {
+    color: rgb(0, 255, 242);
+    text-decoration: underline;
+}
+
+.btntop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: rgb(0, 247, 255);
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    background: rgb(0, 0, 0);
+}
+
+.btntop:hover{
+    background: rgb(0, 238, 255);
+    color:rgb(0, 0, 0);
+}
+
 
 /* 로봇머리 */
 #head {
@@ -37,6 +127,7 @@ body * {
     height: 50px;
     background: url(../images/e1.jpg) no-repeat 0/105% 100%;
 }
+
 /* 로봇 눈2 */
 #eye2 {
     position: absolute;
@@ -47,6 +138,7 @@ body * {
     height: 50px;
     background: url(../images/e2.jpg) no-repeat 0/105% 100%;
 }
+
 /* 코 */
 #nose {
     position: absolute;
@@ -54,9 +146,10 @@ body * {
     right: 100px;
     /* 부모는?? */
     width: 50px;
-    height:70px;
+    height: 70px;
     background: url(../images/nose.jpg) no-repeat 0/110% 100%;
 }
+
 /* 입 */
 #mouth {
     position: absolute;
@@ -67,6 +160,7 @@ body * {
     height: 30px;
     background: url(../images/mouth.png) no-repeat 0/100% 100%;
 }
+
 /* 귀1 */
 #ear1 {
     position: absolute;
@@ -78,11 +172,12 @@ body * {
     background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
     border-radius: 20px 0 0 20px;
 }
+
 /* 귀2 */
 #ear2 {
     position: absolute;
     top: -100px;
-    right:-20px;
+    right: -20px;
     /* 부모는?? */
     width: 20px;
     height: 200px;
@@ -99,41 +194,164 @@ body * {
     background: url(../images/metal01.jpg)no-repeat center/cover;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 300px;
+    /* 다리 길이 만큼 아래쪽에 공백 */
 }
+
 /* 로봇목 */
-#neck{
+#neck {
     position: absolute;
     width: 50px;
     height: 50px;
     background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
-    left:100px;
+    left: 100px;
     top: -50px;
 }
+
 /* 팔다리 공통 */
 .parts {
     width: 50px;
-    height: 270px;
+    height: 250px;
     background: url(../images/metal02.jpg) repeat-y 0/100%;
+
 }
 
 /* 로봇팔1 */
-#arm1{
+#arm1 {
     position: absolute;
     left: -50px;
 }
+
 /* 로봇팔2 */
-#arm2{
+#arm2 {
     position: absolute;
     right: -50px;
 }
+
 /* 로봇다리1 */
-#leg1{
+#leg1 {
     position: absolute;
     top: 100%;
 }
+
 /* 로봇다리1 */
-#leg2{
+#leg2 {
     position: absolute;
     top: 100%;
-    right:0px;
+    right: 0px;
+
+}
+
+/* TV */
+#tv {
+    position: absolute;
+    /* 하위 요소에 대한 부모 역할 */
+    top: 30px;
+    left: 25px;
+    /* 부모는 #body */
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg)no-repeat 0/100%;
+}
+
+/* 스크린 */
+#screen {
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    /* 부모는 누구? #tv */
+    width: 138px;
+    height: 105px;
+    background-color: #000;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* 유튜브 아이프레임 */
+#screen iframe {
+    position: absolute;
+    /* 부모는 #screen */
+    left: -20px;
+    top: -20px;
+    width: 135%;
+    height: 135%;
+    /* 부모에 맞춰 크기가 맞춰짐 */
+    border: none;
+    /* 아이프레임 기본 테두리를 없앰 */
+}
+
+/* 로봇 설명 박스 */
+#dcbx {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    /* 위아래 양쪽 */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 3px #000;
+    box-shadow: inset 0 0 50px 10px aquamarine,
+        0 0 20px 3px rgb(255, 255, 255);
+    /* 박스그림자 : (내/외부) x y 블러(크기) 색
+    -> 그림자색을 형광 계열로 주면 glow 효과
+    -> 글자그림자와 달리 그림자 크기(spread)를 줄 수 있다.(포토샵 그림자 퍼짐 크기)
+    이것으로 더 강한 효과를 줄 수있음. (기본값 0)
+    -> 글자 그림자나 박스 그림자 모두 여러개를 콤마로 세팅 가능. */
+}
+
+/* 로봇설명제목 */
+#dcbx h2 {
+    font-size: 35px;
+    text-align: center;
+    color: gold;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 5px;
+}
+
+#dcbx small {
+    font-size: 15px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: lightgreen;
+}
+
+/* 설명문단 */
+#dcbx p {
+    padding: 10px;
+    font-size: 15px;
+    line-height: 1.8;
+    /* 줄간격 : 배수/단위 등 */
+    letter-spacing: 1px;
+    /* 자간 */
+    word-spacing: 2px;
+    /* 단어간격 */
+
+    /* 가독성을 위한 다단 설정 */
+    /* 다단표시(다중열속성) */
+    column-count: 3;
+    /* 다중열 갯수 */
+    column-rule: 1px dashed rgb(172, 172, 172);
+    /* 다중열 구분선 */
+    column-gap: 55px;
+    /* 다중열 사이 간격
+    -> 구분선 오른쪽 간격 조정 */
+    /* 문단정렬 */
+    text-align: justify;
+    /* 양쪽정렬 - 양쪽 끝라인 맞춤 */
+    word-break: break-all;
+    /* 단어 깨기 - 스펠링을 한글자씩 깨줌
+    영문자는 단어가 따라다니기때문에 정렬을 위해 깨줘야함 */
+    text-indent: 20px;
+    /* 첫줄 들여쓰기 */
+}
+
+/* 가상 요소로 첫글자 디자인 변경 */
+#dcbx p::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+    color: gold;
 }
