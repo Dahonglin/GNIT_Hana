@@ -49,11 +49,24 @@ ul, ol {
     margin-bottom: -30px;
 }
 
-
+/* 다람애니 */
 .logo img {
     width:100px;
     vertical-align: middle;
+    /* 다람 로고 애니 */
+    animation: daramAni .3s linear infinite alternate;
+    transform-origin: 0 100%;
 }
+
+/* 다람 애니 키프레임 */
+@keyframes daramAni {
+    to {
+        transform: scaleY(1.1);
+    }
+
+}
+
+
 .wrap {
     width: 800px;
     margin: 50px auto;
