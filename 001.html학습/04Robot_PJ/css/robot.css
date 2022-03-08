@@ -14,10 +14,10 @@ font-family: 'Zen Dots', cursive; */
 html {
     scroll-behavior: smooth;
     /* 스크롤 동작 시 부드럽게 움직이도록 해줌 */
-    overflow-x: hidden;
 }
 
 body {
+    overflow-x: hidden;
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
 }
 
@@ -98,6 +98,7 @@ h1#logo {
         top: 50px;
         left: 50px;
         transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -108,20 +109,47 @@ h1#logo {
     }
 }
 
-/* 로고 흔들기 키프레임 */
-@keyframes logoAni2 {
 
-    0% {
-        transform: rotate(20deg);
-    }
-
-    100% {
-        transform: rotate(-20deg);
-    }
-
+h2.img {
+    position: fixed;
+    /* 부모는 항상 보이는 화면 */
+    z-index: 1;
+    /* 위치 가장 윗층 */
+    opacity: 0;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    /* 가로 중앙 */
+    line-height: 200px;
+    /* 세로 중앙 */
+    font-family: 'Russo One', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    color: rgb(251, 255, 0);
+    background: rgb(171, 255, 234) url(../images/robot_03.png)no-repeat;
+    background-position: center/10px;
+    background-size: 160px;
+    text-shadow: 2px 2px 2px #000;
+    box-shadow: 0 0 20px 5px rgb(0, 247, 255),
+        inset 0 0 20px 5px rgb(66, 169, 195);
+    animation: rotate_image 6s linear infinite 6s;
+    transform-origin: 50% 50%;
+    
 }
 
-/* logoAni2 키프레임 */
+@keyframes rotate_image {
+    0%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(360deg);
+    }
+}
 
 
 /********************************************************************
@@ -200,31 +228,65 @@ h1#logo {
 
 /* 점멸 애니메이션 키프레임 조절 호출 클래스 */
 .showIt {
-    opacity: 0; /* 처음에 투명 */
+    opacity: 0;
+    /* 처음에 투명 */
     /* 애니메이션 이시이지반방마 */
     animation: showIt 0.7s ease-in-out 5s forwards;
 }
+
 /* 애니메이션 등장시간 차이 클래스 */
-.showItTit{
+.showItTit {
     animation-delay: 5.5s;
 }
-.showItTop{
+
+.showItTop {
     animation-delay: 6s;
 }
 
 /* 점멸 애니메이션 키프레임 */
 @keyframes showIt {
-    0% {opacity: 1;}
-    20% {opacity: 0.5;}
-    30% {opacity: 0;}
-    40% {opacity: 1;}
-    50% {opacity: 0.3;}
-    60% {opacity: 0;}
-    70% {opacity: 1;}
-    80% {opacity: 0.5;}
-    90% {opacity: 0;}
-    100% {opacity: 1;}
-}/* showIt 키프레임*/
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0.5;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* showIt 키프레임*/
 
 .link a {
     font-family: 'Zen Dots', cursive;
