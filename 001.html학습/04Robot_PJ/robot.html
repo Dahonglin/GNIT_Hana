@@ -9,20 +9,20 @@
 
 <body>
     <!-- 로봇 페이지 로고 -->
-    <h1 id="logo" class="img">
+    <h1 id="logo">
         R2D2
     </h1>
     <!-- 내용보기 링크 타이틀 -->
-    <h2 class="link">
+    <h2 class="link showIt showItTit">
         <a href="#dcbx">What is Robot?</a>
         <!-- href 속성값으로 본 페이지의 아이디명을 #뒤에 쓰면 해당 위치로 이동함.(앵커 기능) -->
     </h2>
     
     <!-- 위로 이동 버튼 -->
-    <a href="#" class="btntop">TOP</a>
+    <a href="#" class="btntop showIt showItTop">TOP</a>
 
     <!-- 로봇 머리 -->
-    <div id="head">
+    <div id="head" class="rAni">
         <!-- 눈1 -->
         <div id="eye1"></div>
         <!-- 눈2 -->
@@ -39,7 +39,7 @@
     </div>
 
     <!-- 로봇 몸 -->
-    <div id="body">
+    <div id="body" class="rAni">
         <!-- 목 -->
         <div id="neck"></div>
         <!-- 팔1 -->
@@ -50,8 +50,12 @@
         <div id="leg1" class="parts"></div>
         <!-- 다리2 -->
         <div id="leg2" class="parts"></div>
+        <!-- 어깨1 -->
+        <div id="sh1" class="sh"></div>
+        <!-- 어깨2 -->
+        <div id="sh2" class="sh"></div>
         <!-- TV -->
-        <div id="tv">
+        <div id="tv" class="showIt">
             <div id="screen">
                 <iframe src="https://www.youtube.com/embed/qMwzWk81tVM?autoplay=0&mute=0" allow="autoplay;"></iframe>
                 <!-- 
