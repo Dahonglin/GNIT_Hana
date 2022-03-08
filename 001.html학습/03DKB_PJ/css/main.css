@@ -2,6 +2,7 @@
 
 /* 외부 파일 합치기 - 웹폰트(CDN) */
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Noto+Serif+KR:wght@500&family=Noto+Serif+KR:wght@500&display=swap');
+
 /* 메인 css */
 * {
     padding: 0px;
@@ -19,8 +20,10 @@ h6 {
     /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
     기본글자크기는 16px */
 }
+
 /* ul, ol 초기화 */
-ul, ol {
+ul,
+ol {
     list-style: none;
     /* 블릿 스타일 없앰 */
 }
@@ -29,7 +32,7 @@ ul, ol {
 /* 작업진행중 외곽선 */
 /* 별표시(*)는 모든요소를 선택시 사용 */
 body * {
-    outline: 1px dashed gray;
+    /* outline: 1px dashed gray; */
     /* outline은 보더와 달리
     주변요소에 전혀 영향을 주지 않는다!
     그래서 border는 박스요소에 필수포함요소지만
@@ -70,7 +73,7 @@ body {
     /* 3. 배경반복여부 */
     /* background-repeat: no-repeat; */
     /* background-repeat: no-repeat; */
-    /* 
+    /*
         no-repeat 반복안함
         repeat-x x축반복
         repeat-y y축반복
@@ -85,11 +88,11 @@ body {
     /* background-position: center; */
     /* background-position: right bottom; */
     /* background-position: 100px 200px; */
-    /* 
-        background-position: 가로 세로; 
+    /*
+        background-position: 가로 세로;
         - 가로: px, % 등 단위 또는 left, center, right
         - 세로: px, % 등 단위 또는 top, center, bottom
-    
+
     */
     /* 6.배경이미지 크기 */
     /* background-size: cover; */
@@ -97,13 +100,13 @@ body {
     /* background-size: auto 200px; */
     /* background-size: 100px auto; */
     /* background-size: 100px 400px; */
-    /* 
-        background-size: 가로 세로; 
+    /*
+        background-size: 가로 세로;
         - 가로 : px,% 등 단위 auto
         - 세로 : px,% 등 단위 auto
         -> 가로,세로중 한쪽만 크기주고 나머지는 auto일
         경우 이미지가 고유 비율을 유지한다!
-        ->>> 특별한 값 : 
+        ->>> 특별한 값 :
         contain(비율유지 채우기-이미지모두 보임,빈틈있음)
         cover(비율유지 채우기-배경박스에 빈틈없이 채움)
     */
@@ -112,17 +115,19 @@ body {
 /********** 공통 클래스 **********/
 /* 스크롤바 디자인 클래스 */
 /* -webkit- 벤더사명(크롬, 사파리)  접두어 */
-.scbar::-webkit-scrollbar{
+.scbar::-webkit-scrollbar {
     /* 전체 스크롤바 크기 변경 */
 
     width: 5px;
 }
-.scbar::-webkit-scrollbar-thumb{
+
+.scbar::-webkit-scrollbar-thumb {
     /* 스크롤바 */
     background-color: #aaa;
     border-radius: 3px;
 }
-.scbar::-webkit-scrollbar-track{
+
+.scbar::-webkit-scrollbar-track {
     /* 스크롤바 트랙 */
     background-color: #ddd;
     border-radius: 3px;
@@ -132,8 +137,8 @@ body {
 .ibx {
     /* width: 1200px; */
     max-width: 1200px;
-    /* 최대가로 크기 1200px이다가 화면이 
-    1200px 보다 작아지면 auto로 자동변경 
+    /* 최대가로 크기 1200px이다가 화면이
+    1200px 보다 작아지면 auto로 자동변경
     가로스크롤이 생기지 않는다! */
     margin: 0 auto;
     /* 위아래 양쪽(auto는 등분함) */
@@ -143,38 +148,46 @@ body {
 
 /******************* 1. 상단영역 *******************/
 /* 겉박스 */
-#top{
+#top {
     background-color: #fff;
+    border-bottom: 1px solid #aaa;
 }
+
 /* 속박스 */
 .top {
     height: 125px;
 }
+
 /* 로고 박스 */
 #logo {
     text-align: center;
     padding: 20px;
 }
+
 /* 로고 이미지 가로 크기 */
-#logo img{
+#logo img {
     width: 100px;
 }
+
 /* GNB 메뉴 */
 .gnb {
     width: 602px;
     margin: 0 auto;
 }
+
 /* 가상요소로 clear 하기 */
-.gnb>ul::after{
+.gnb>ul::after {
     content: '';
     display: block;
     clear: both;
 }
+
 /* 옆으로 흐르게 */
 .gnb>ul>li {
     float: left;
     padding: 0 15px;
 }
+
 /* GNB 메뉴 링크 */
 .gnb>ul>li>a {
     color: #000;
@@ -185,10 +198,80 @@ body {
     word-spacing: 2px;
 }
 
+/* 서브 메뉴 */
+.smenu {
+    position: absolute;
+    /* 서브메뉴숨기기 */
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    /* 트랜지션 */
+    transition: height .3s ease-out;
+}
 
+/* 서브메뉴 ol 세팅 */
+.smenu>ol {
+    padding: 10px 0;
+}
 
+/* 서브메뉴 a */
+.smenu a {
+    font-size: 14px;
+    line-height: 30px;
 
+    /* 글자색+밑줄 */
+    color: #222;
+    text-decoration: none;
+}
 
+/* 하위 메뉴가 있는 상위 li 요소에 마우스 오버 시
+    가상 요소로 페이지 가로를 모두 채우는 흰색 메뉴 배경
+    클래스 sm이 부여된 li만 적용 된다. */
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block; /* div와 비슷한 성질을 지니게 됨. 블럭화 */
+    position: absolute;
+    /* top에 대한 설정이 없으므로 젠틀 앱솔루트.
+    a 요소 아래에 위치한다. */
+    width: 100%;
+    left: 0;
+    /* 앱솔루트의 크기에 %사용 시 부모를 기준함 */
+    /* 위에 아무도 position이 선언 된 요소가 없으므로 화면이 부모가 됨 */
+    background:#fff;
+    height: 0px;
+
+    /* 세부 위치 조정은 마진으로 */
+    margin-top: 2px;
+    /* #top에 하단 border를 가리므로 내려주어야 하는데
+    top값을 주게되면 앱솔루트로 설정한 박스가 틀어지므로 margin을 이용 */
+
+    /* 트랜지션 */
+    transition: height .3s ease-out;
+}
+
+/* li.sm 마우스 오버 시 가상요소 내려오기 */
+.gnb>ul>li.sm:hover::after{
+    border-bottom: 2px solid crimson;
+}
+
+/* 상위 li에 마우스 오버 시 .smenu 보이기*/
+/* 높이값 다르게 세팅 */
+
+/* 프로그램 소개 */
+.gnb>ul>li.sm.sm1:hover::after,
+.gnb>ul>li.sm1:hover .smenu {
+    height: 120px;
+}
+/* 동영상 */
+.gnb>ul>li.sm.sm2:hover::after,
+.gnb>ul>li.sm2:hover .smenu{
+    height: 140px;
+}
+/* 사진첩 */
+.gnb>ul>li.sm.sm3:hover::after,
+.gnb>ul>li.sm3:hover .smenu{
+    height: 100px;
+}
 
 /******************* 2. 메인 영역 *******************/
 .cont {
@@ -243,6 +326,7 @@ body {
     cursor: pointer;
     /* 커서 모양이 손가락 모양으로 변경 */
 }
+
 /* 캐릭터 이미지 박스 */
 .ci {
     /* 트랜지션 */
@@ -269,7 +353,7 @@ body {
     text-align: center;
     /* 인라인 요소 중앙 정렬 */
     margin-top: -21%;
-    /* 부모높이값 기준 21%크기만큼 
+    /* 부모높이값 기준 21%크기만큼
     반대방향(위쪽)으로 위치 이동함 */
 }
 
@@ -279,7 +363,7 @@ body {
     /* 부모박스(span)의 가로크기의 40%크기 */
 }
 
-/* 
+/*
     [ 자식요소 선택 가상클래스 ]
 
     - 전제조건: 자식요소가 같은 종류일 경우
@@ -315,7 +399,8 @@ body {
     /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
-    border-radius: 15px 0; /* 50%를 주게 되면 원형이 나옴 */
+    border-radius: 15px 0;
+    /* 50%를 주게 되면 원형이 나옴 */
     /* 상 우 하 좌 순으로 따로 설정 가능 */
     background: url(../images/eachBG.jpg) no-repeat center/cover;
     /* background:색이반고윙/크; */
@@ -331,7 +416,7 @@ body {
     트랜지션(Transition) 애니메이션 효과 주기
     > 속성값을 변화 과정을 보여주면서 애니메이션 하는 속성
     transition : 속성 시간 이징 지연 > 속시이지
-    1. 속성 : 변경 애니메이션 대상 속성 
+    1. 속성 : 변경 애니메이션 대상 속성
               (안쓰거나 all을 쓰면 모든 속성이 선택됨)
     2. 시간 - 애니메이션 시간 : 초 단위 (s)
     3. 이징 - 가속도
@@ -396,43 +481,49 @@ body {
 /******************* 3. 하단 영역 *******************/
 /* 겉박스 */
 #info {
-    background-color:rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
 }
+
 /* 속박스 */
 .info {
     height: 241px;
     box-sizing: border-box;
     padding: 13px;
 }
-.blink{
+
+.blink {
     width: 785px;
     margin: 0 auto;
 }
+
 /* 가상요소로 clear 하기 */
-.blink>ul::after{
+.blink>ul::after {
     content: '';
     display: block;
     clear: both;
 }
+
 /* 옆으로 흐르게 */
 .blink>ul>li {
     float: left;
     padding: 10px;
 }
+
 /* 하단 메뉴 링크 */
 .blink>ul>li>a {
     color: #000;
     text-decoration: none;
     /* font-family: 'Noto Sans KR', sans-serif; */
     font: normal bold 14px/39px 'Noto Sans KR', sans-serif;
-    /* 
+    /*
         font 한번에 세팅하기
         font : 스두크/줄체
         font : 스타일 두께 크기/줄간격 글자체
     */
 }
-.blink>ul>li>a:hover{
-    text-decoration:underline;
+
+.blink>ul>li>a:hover {
+    text-decoration: underline;
     color: crimson;
 }
 
@@ -452,6 +543,6 @@ body {
 }
 
 /* 하단 로고 박스 */
-.blogo{
+.blogo {
     text-align: center;
 }
