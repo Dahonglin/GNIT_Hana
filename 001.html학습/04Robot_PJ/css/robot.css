@@ -202,14 +202,14 @@ h1#logo {
 .showIt {
     opacity: 0; /* 처음에 투명 */
     /* 애니메이션 이시이지반방마 */
-    animation: showIt 0.7s ease-in-out 6s forwards;
+    animation: showIt 0.7s ease-in-out 5s forwards;
 }
 /* 애니메이션 등장시간 차이 클래스 */
 .showItTit{
-    animation-delay: 6.5s;
+    animation-delay: 5.5s;
 }
 .showItTop{
-    animation-delay: 7s;
+    animation-delay: 6s;
 }
 
 /* 점멸 애니메이션 키프레임 */
