@@ -132,6 +132,7 @@ body::after {
     /* 애니메이션으로 일정 시간 뒤 없앰 */
     animation: coverDel .1s 7s forwards;
 }
+
 /* 애니 후 없애기 */
 @keyframes coverDel {
     to {
@@ -187,7 +188,8 @@ body::after {
     border-bottom: 1px solid #ccc;
     /* 애니메이션 */
     animation: topAni 0.5s ease-out 7s forwards;
-    z-index: 99; /* 상단메뉴 위로 */
+    z-index: 99;
+    /* 상단메뉴 위로 */
 }
 
 /* 상단박스 키프레임 */
@@ -216,7 +218,60 @@ body::after {
     width: 100px;
 }
 
-/* GNB 메뉴 */
+/******* 상단 sns / 회원가입 메뉴 *******/
+
+.snsbx{ /* 최상위 박스 */
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축 방향으로 자기 크기의 절반 반대방향 이동(중앙정렬)  */
+    width: 1200px;
+    max-width: 100%;
+    /* 1200 이었다가 화면이 줄어들면 100%로 변경 */
+    outline: 2px dotted blue;
+}
+
+.sns {
+    float: right;
+    margin-right: 50px;
+    outline: 1px solid red;
+}
+
+.sns ul::after{ /* clear 세팅 */
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sns li{
+    float: left;
+    margin : 0 5px;
+}
+
+/* sns 메뉴용 li만 디자인 */
+/* 두번째 li 이후 모든 li 형제들 : 틸드(~) 형제들 선택자 */
+.sns li:nth-child(2)~li {
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+}
+
+
+.sns a{
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.4rem;
+    line-height: 30px;
+}
+
+/* sns 설명글 숨기기 */
+.ir {
+    display:none;
+}
+
+/***************** GNB 메뉴 *****************/
 .gnb {
     width: 573px;
     margin: 0 auto;
@@ -338,19 +393,20 @@ body::after {
     top: 15px;
     right: 20px;
     font-size: 40px;
-    transform:scaleX(1.5);
+    transform: scaleX(1.5);
 
     /* 버튼 기본 디자인 없애기 */
-    background-color:transparent;
+    background-color: transparent;
     border: none;
     /* 모바일 아닐때 안보임 */
-    display:none;
+    display: none;
 }
 
 /* 버튼 모양 변경 위해 가상 요소로 내용 넣기 */
-.ham::before{
+.ham::before {
     content: '≡';
 
+}
 
 /******************* 2. 메인 영역 *******************/
 .cont {
@@ -416,13 +472,15 @@ body::after {
 }
 
 /* 캐릭터 시차 */
-.cat:nth-child(2){
+.cat:nth-child(2) {
     animation-duration: 3.5s;
 }
-.cat:nth-child(3){
+
+.cat:nth-child(3) {
     animation-duration: 4s;
 }
-.cat:nth-child(4){
+
+.cat:nth-child(4) {
     animation-duration: 4.5s;
 }
 
