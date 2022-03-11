@@ -7,6 +7,8 @@
 * {
     padding: 0px;
     margin: 0 auto;
+    font-size: 10px;
+    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
 }
 
 /* 헤딩태그 글자크기 초기화 */
@@ -148,9 +150,13 @@ body {
 
 /******************* 1. 상단영역 *******************/
 /* 겉박스 */
-#top {
+#top{/* 겉박스 */
+    position: absolute;
+    /* 앱솔을 준이유는 아래쪽 스테틱박스에 영향을 주기때문! */
+    width: 100%;
+    /* 크기를 화면에 채움! */
     background-color: #fff;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #ccc;
 }
 
 /* 속박스 */
@@ -171,7 +177,7 @@ body {
 
 /* GNB 메뉴 */
 .gnb {
-    width: 602px;
+    width: 573px;
     margin: 0 auto;
 }
 
@@ -189,14 +195,24 @@ body {
 }
 
 /* GNB 메뉴 링크 */
-.gnb>ul>li>a {
-    color: #000;
+.gnb>ul>li>a{
+    display: inline-block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
+    color: #222;
     text-decoration: none;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 17px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.6rem;
     line-height: 40px;
-    word-spacing: 2px;
+    border-bottom: 4px solid #fff;
+    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
 }
+
+/* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
+.gnb>ul>li:hover>a{
+    border-bottom: 4px solid red;
+    /* 인라인블록이어서 보더가 크기에 영향을 미치지 않음! */
+}
+
 
 /* 서브 메뉴 */
 .smenu {
@@ -206,7 +222,7 @@ body {
     height: 0;
     overflow: hidden;
     /* 트랜지션 */
-    transition: height .3s ease-out;
+    transition: height .4s ease-out;
 }
 
 /* 서브메뉴 ol 세팅 */
@@ -216,7 +232,7 @@ body {
 
 /* 서브메뉴 a */
 .smenu a {
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 30px;
 
     /* 글자색+밑줄 */
@@ -224,34 +240,31 @@ body {
     text-decoration: none;
 }
 
-/* 하위 메뉴가 있는 상위 li 요소에 마우스 오버 시
-    가상 요소로 페이지 가로를 모두 채우는 흰색 메뉴 배경
-    클래스 sm이 부여된 li만 적용 된다. */
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
+클래스 sm이 부여된 li만 적용된다!*/
 .gnb>ul>li.sm::after {
     content: '';
-    display: block; /* div와 비슷한 성질을 지니게 됨. 블럭화 */
+    display: block;/* div와 비슷! */
     position: absolute;
-    /* top에 대한 설정이 없으므로 젠틀 앱솔루트.
-    a 요소 아래에 위치한다. */
-    width: 100%;
+    top: 126px;/* 겉박스 하단보더 1px보이게 1px더함! */
     left: 0;
-    /* 앱솔루트의 크기에 %사용 시 부모를 기준함 */
-    /* 위에 아무도 position이 선언 된 요소가 없으므로 화면이 부모가 됨 */
-    background:#fff;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면이 부모! */
     height: 0px;
-
-    /* 세부 위치 조정은 마진으로 */
-    margin-top: 2px;
-    /* #top에 하단 border를 가리므로 내려주어야 하는데
-    top값을 주게되면 앱솔루트로 설정한 박스가 틀어지므로 margin을 이용 */
-
-    /* 트랜지션 */
-    transition: height .3s ease-out;
+    background-color: #fff;
+    /* 세부위치조정은 마진으로!!! */
+    /* margin-top: 4px; */
+    /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
 }
-
-/* li.sm 마우스 오버 시 가상요소 내려오기 */
+/* li.sm에 마우스 오버시 가상요소 내려오기! */
+/* 공통으로 하단보더설정 */
 .gnb>ul>li.sm:hover::after{
-    border-bottom: 2px solid crimson;
+    border-bottom: 2px solid red;
 }
 
 /* 상위 li에 마우스 오버 시 .smenu 보이기*/
@@ -274,8 +287,8 @@ body {
 }
 
 /******************* 2. 메인 영역 *******************/
-.cont {
-    max-width: 1200px;
+.cont{
+    max-width: 1920px;
     /* 가장 큰 일반 해상도 크기로 최대가로크기 변경! */
     height: 800px;
     overflow: hidden;
@@ -283,17 +296,20 @@ body {
 }
 
 /* 캐릭터 부모박스 */
-#cbx {
+#cbx{
     width: 90%;
     /* 부모박스크기의 90%가로크기 */
     margin: 0 auto;
     /* 마영오! - 블록가로중앙 */
-    margin-top: 400px;
-    /* 윗쪽마진 400px로 설정 */
+    margin-top: 527px;
+    /* 윗쪽마진 400px + 127px(#top만큼)로 설정 */
+    /* height: 300px; */
+    /* background-color: rgba(144, 238, 144, 0.637); */
+    
     /* overflow: hidden; */
-    /* float해제를 위해!
-    > 자식 요소가 위로 올라갈 때 가려져서 쓸 수 없음. */
-    /* > 가상 요소로 마지막에 오버 float 해제 설정하기 */
+    /* float해제를 위해! 
+    -> 자식요소가 위로 올라갈때 가려져서 쓸 수 없음!!! */
+    /* -> 가상요소로 마지막에 float해제설정하기! */
 }
 
 /* 가상 요소로 clear 설정 하기! */
@@ -441,14 +457,13 @@ body {
 /* 캐릭터 설명 타이틀 */
 .cd h3 {
     font-family: 'Dokdo', cursive;
-    font-size: 1.7em;
+    font-size: min(2vw,40px);
+    font-weight: normal;
     padding: 5px;
 }
 
 /* 가상 요소로 타이틀 앞에 아이콘 보이기 */
 .cd h3::before {
-    /* content: '👹';
-    font-size: 20px; */
     content: '';
     display: inline-block;
     width: 15px;
@@ -461,8 +476,8 @@ body {
 /* 캐릭터 설명 내용 */
 .cd p {
     font-family: 'Noto Serif KR', serif;
-    font-size: 0.8em;
-    line-height: 1.6;
+    font-size: min(1.5vw,16px);
+    line-height: 1.7;
     padding: 5px;
     /* 양쪽 정렬 */
     text-align: justify;
@@ -471,7 +486,7 @@ body {
 /* 캐릭터 설명 내용 첫번째 글자 강조 가상요소로 변경 */
 .cd p:first-of-type::first-letter {
     color: crimson;
-    font-size: 2em;
+    font-size: min(4vw,30px);
     font-style: normal;
     /* 그림자로 글자에 테두리 주기 */
     text-shadow: 1px 0 #000, -1px 0 #000,
@@ -488,11 +503,11 @@ body {
 .info {
     height: 241px;
     box-sizing: border-box;
-    padding: 13px;
+    /* 크기유지 - 보더 패딩 포함 */
 }
 
 .blink {
-    width: 785px;
+    max-width: 785px;
     margin: 0 auto;
 }
 
@@ -514,7 +529,7 @@ body {
     color: #000;
     text-decoration: none;
     /* font-family: 'Noto Sans KR', sans-serif; */
-    font: normal bold 14px/39px 'Noto Sans KR', sans-serif;
+    font: bold 1.4rem/2.8 'Noto Sans KR', sans-serif;
     /*
         font 한번에 세팅하기
         font : 스두크/줄체
@@ -530,10 +545,10 @@ body {
 
 /* 회사 주소 박스 */
 .addr {
-    width: 785px;
-    margin: 0 auto;
+    max-width: 785px;
+    margin: 10px auto;
     border: 4px double #222;
-    font: normal 14px/30px 'Noto Sans KR', sans-serif;
+    font: 1.4rem/2 'Noto Sans KR', sans-serif;
     text-align: center;
     /* 원래 address 요소는 italic 체인데 폰트 한번에 쓰기에서
         스타일 설정을 하지 않으면 기본 normal이 적용됨. */
