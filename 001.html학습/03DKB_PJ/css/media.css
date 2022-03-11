@@ -20,12 +20,14 @@
 @media screen and (max-width:800px) {
 
     /* 1. 숨기기
-    - GNB메뉴, 문구이미지, 하단링크, 서브메뉴, 메뉴배경 가상요소 */
+    - GNB메뉴, 문구이미지, 하단링크, 서브메뉴, 메뉴배경 가상요소, sns박스, 브랜드 선택박스 */
     .gnb,
     #dtxt,
     .blink,
     .smenu,
-    .gnb>ul>li.sm::after {
+    .gnb>ul>li.sm::after,
+    .snsbx,
+    #sel {
         display: none;
     }
 
