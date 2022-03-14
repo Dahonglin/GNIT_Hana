@@ -196,18 +196,22 @@ nav.gnb {
     display: block;
     width: 100%;
     height: 100%;
-    animation: dlcAni 3s infinite ease-in-out;
+    
+}
+
+.dlc {
+    animation: dlcAni 3s infinite 3s linear;
 }
 
 .dlc:hover {
     animation: dlcOnAni 2s infinite linear;
 }
 
-/* 로고 평상시 좌우로 살짝 움직임 */
+/* 로고 평상시 좌우로 살짝 딸랑딸랑 움직임 구글 참조함 */
 @keyframes dlcAni {
     0%,
     50% {
-        transform: ro(0deg);
+        transform: rotate(0deg);
     }
 
     5%,
@@ -215,21 +219,20 @@ nav.gnb {
     25%,
     35%,
     45% {
-        transform: rotate(5deg);
+        transform: rotate(2deg);
     }
 
     10%,
     20%,
     30%,
     40% {
-        transform: rotate(-5deg);
+        transform: rotate(-2deg);
     }
 
 }
 
 
-
-/* 로고 좌우 딸랑딸랑! 구글 참조함 */
+/* 로고 좌우 더 빨리 딸랑딸랑! */
 @keyframes dlcOnAni {
 
     0%,
@@ -277,8 +280,6 @@ nav.gnb {
     width: 100%;
     height: 60px;
     background-image: url(../img/footer_bg_pc.png);
-    background-repeat: repeat-x;
-    background-position: 50% 0;
     background-size: cover;
 }
 
