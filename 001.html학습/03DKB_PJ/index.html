@@ -17,7 +17,8 @@
         // 함수는 키워드 function 을 사용함!
         // 함수형식: function 함수명(){코드}
         function 바꿔() {
-
+            var 대상 = document.getElementsByClassName("top").item(0);
+            대상.classList.toggle("on");
             // 1. 함수호출확인 : 경고창 띄우기
             // alert("나야나!");
 
@@ -30,8 +31,7 @@
             // JS는 명령문 끝에 세미콜론(;)을 쓴다!
             // JS에서 이퀄(=)은 오른쪽 데이터가 왼쪽에 들어감!
             // 이것을 '할당'이라고 함!
-            var 대상 =
-                document.getElementsByClassName("top").item(0);
+            
             // 문서 탐색하기!
             // (1) html문서 전체 -> document
             // (2) 문서내용 중 아이디요소 -> get Element
@@ -50,7 +50,7 @@
             // item(순번) -> 여러개 요소중 몇번째 순번 선택!
 
             // 3. 대상에게 클래스 넣기!
-            대상.classList.toggle("on");
+            
             /************************************** 
                 [ 요소에 클래스를 넣고 빼는 객체 ]
                 classList 객체
@@ -73,14 +73,14 @@
 
         } //////// 바꿔 함수 ////////
 
-        window.onload = function () {
-            document.getElementsByClassName('ham').item(0).addEventListener('click', addClassOn);
-            const top = document.getElementsByClassName('top').item(0);
+        // window.onload = function () {
+        //     document.getElementsByClassName('ham').item(0).addEventListener('click', addClassOn);
+        //     const top = document.getElementsByClassName('top').item(0);
 
-            function addClassOn() {
-                top.classList.toggle('on');
-            }
-        }
+        //     function addClassOn() {
+        //         top.classList.toggle('on');
+        //     }
+        // }
     </script>
 </head>
 
