@@ -207,7 +207,9 @@ nav.gnb {
 
 #main {
     width: 1400px;
-    height: 650px;
+    min-height: 600px;
+    height:75vh;
+
     margin: 0 auto;
 }
 
