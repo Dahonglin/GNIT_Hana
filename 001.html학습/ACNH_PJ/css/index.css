@@ -74,7 +74,7 @@ body {
 
 /* 상단 박스 전체 영역 */
 #top {
-    position: relative;
+    position:relative;
     width: 1400px;
     height: 210px;
     margin: 0 auto;
@@ -82,7 +82,7 @@ body {
 
 /* 상단 로고 */
 .logo {
-    display: inline-block;
+    display:inline-block;
     width: 270px;
     height: 150px;
     margin: 20px;
@@ -114,7 +114,6 @@ body {
 nav.gnb {
     position: absolute;
     display: inline-block;
-    text-align: center;
     top: 60px;
     margin-left: 50px;
     width: 650px;
@@ -200,10 +199,11 @@ nav.gnb {
 }
 
 .dlc:hover {
-    animation: bell 2s infinite linear;
+    animation: dlcAni 2s infinite linear;
 }
 
-@keyframes bell {
+/* 로고 좌우 딸랑딸랑! 구글 참조함 */
+@keyframes dlcAni {
 
     0%,
     50% {
