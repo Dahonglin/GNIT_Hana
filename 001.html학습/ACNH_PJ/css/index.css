@@ -2,6 +2,7 @@
 /* 상단 메뉴 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+/********************* 공통 클래스 *********************/
 
 /* 전역 패딩, 마진 초기화 */
 * {
@@ -41,6 +42,23 @@ body {
     /* overflow-x: hidden; */
 }
 
+/* 스크롤바 */
+.scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: rgb(88, 170, 156);
+    border-radius: 3px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    /* 스크롤바 트랙 */
+    background-color: rgb(187, 221, 216);
+    border-radius: 3px;
+}
+
 /* 대체 텍스트 */
 .ir {
     display: block;
@@ -48,6 +66,9 @@ body {
     height: 0;
     overflow: hidden;
 }
+
+
+
 
 /************************************** 상단 영역 **************************************/
 
@@ -98,6 +119,8 @@ nav.gnb {
     width: 650px;
     height: 50px;
     background: url(../img/footer_bg_pc.png) no-repeat top/cover;
+    box-shadow: 1px 0 rgb(77, 51, 9), -1px 0 rgb(77, 51, 9),
+        0 1px rgb(77, 51, 9), 0 -1px rgb(77, 51, 9);
     border-radius: 20px;
     font-size: 2.4rem;
 }
@@ -206,9 +229,9 @@ nav.gnb {
 /*************************** 메인 영역 ***************************/
 
 #main {
-    width: 1400px;
+    width: 100%;
     min-height: 600px;
-    height:75vh;
+    height: 75vh;
 
     margin: 0 auto;
 }
@@ -223,7 +246,7 @@ nav.gnb {
 
 #info {
     margin: 0 auto;
-    width: 1400px;
+    width: 100%;
     height: 60px;
     background-image: url(../img/footer_bg_pc.png);
     background-repeat: repeat-x;
@@ -232,8 +255,8 @@ nav.gnb {
 }
 
 .info {
-   width: 562px;
-   margin: 0 auto;
+    width: 562px;
+    margin: 0 auto;
 }
 
 .info ul>li {
