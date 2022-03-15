@@ -1,6 +1,10 @@
 @charset "utf-8";
-/* 상단 메뉴 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap');
+
+/* font-family: 'Gamja Flower', cursive;
+font-family: 'Jua', sans-serif; */
+
 
 /********************* 공통 클래스 *********************/
 
@@ -45,6 +49,7 @@ body {
 /* 스크롤바 */
 .scroll::-webkit-scrollbar {
     width: 5px;
+    height: 5px;
 }
 
 .scroll::-webkit-scrollbar-thumb {
@@ -67,14 +72,19 @@ body {
     overflow: hidden;
 }
 
-
+/* a 태그 확장 */
+.a_ex {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 
 /************************************** 상단 영역 **************************************/
 
 /* 상단 박스 전체 영역 */
 #top {
-    position:relative;
+    position: relative;
     width: 1400px;
     height: 210px;
     margin: 0 auto;
@@ -82,7 +92,7 @@ body {
 
 /* 상단 로고 */
 .logo {
-    display:inline-block;
+    display: inline-block;
     width: 270px;
     height: 150px;
     margin: 20px;
@@ -92,12 +102,6 @@ body {
     background-position: -50px 0;
 }
 
-/* 로고 a 영역 확장 */
-.logo a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
 
 /**************** 플레이어 디자인 자바스크립트 제어 *****************/
 /* 동물의숲 BGM */
@@ -108,13 +112,11 @@ body {
 } */
 
 
-
-
 /* gnb 메뉴 */
 nav.gnb {
     position: absolute;
     display: inline-block;
-    top: 60px;
+    top: 70px;
     margin-left: 50px;
     width: 650px;
     height: 50px;
@@ -174,7 +176,6 @@ nav.gnb {
 /* 상단 확장팩 배너 */
 .dlc {
     float: right;
-    display: inline-block;
     width: 200px;
     height: 150px;
     margin: 20px;
@@ -191,16 +192,8 @@ nav.gnb {
     width: 200px;
 }
 
-/* dlc 로고 a 영역 확장 */
-.dlc a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    
-}
-
 .dlc {
-    animation: dlcAni 3s infinite 3s linear;
+    animation: dlcAni 2s infinite 3s linear;
 }
 
 .dlc:hover {
@@ -209,6 +202,7 @@ nav.gnb {
 
 /* 로고 평상시 좌우로 살짝 딸랑딸랑 움직임 구글 참조함 */
 @keyframes dlcAni {
+
     0%,
     50% {
         transform: rotate(0deg);
@@ -257,25 +251,158 @@ nav.gnb {
 }
 
 
-/*************************** 메인 영역 ***************************/
 
+/* 상단 E-shop 바로가기 버튼 */
+.eshop {
+    position: fixed;
+    right: 0;
+    top: 210px;
+    width: 50px;
+    height: 50px;
+    background: rgb(255, 125, 1);
+    border-radius: 8px 0 0 8px;
+    border: 3px solid rgb(255, 125, 1);
+    overflow: hidden;
+}
+
+.eshop .download {
+    position: absolute;
+    width: 130px;
+    height: 20px;
+    top: 15px;
+    left: 55px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(255, 125, 1);
+}
+
+.eshop:hover {
+    transition: .12s ease-out;
+    background-color: #fff;
+    width: 200px;
+}
+
+
+/* eshop 아이콘 */
+.eshop span img {
+    margin: 12px;
+    margin-top: 10px;
+}
+
+.eshop span img:last-child {
+    display: none;
+}
+
+.eshop:hover span img:last-child {
+    display: inline;
+}
+
+.eshop:hover span img:first-child {
+    display: none;
+}
+
+/*********************************** 메인 영역 ***********************************/
+
+/* 겉박스 */
 #main {
-    width: 100%;
-    min-height: 600px;
-    height: 75vh;
-
+    width: 1400px;
+    min-height: 500px;
     margin: 0 auto;
 }
 
+/* 속박스 */
 .cont {
+    width: 90%;
     margin: 0 auto;
-    text-align: center;
-    width: 1250px;
+    margin-top: 170px;
 }
 
-/*************************** 하단 영역 ***************************/
+/* 컨텐츠 박스 크기 */
+.cbx {
+    width: 20%;
+    float: left;
+    text-align: center;
+}
 
+.cbx::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 컨텐츠 박스 1 */
+.mainCt1 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_1.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:first-child:hover .mainCt1 {
+    background-image: url(../img/main_menu_1.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 2 */
+.mainCt2 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_2.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(2):hover .mainCt2 {
+    background-image: url(../img/main_menu_2.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+
+/* 설명글 박스 */
+.cdes {
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: url(../img/ctbg.jpg) no-repeat top/cover;
+    margin-top: 5px;
+    transition: height .4s ease-out;
+    box-sizing: border-box;
+}
+
+.cdes .mainSct {
+    width: 220px;
+    margin: 0 auto;
+    margin-top: 15%;
+    text-align: left;
+    line-height: 1.7rem;
+    font-size: 1.5rem;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.mainSct p{
+    padding-bottom: 1.2rem;
+}
+
+.cdes div::after {
+    display: inline-block;
+    width: 200px;
+}
+
+/* 설명글 내려옴 */
+.cbx:hover .cdes {
+    height: 250px;
+}
+
+
+/*********************************** 하단 영역 ***********************************/
+
+/* 겉박스 */
 #info {
+    position: relative;
     margin: 0 auto;
     width: 100%;
     height: 60px;
@@ -283,14 +410,48 @@ nav.gnb {
     background-size: cover;
 }
 
+/* 속박스 */
 .info {
-    width: 562px;
+    width: 569px;
+    height: 60px;
     margin: 0 auto;
 }
 
+/* 하단정보 */
 .info ul>li {
     float: left;
-    line-height: 2;
-    padding: 20px;
+    line-height: 1.6;
+    padding: 20px 0 20px 0;
+    margin-left: 1rem;
+    font-size: 1.3rem;
     box-sizing: border-box;
+}
+
+.info ul>li:first-child {
+    margin-left: 0;
+}
+
+/* 하단정보 사이 bar */
+.info ul>li:nth-child(-n+4)::after {
+    content: '|';
+    color: #fff;
+    margin-left: 1rem;
+}
+
+.info ul>li a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+/* 하단 탑 버튼 */
+.top {
+    position: absolute;
+    top: -110px;
+    right: 20px;
+    width: 106px;
+    height: 156px;
+    background: url(../img/back-to-top-pc.png) no-repeat;
+    background-position: -12px 3px;
 }
