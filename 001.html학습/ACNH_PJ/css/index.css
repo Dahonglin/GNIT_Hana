@@ -36,9 +36,9 @@ ol {
 }
 
 /* 작업 가이드라인 */
-body * {
+/* body * {
     outline: 1px dashed green;
-}
+} */
 
 /* 배경 이미지, 스크롤 바 x 숨김 */
 body {
@@ -360,9 +360,54 @@ nav.gnb {
     margin-top: -40%;
 }
 
+/* 컨텐츠 박스 3 */
+.mainCt3 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_3.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(3):hover .mainCt3 {
+    background-image: url(../img/main_menu_3.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 4 */
+.mainCt4 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_4.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(4):hover .mainCt4 {
+    background-image: url(../img/main_menu_4.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
+
+/* 컨텐츠 박스 5 */
+.mainCt5 {
+    width: 200px;
+    height: 159px;
+    margin: 0 auto;
+    background-image: url(../img/main_menu_5.png);
+    transition: margin-top .3s ease-in-out;
+}
+
+.cbx:nth-child(5):hover .mainCt5 {
+    background-image: url(../img/main_menu_5.png);
+    background-position: 0 -316px;
+    margin-top: -40%;
+}
 
 /* 설명글 박스 */
 .cdes {
+    position: relative;
     width: 100%;
     height: 0px;
     overflow: hidden;
@@ -373,23 +418,27 @@ nav.gnb {
     box-sizing: border-box;
 }
 
+/* 설명글 위 낙엽 아이콘 */
+.cdes::before {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 85px;
+    top: 5px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/icon.png) no-repeat;
+}
+
+/* 설명글 */
 .cdes .mainSct {
     width: 220px;
     margin: 0 auto;
     margin-top: 15%;
     text-align: left;
-    line-height: 1.7rem;
+    line-height: 2.2rem;
     font-size: 1.5rem;
     font-family: 'Gamja Flower', cursive;
-}
-
-.mainSct p{
-    padding-bottom: 1.2rem;
-}
-
-.cdes div::after {
-    display: inline-block;
-    width: 200px;
 }
 
 /* 설명글 내려옴 */
