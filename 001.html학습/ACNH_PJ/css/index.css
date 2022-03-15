@@ -42,12 +42,26 @@ ol {
 
 /* 배경 이미지, 스크롤 바 x 숨김 */
 body {
-    background: url(../img/bg_cha_2.png) no-repeat scroll 0% 70%/12%,
+    /* background: url(../img/bg_cha_2.png) no-repeat scroll 0% 70%/12%,
                 url(../img/bg_cha_1.png) no-repeat scroll 100% 70%/12%,
                 url(../img/bg_cha_3.png) no-repeat scroll 99% 37%/8%,
                 url(../img/bg_cha_6.png) no-repeat scroll 91% 23%/6%,
                 url(../img/bg_cha_4.png) no-repeat scroll 7% 40%/8%,
                 url(../img/bg_cha_5.png) no-repeat scroll 3% 23%/5%,
+                url(../img/bg.jpg) no-repeat scroll top/cover; */
+    background: url(../img/acnh01.png) no-repeat scroll 28% 65%/550px,
+                url(../img/acnh02.png) no-repeat scroll 68% 23%/400px,
+                /* 왼쪽 */
+                url(../img/acnh09.png) no-repeat scroll 2% 93%/190px,
+                /* url(../img/bg_cha_2.png) no-repeat scroll 0% 67%/220px,
+                url(../img/acnh05.png) no-repeat scroll 8% 43%/120px,
+                url(../img/bg_cha_6.png) no-repeat scroll 3% 30%/110px, */
+                /* 오른쪽 */
+                url(../img/acnh14.png) no-repeat scroll 98% 97%/190px,
+                /* url(../img/bg_cha_1.png) no-repeat scroll 100% 67%/230px,
+                url(../img/acnh12.png) no-repeat scroll 93% 44%/170px,
+                url(../img/acnh04.png) no-repeat scroll 96% 28%/95px, */
+
                 url(../img/bg.jpg) no-repeat scroll top/cover;
     /* overflow-x: hidden; */
 }
@@ -242,6 +256,7 @@ nav.gnb {
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.05);
     }
@@ -303,7 +318,7 @@ nav.gnb {
 /* 겉박스 */
 #main {
     width: 1400px;
-    min-height: 620px;
+    min-height: 580px;
     margin: 0 auto;
 }
 
@@ -311,7 +326,7 @@ nav.gnb {
 .cont {
     width: 90%;
     margin: 0 auto;
-    margin-top: 170px;
+    margin-top: 150px;
 }
 
 /* 컨텐츠 박스 크기 */
@@ -410,10 +425,25 @@ nav.gnb {
     height: 0px;
     overflow: hidden;
     border-radius: 10px;
-    background: url(../img/ctbg.jpg) no-repeat top/cover;
     margin-top: 5px;
     transition: height .4s ease-out;
     box-sizing: border-box;
+}
+
+.cdes.desBg1 {
+    background: url(../img/ctbg.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg2 {
+    background: url(../img/ctbg2.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg3 {
+    background: url(../img/ctbg3.jpg) no-repeat top/cover;
+}
+
+.cdes.desBg4 {
+    background: url(../img/ctbg4.jpg) no-repeat top/cover;
 }
 
 /* 설명글 위 낙엽 아이콘 */
@@ -449,7 +479,6 @@ nav.gnb {
 
 /* 겉박스 */
 #info {
-    position: relative;
     margin: 0 auto;
     width: 100%;
     height: 60px;
@@ -459,6 +488,7 @@ nav.gnb {
 
 /* 속박스 */
 .info {
+    position: relative;
     width: 569px;
     height: 60px;
     margin: 0 auto;
@@ -496,7 +526,7 @@ nav.gnb {
 .top {
     position: absolute;
     top: -110px;
-    right: 20px;
+    right: -100px;
     width: 106px;
     height: 156px;
     background: url(../img/back-to-top-pc.png) no-repeat;
