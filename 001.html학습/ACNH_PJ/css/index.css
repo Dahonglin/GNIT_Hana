@@ -93,7 +93,7 @@ body {
 /* 링크 미리보기 이미지 테스트 */
 .preLogo {
     position: absolute;
-    display: none;
+    transform: scale(0);
 }
 
 /* 상단 로고 */
