@@ -202,11 +202,11 @@ nav.gnb {
 }
 
 .dlc {
-    animation: dlcAni 2s infinite 3s linear;
+    animation: dlcAni 2s infinite 2s linear;
 }
 
 .dlc:hover {
-    animation: dlcOnAni 2s infinite linear;
+    animation: dlcOnAni .1s forwards ease-out;
 }
 
 /* 로고 평상시 좌우로 살짝 딸랑딸랑 움직임 구글 참조함 */
@@ -237,8 +237,14 @@ nav.gnb {
 
 /* 로고 좌우 더 빨리 딸랑딸랑! */
 @keyframes dlcOnAni {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
 
-    0%,
+    /* 0%,
     50% {
         transform: rotate(0deg);
     }
@@ -256,7 +262,7 @@ nav.gnb {
     30%,
     40% {
         transform: rotate(-5deg);
-    }
+    } */
 }
 
 
