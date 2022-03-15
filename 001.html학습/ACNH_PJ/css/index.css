@@ -90,6 +90,12 @@ body {
     margin: 0 auto;
 }
 
+/* 링크 미리보기 이미지 테스트 */
+.preLogo {
+    position: absolute;
+    display: none;
+}
+
 /* 상단 로고 */
 .logo {
     display: inline-block;
@@ -101,7 +107,6 @@ body {
     background-size: 140%;
     background-position: -50px 0;
 }
-
 
 /**************** 플레이어 디자인 자바스크립트 제어 *****************/
 /* 동물의숲 BGM */
