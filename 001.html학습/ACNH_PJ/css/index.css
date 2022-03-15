@@ -42,7 +42,11 @@ ol {
 
 /* 배경 이미지, 스크롤 바 x 숨김 */
 body {
-    background: url(../img/bg.jpg) no-repeat fixed bottom/cover;
+    background: url(../img/bg_cha_2.png) no-repeat scroll 0% 65%/12%,
+                url(../img/bg_cha_1.png) no-repeat scroll 100% 65%/12%,
+                url(../img/bg_cha_3.png) no-repeat scroll 97% 15%/11%,
+                url(../img/bg_cha_4.png) no-repeat scroll 5% 12%/11%,
+                url(../img/bg.jpg) no-repeat scroll bottom/cover;
     /* overflow-x: hidden; */
 }
 
