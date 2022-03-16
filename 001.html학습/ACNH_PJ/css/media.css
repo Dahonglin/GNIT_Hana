@@ -341,6 +341,7 @@
             /* 오른쪽 */
             url(../img/acnh14.png) no-repeat scroll 98% 97%/130px,
             url(../img/bg.jpg) no-repeat scroll top/cover;
+        overflow-x: hidden;
     }
 
     /* 로고 위치 재설정 */
@@ -456,10 +457,12 @@
         top: 10px;
         transform: scale(1.5);
     }
+
     /* GNB 숨김 */
     .gnb {
         display: none;
     }
+
     /* GNB 디자인 변경 */
     .gnb {
         position: fixed;
@@ -469,7 +472,7 @@
         height: 100vh;
         margin-left: 0px;
         background: rgba(13, 73, 50, 0.7);
-        box-shadow:none;
+        box-shadow: none;
         border-radius: 0px;
     }
 
@@ -521,9 +524,11 @@
     .info {
         display: none;
     }
+
     #info {
         width: 100%;
     }
+
     .mInfo {
         display: block;
         width: 373px;
