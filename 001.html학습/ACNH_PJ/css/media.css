@@ -397,6 +397,10 @@
 
 /******** 600px 이하 미디어쿼리 ********/
 @media screen and (max-width:600px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
     body {
         background: url(../img/acnh01.png) no-repeat scroll 30% 65%/0px,
             url(../img/acnh02.png) no-repeat scroll 78% 23%/0px,
