@@ -474,6 +474,7 @@
     }
 
     .gnb>ul {
+        width: 100vw;
         margin-top: 30vh;
         /* 리스트가 30% 이므로 나머지 70%의 절반을 밀어주면 수직중앙 */
     }
@@ -494,10 +495,6 @@
 
     /* 오버 시 하단 보더 삭제 */
     .gnb>ul>li>a:hover {
-        border: none;
-    }
-
-    .gnb>ul>li.sm:hover::after {
         border: none;
     }
 
