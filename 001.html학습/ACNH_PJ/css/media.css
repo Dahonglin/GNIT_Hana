@@ -447,14 +447,13 @@
     .headTop.on .ham::before {
         content: '×';
         color: #fff;
-        position: relative;
-        top: 15px;
-        right: 5px;
     }
 
     /* 상단영역에 클래스 on 적용 시 버튼 고정 */
     .headTop.on .ham {
         position: fixed;
+        margin-right: 20px;
+        top: 10px;
         transform: scale(1.5);
     }
     /* GNB 숨김 */
