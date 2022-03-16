@@ -538,6 +538,7 @@ body.mobile {
     width: 220px;
     margin: 0 auto;
     margin-top: 15%;
+    margin-left: 15px;
     text-align: left;
     line-height: 2.2rem;
     font-size: 1.5rem;
