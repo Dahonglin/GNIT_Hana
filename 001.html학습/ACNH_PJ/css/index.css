@@ -70,13 +70,13 @@ body.mobile {
 
 .scroll::-webkit-scrollbar-thumb {
     /* 스크롤바 */
-    background-color: rgb(88, 170, 156);
+    background-color: rgb(209, 209, 209);
     border-radius: 3px;
 }
 
 .scroll::-webkit-scrollbar-track {
     /* 스크롤바 트랙 */
-    background-color: rgb(187, 221, 216);
+    background-color: rgb(230, 230, 230);
     border-radius: 3px;
 }
 
