@@ -432,7 +432,7 @@
     /* BGM 위치 변경 */
     .bgm {
         top: 150px;
-        margin-left: 17vw;
+        margin-left: 14vw;
         height: 30px;
     }
 
@@ -533,7 +533,7 @@
 
     .mInfo {
         display: block;
-        width: 373px;
+        width: 171px;
     }
 
 }

@@ -598,7 +598,7 @@ body.mobile {
     margin-left: 1rem;
 }
 
-.mInfo ul>li:nth-child(-n+3)::after {
+.mInfo ul>li:first-child::after {
     content: '|';
     color: #fff;
     margin-left: 1rem;
