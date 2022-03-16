@@ -411,7 +411,7 @@
     /* 전체 영역 축소 */
     #top,
     #main {
-        width: 500px;
+        width: 100vw;
     }
 
     /* 로고 위치 재설정 */
@@ -516,6 +516,7 @@
     }
 
     .cont {
+        width: 50%;
         height: auto;
         margin-bottom: 100px;
     }
@@ -523,7 +524,9 @@
     .info {
         display: none;
     }
-
+    #info {
+        width: 100%;
+    }
     .mInfo {
         display: block;
         width: 373px;
