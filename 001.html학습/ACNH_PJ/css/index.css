@@ -130,11 +130,23 @@ body {
 
 /**************** 플레이어 디자인 자바스크립트 제어 *****************/
 /* 동물의숲 BGM */
-/* .bgm {
+.bgm {
     position: absolute;
+    z-index: 2;
+
+    right: 370px;
+    top: 75px;
+    border-radius: 10px;
+}
+
+.bgm .play{
     width: 100px;
-    height: 15px;
-} */
+    height: 100px;
+    outline: 1px solid red;
+    background: url(../img/bg.jpg) no-repeat ;
+    background-size: 90%;
+    background-position: 0 0;
+}
 
 
 /* gnb 메뉴 */
