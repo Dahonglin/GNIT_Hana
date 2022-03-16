@@ -126,7 +126,7 @@ body {
     width: 280px;
     height: 50px;
     background: rgb(21, 163, 109);
-    right: 380px;
+    margin-left: 740px;
     top: 40px;
     border-radius: 10px;
     border: 1px solid rgb(17, 68, 57);
@@ -136,24 +136,28 @@ body {
 /* 재생버튼 */
 .bgm .play a {
     position: absolute;
-    top: 3px;
-    left: 235px;
+    width: 20px;
+    height: 20px;
+    top: 2px;
+    margin-left: 230px;
     text-decoration: none;
     color: #FFF;
     font-size: 1.6rem;
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.685);
 }
 
 /* 일시정지버튼 */
 .bgm .pause a {
     position: absolute;
-    top: 0px;
-    left: 255px;
+    width: 20px;
+    height: 25px;
+    top: -1px;
+    margin-left: 250px;
     text-decoration: none;
     font-weight: bold;
     color: #FFF;
     font-size: 2rem;
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.685);
 }
 
 /* bgm 타이틀 */
@@ -171,7 +175,7 @@ body {
 
 
 /* gnb 메뉴 */
-nav.gnb {
+.gnb {
     position: absolute;
     display: inline-block;
     top: 70px;
@@ -230,6 +234,29 @@ nav.gnb {
     /* 글자 테두리 */
 }
 
+/* 모바일용 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 40px;
+    transform: scaleX(1.5);
+    /* 버튼 기본 디자인 없애기 */
+    background-color: transparent;
+    border: none;
+    /* 모바일 아닐때 안보임 */
+    display: none;
+}
+
+/* 버튼 모양 변경 위해 가상 요소로 내용 넣기 */
+.ham::before {
+    content: '≡';
+    color: #fff;
+}
+/* 크롬 브라우저 버튼 포커스 아웃라인 제거 */
+.ham:focus{
+    outline: none;
+}
 
 /* 상단 확장팩 배너 */
 .dlc {
@@ -461,6 +488,7 @@ nav.gnb {
     margin-top: 5px;
     transition: height .4s ease-out;
     box-sizing: border-box;
+    overflow-y: scroll;
 }
 
 
@@ -523,14 +551,19 @@ nav.gnb {
 }
 
 /* 속박스 */
-.info {
+.info, .mInfo {
     width: 569px;
     height: 60px;
     margin: 0 auto;
 }
 
+/* 모바일 하단정보 */
+.mInfo {
+    display: none;
+}
+
 /* 하단정보 */
-.info ul>li {
+.info ul>li, .mInfo ul>li{
     float: left;
     line-height: 1.55;
     padding: 20px 0 20px 0;
@@ -539,18 +572,25 @@ nav.gnb {
     box-sizing: border-box;
 }
 
-.info ul>li:first-child {
+.info ul>li:first-child, .mInfo ul>li:first-child {
     margin-left: 0;
 }
 
 /* 하단정보 사이 bar */
-.info ul>li:nth-child(-n+4)::after {
+.info ul>li:nth-child(-n+4)::after{
     content: '|';
     color: #fff;
     margin-left: 1rem;
 }
 
-.info ul>li a {
+.mInfo ul>li:nth-child(-n+3)::after{
+    content: '|';
+    color: #fff;
+    margin-left: 1rem;
+}
+
+
+.info ul>li a, .mInfo ul>li a {
     color: #fff;
     text-decoration: underline;
     font-weight: bold;

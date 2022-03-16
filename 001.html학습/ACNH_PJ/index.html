@@ -9,12 +9,22 @@
         content="https://dahonglin.github.io/GNIT_Hana/001.html%ED%95%99%EC%8A%B5/ACNH_PJ/index.html">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/media.css">
+    <script>
+        window.onload = function () {
+            document.getElementsByClassName('ham').item(0).addEventListener('click', addClassOn);
+            const top = document.getElementsByClassName('headTop').item(0);
+
+            function addClassOn() {
+                top.classList.toggle('on');
+            }
+        }
+    </script>
     <title>모여봐요, 동물의 숲_PJ</title>
 </head>
 
 <body class="scroll">
     <!-- 상단 -->
-    <div id="top">
+    <div id="top" class="headTop">
         <!-- 링크 미리보기 썸네일용 이미지 테스트 -->
         <div class="preLogo"><img src="./img/logo.png" alt="동물의 숲"></div>
         <!-- 동물의숲 로고 (상단 좌측) -->
@@ -35,6 +45,8 @@
                         target="_blank">추가 컨텐츠</a></li>
             </ul>
         </nav>
+        <!-- 모바일용 햄버거 버튼 -->
+        <button class="ham"></button>
         <!-- DLC 페이지 이동 배너(상단 우측) -->
         <div class="dlc">
             <a href="https://www.nintendo.co.kr/software/switch/acbaa/happyhomeparadise/index.html" target="_blank"
@@ -161,8 +173,17 @@
                     <li><a href="https://www.nintendo.co.kr/support/index.php" target="_blank">고객지원</a></li>
                 </ul>
             </div>
+            <div class="mInfo">
+                <ul>
+                    <li><a href="https://www.nintendo.co.kr/main.php" target="_blank">닌텐도 홈페이지</a></li>
+                    <li><a href="https://www.nintendo.co.kr/common/account.php" target="_blank">이용약관</a></li>
+                    <li><a href="https://www.nintendo.co.kr/common/privacy.php" target="_blank">개인정보취급방침</a></li>
+                    <li><a href="https://www.nintendo.co.kr/support/index.php" target="_blank">고객지원</a></li>
+                </ul>
+            </div>
         </footer>
     </div>
 </body>
 <script src="./js/bgm.js"></script>
+
 </html>
