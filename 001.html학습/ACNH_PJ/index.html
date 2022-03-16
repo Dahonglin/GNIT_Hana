@@ -18,6 +18,11 @@
                 top.classList.toggle('on');
             }
         }
+        // 스크롤바 영역으로 인한 모바일 x 스크롤 없앰
+        var filter = "win16|win32|win64|mac|macintel";
+        if (navigator.platform)
+            if (filter.indexOf(navigator.platform.toLowerCase()) < 0)
+                document.body.classList.add("mobile");
     </script>
     <title>모여봐요, 동물의 숲_PJ</title>
 </head>

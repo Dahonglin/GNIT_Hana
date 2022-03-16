@@ -397,14 +397,6 @@
 
 /******** 600px 이하 미디어쿼리 ********/
 @media screen and (max-width:600px) {
-    html {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-
     body {
         background: url(../img/acnh01.png) no-repeat scroll 30% 65%/0px,
             url(../img/acnh02.png) no-repeat scroll 78% 23%/0px,

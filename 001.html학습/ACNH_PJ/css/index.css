@@ -49,7 +49,17 @@ body {
         /* 오른쪽 */
         url(../img/acnh14.png) no-repeat scroll 98% 97%/190px,
         url(../img/bg.jpg) no-repeat scroll top/cover;
-    /* overflow-x: hidden; */
+}
+
+/* 스크롤바 영역으로 인한 모바일 x 스크롤 없앰 */
+body.mobile::-webkit-scrollbar {
+    display: none !important;
+}
+
+body.mobile {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: visible !important;
 }
 
 /* 스크롤바 */
@@ -254,8 +264,9 @@ body {
     content: '≡';
     color: #fff;
 }
+
 /* 크롬 브라우저 버튼 포커스 아웃라인 제거 */
-.ham:focus{
+.ham:focus {
     outline: none;
 }
 
@@ -552,7 +563,8 @@ body {
 }
 
 /* 속박스 */
-.info, .mInfo {
+.info,
+.mInfo {
     width: 569px;
     height: 60px;
     margin: 0 auto;
@@ -564,7 +576,8 @@ body {
 }
 
 /* 하단정보 */
-.info ul>li, .mInfo ul>li{
+.info ul>li,
+.mInfo ul>li {
     float: left;
     line-height: 1.55;
     padding: 20px 0 20px 0;
@@ -573,25 +586,27 @@ body {
     box-sizing: border-box;
 }
 
-.info ul>li:first-child, .mInfo ul>li:first-child {
+.info ul>li:first-child,
+.mInfo ul>li:first-child {
     margin-left: 0;
 }
 
 /* 하단정보 사이 bar */
-.info ul>li:nth-child(-n+4)::after{
+.info ul>li:nth-child(-n+4)::after {
     content: '|';
     color: #fff;
     margin-left: 1rem;
 }
 
-.mInfo ul>li:nth-child(-n+3)::after{
+.mInfo ul>li:nth-child(-n+3)::after {
     content: '|';
     color: #fff;
     margin-left: 1rem;
 }
 
 
-.info ul>li a, .mInfo ul>li a {
+.info ul>li a,
+.mInfo ul>li a {
     color: #fff;
     text-decoration: underline;
     font-weight: bold;
