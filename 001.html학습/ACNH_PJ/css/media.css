@@ -194,6 +194,7 @@
         display: inline-block;
         width: 200px;
         margin-right: 20px;
+        vertical-align:top;
     }
 
     /* 아이콘 위치 재배치 */

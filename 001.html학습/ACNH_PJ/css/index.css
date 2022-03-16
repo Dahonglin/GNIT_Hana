@@ -548,6 +548,7 @@ body.mobile {
 /* 설명글 내려옴 */
 .cbx:hover .cdes {
     height: 250px;
+    margin-bottom:10px
 }
 
 
