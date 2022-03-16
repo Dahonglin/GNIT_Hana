@@ -50,19 +50,19 @@ body {
                 url(../img/bg_cha_5.png) no-repeat scroll 3% 23%/5%,
                 url(../img/bg.jpg) no-repeat scroll top/cover; */
     background: url(../img/acnh01.png) no-repeat scroll 28% 65%/550px,
-                url(../img/acnh02.png) no-repeat scroll 68% 23%/400px,
-                /* 왼쪽 */
-                url(../img/acnh09.png) no-repeat scroll 2% 93%/190px,
-                /* url(../img/bg_cha_2.png) no-repeat scroll 0% 67%/220px,
+        url(../img/acnh02.png) no-repeat scroll 68% 23%/400px,
+        /* 왼쪽 */
+        url(../img/acnh09.png) no-repeat scroll 2% 93%/190px,
+        /* url(../img/bg_cha_2.png) no-repeat scroll 0% 67%/220px,
                 url(../img/acnh05.png) no-repeat scroll 8% 43%/120px,
                 url(../img/bg_cha_6.png) no-repeat scroll 3% 30%/110px, */
-                /* 오른쪽 */
-                url(../img/acnh14.png) no-repeat scroll 98% 97%/190px,
-                /* url(../img/bg_cha_1.png) no-repeat scroll 100% 67%/230px,
+        /* 오른쪽 */
+        url(../img/acnh14.png) no-repeat scroll 98% 97%/190px,
+        /* url(../img/bg_cha_1.png) no-repeat scroll 100% 67%/230px,
                 url(../img/acnh12.png) no-repeat scroll 93% 44%/170px,
                 url(../img/acnh04.png) no-repeat scroll 96% 28%/95px, */
 
-                url(../img/bg.jpg) no-repeat scroll top/cover;
+        url(../img/bg.jpg) no-repeat scroll top/cover;
     /* overflow-x: hidden; */
 }
 
@@ -99,6 +99,12 @@ body {
     height: 100%;
 }
 
+/* 숨기기 */
+
+.hidden {
+    display: none;
+}
+
 
 /************************************** 상단 영역 **************************************/
 
@@ -132,20 +138,47 @@ body {
 /* 동물의숲 BGM */
 .bgm {
     position: absolute;
-    z-index: 2;
-
-    right: 370px;
-    top: 75px;
+    width: 280px;
+    height: 50px;
+    background: rgb(21, 163, 109);
+    right: 380px;
+    top: 40px;
     border-radius: 10px;
+    border: 1px solid rgb(17, 68, 57);
+    box-sizing: border-box;
 }
 
-.bgm .play{
-    width: 100px;
-    height: 100px;
-    outline: 1px solid red;
-    background: url(../img/bg.jpg) no-repeat ;
-    background-size: 90%;
-    background-position: 0 0;
+.bgm .play a {
+    position: absolute;
+    top: 3px;
+    left: 235px;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 1.6rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.bgm .pause a{
+    position: absolute;
+    top: 0px;
+    left: 255px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.bgm .bgmTit {
+    font-size: 1.4rem;
+    font-family: 'Gamja Flower', cursive;
+    font-weight: bold;
+    color: #fff;
+    margin: 5px;
+    margin-left: 10px;
+    text-shadow: 1px 0 rgb(17, 68, 57), -1px 0 rgb(17, 68, 57),
+        /* 글자 테두리 */
+        0 1px rgb(17, 68, 57), 0 -1px rgb(17, 68, 57);
 }
 
 
