@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* 미디어 쿼리 */
+
+/******** 1400px 이하 미디어쿼리 ********/
+@media screen and (max-width:1350px) {
+
+    #main {
+        width: 1200px;
+        min-height: 580px;
+        margin: 0 auto;
+    }
+
+    /* 설명박스 배경 */
+    .cdes.desBg1 {
+        background: url(../img/ctbg.jpg) no-repeat top/contain;
+    }
+
+    .cdes.desBg2 {
+        background: url(../img/ctbg2.jpg) no-repeat top/contain;
+    }
+
+    .cdes.desBg3 {
+        background: url(../img/ctbg3.jpg) no-repeat top/contain;
+    }
+
+    .cdes.desBg4 {
+        background: url(../img/ctbg4.jpg) no-repeat top/contain;
+    }
+
+
+}
