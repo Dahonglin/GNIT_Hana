@@ -406,6 +406,8 @@
             /* 오른쪽 */
             url(../img/acnh14.png) no-repeat scroll 98% 97%/130px,
             url(../img/bg.jpg) no-repeat scroll top/cover;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
 
