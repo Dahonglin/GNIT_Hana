@@ -432,6 +432,10 @@
         margin-top: 20px;
     }
 
+    .eshop {
+        top: 230px;
+    }
+
     /* BGM 위치 변경 */
     .bgm {
         position: relative;
