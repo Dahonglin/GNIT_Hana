@@ -2,7 +2,7 @@
 const myAudio = new Audio();
 myAudio.src = "./bgm/acnh_bgm.mp3";
 // 오디오 재생: 크롬브라우저에서 작동 안함 
-myAudio.play(); // 버튼 취득 
+myAudio.stop(); // 버튼 취득 
 myAudio.volume = 0.3;
 const btnPlay = document.getElementById("btnPlay");
 const btnPause = document.getElementById("btnPause");
