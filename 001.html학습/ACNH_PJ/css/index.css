@@ -70,7 +70,7 @@ body.mobile {
 
 .scroll::-webkit-scrollbar-thumb {
     /* 스크롤바 */
-    background-color: rgb(209, 209, 209);
+    background-color: rgb(155, 155, 155);
     border-radius: 3px;
 }
 
