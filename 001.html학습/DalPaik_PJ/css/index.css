@@ -1,11 +1,11 @@
 @charset "utf-8";
-/* 폰트 : font-family: 'Noto Sans KR', sans-serif;
-          font-family: 'Pacifico', cursive;
+/* 폰트
+font-family: 'Lemon', cursive;
+font-family: 'Noto Sans KR', sans-serif;
 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Pacifico&display=swap');
-/* 카피 컬러 */
-/* 
-    네이비 : #071F60
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Noto+Sans+KR:wght@500&display=swap');
+/*    
+네이비 : #071F60
     옐로우 : #ffe600
 */
 
@@ -61,14 +61,12 @@ body * {
 }
 
 
-/* 상단, 메인, 하단 크기 // 중앙 정렬 */
+/* 상단, 하단 크기 // 중앙 정렬 */
 #top,
-#main,
 #bottom {
     margin: 0 auto;
     width: 144rem;
 }
-
 
 /************************ 상단 영역 *************************/
 
@@ -156,46 +154,55 @@ body * {
 /*********************** 메인1 영역 ***********************/
 .cont1 {
     position: relative;
+    margin: 0 auto;
+    width: 144rem;
 }
 
 .cont1 h2 {
+    height: 85vh;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
-    padding: 10rem;
+    padding: 5rem;
     box-sizing: border-box;
-
 }
 
 /* 메인1 타이포 */
 .cont1 h2 span {
-    width: 70rem;
-    font-size: 10rem;
-    line-height: 13rem;
+    width: 80rem;
+    font-size: 9.5rem;
+    line-height: 11rem;
     text-align: right;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Lemon', cursive;
     color: #071F60;
+}
+
+.cont1 h2 span:first-child {
+    color: #ffe600;
 }
 
 .cont1 h2 span:last-child {
     font-style: italic;
 }
 
-.cont1 .main1Typo1 {
+/* 애니메이션 라이브러리 사용으로 주석처리 */
+/* .cont1 .main1Typo1 {
     transform: translate(0, 30%);
     opacity: 0;
-    animation: Updown 1s ease-out forwards;
+    animation: Updown .6s ease-out forwards;
 }
+
 .cont1 .main1Typo2 {
     transform: translate(0, 30%);
     opacity: 0;
-    animation: Updown 1s ease-out .3s forwards;
+    animation: Updown .6s ease-out .3s forwards;
 }
+
 .cont1 .main1Typo3 {
     transform: translate(0, 30%);
     opacity: 0;
-    animation: Updown 1s ease-out .7s forwards;
-}
+    animation: Updown .6s ease-out .7s forwards;
+} */
 
 
 /* 메인 1 배경 */
@@ -203,54 +210,122 @@ body * {
     position: absolute;
     z-index: -1;
     bottom: 0;
-    transform: translate(0, 30%);
+    /* 애니메이션 라이브러리 사용으로 주석처리 */
+    /* transform: translate(0, 30%);
     opacity: 0;
-    animation: Updown 2s ease-out forwards;
+    animation: Updown .5s ease-out forwards; */
 }
-.bgAni img{
+
+.bgAni img {
     width: 110%;
 }
 
+/* 애니메이션 라이브러리 사용으로 주석처리 */
+/* 
 @keyframes Updown {
-    50%{
+    50% {
         transform: translate(0, 5%);
         opacity: .5;
     }
-    100%{
+
+    100% {
         transform: translate(0, 0);
         opacity: 1;
     }
-    
-}
 
+} */
 
-/* 원형 로고 */
-.cont1 h2 .cirLogo {
-    position: relative;
-    margin-right: 30%;
-    margin-top: 15rem;
-    animation: rotate_image 10s linear infinite;
-    transform-origin: 50% 50%;
-}
-
-.cont1 h2 .cirLogo img {
-    vertical-align: bottom;
-    width: 15rem;
-}
-
-@keyframes rotate_image {
-    100% {
-        transform: rotate(360deg);
-    }
-}
 /*********************** 메인1 영역 끝 ***********************/
 
 
 /*********************** 메인2 영역 ***********************/
+.cont2{
+    overflow: hidden;
+    width:100%;
+    height:80vh;
+    margin: 0 auto;
+}
 
+.cont2 h3 {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
 
+.cont2 h3 span {
+    padding: 1rem;
+    color: #071F60;
+}
 
+.cont2 span:first-child {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 3rem;
+}
 
+.cont2 span:last-child p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2rem;
+}
+
+.cont2 span:nth-child(2),
+.cont2 span:nth-child(3) {
+    font-family: 'Lemon', cursive;
+    font-size: 6rem;
+}
+
+.circleImg1 {
+    position: relative;
+    z-index: -1;
+    $size: 100px;
+    right: -70vw;
+    top: -40vw;
+    height: $size;
+    width: $size;
+    transform:
+        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
+    /* background: url(../img/circleImg) no-`peat; */
+}
+.circleImg1 img {
+    width: 40rem;
+}
+
+.circleImg2 {
+    position: relative;
+    left: -20vw;
+    top: -50vw;
+    $size: 100px;
+    height: $size;
+    width: $size;
+    transform:
+        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
+    /* background: url(../img/circleImg) no-repeat; */
+}
+
+.circleImg2 img {
+    width: 29rem;
+}
+
+.circleImg3 {
+    position: relative;
+    left: -5vw;
+    top: -50vw;
+    $size: 100px;
+    height: $size;
+    width: $size;
+    transform:
+        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
+    /* background: url(../img/circleImg) no-repeat; */
+}
+
+.circleImg3 img {
+    width: 15rem;
+    height: 11rem;
+}
+
+/*********************** 메인2 영역 끝 ***********************/
 
 
 /************************ 하단 영역 *************************/

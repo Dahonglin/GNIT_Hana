@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빽다방</title>
     <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 페이드 애니메이션 라이브러리 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,23 +47,39 @@
                 <!-- 메인 컨텐츠 1번 -->
                 <div class="cont1">
                     <h2>
-                        <span class="main1Typo1">Paik's Coffee</span>
-                        <span class="main1Typo2">Life Happens</span>
-                        <span class="main1Typo3">Coffee helps</span>
-                        <div class="cirLogo">
-                            <img src="./img/mainLogoCircle.png" alt="빽다방 로고">
-                        </div>
+                        <span data-aos="fade-up" data-aos-duration="1000">Paik's Coffee</span>
+                        <span data-aos="fade-up" data-aos-duration="1200">Life Happens</span>
+                        <span data-aos="fade-up" data-aos-duration="1400">Coffee helps</span>
                     </h2>
-                    <div class="bgAni"><img src="./img/mainBg1.jpg" alt="빽다방 배경 이미지 1번"></div>
+                    <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0" class="bgAni"><img
+                            src="./img/mainBg1.jpg" alt="1번 메인 배경 이미지"></div>
                 </div>
-                <!-- 메인 컨텐츠 2번 -->
-                <div class="cont2"></div>
-                <!-- 메인 컨텐츠 3번 -->
-                <div class="cont3"></div>
-                <!-- 메인 컨텐츠 4번 -->
-                <div class="cont4"></div>
             </div>
-        </main>
+            <!-- 메인 컨텐츠 2번 -->
+            <div class="cont2">
+                <h3>
+                    <span data-aos="fade-up" data-aos-duration="700">친구 같은 브랜드의 진정한 가치</span>
+                    <span data-aos="fade-up" data-aos-duration="800">Paik's Coffee Life begins</span>
+                    <span data-aos="fade-up" data-aos-duration="900">with imagination</span>
+                    <span data-aos="fade-up" data-aos-duration="1000">
+                        <p>합리적인 커피 문화를 만들어 갑니다.</p>
+                        <p>호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다.</p>
+                    </span>
+                </h3>
+                <div>
+                    <div>
+                        <div class="circleImg1"><img src="./img/circleImg.png" alt="2번 메인 배경 이미지1"></div>
+                        <div class="circleImg2"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지2"></div>
+                        <div class="circleImg3"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지3"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- 메인 컨텐츠 3번 -->
+            <div class="cont3"></div>
+            <!-- 메인 컨텐츠 4번 -->
+            <div class="cont4"></div>
+    </div>
+    </main>
     </div>
 
     <!-- 하단 영역 -->
@@ -137,7 +156,23 @@
             </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 페이드 애니메이션 라이브러리 초기화 -->
+    <script>
+        AOS.init({
 
+        });
+        // http://ahrengot.com/tutorials/greensock-javascript-animation
+
+        var docStyle = document.documentElement.style;
+
+        // setting CSS variables inside this JS where they 
+        // can be declaratively used inside the CSS file.
+        document.addEventListener('mousemove', function (e) {
+            docStyle.setProperty('--mouse-x', e.clientX);
+            docStyle.setProperty('--mouse-y', e.clientY);
+        });
+    </script>
 </body>
 
 </html>
