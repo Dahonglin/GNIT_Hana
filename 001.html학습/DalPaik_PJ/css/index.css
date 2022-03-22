@@ -1,0 +1,387 @@
+@charset "utf-8";
+/* 폰트 : font-family: 'Noto Sans KR', sans-serif;
+          font-family: 'Pacifico', cursive;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Pacifico&display=swap');
+/* 카피 컬러 */
+/* 
+    네이비 : #071F60
+    옐로우 : #ffe600
+*/
+
+
+/************************** 공통 css **************************/
+
+/* 마진 / 패딩 / 폰트 사이즈 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+/* 헤딩 태그 글자 크기 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+/* 리스트 스타일 초기화 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 작업 가이드라인 */
+body * {
+    outline: 1px dashed green;
+}
+
+/* 대체 텍스트 */
+.ir {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* a 태그 확장 */
+.a_ex {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* 숨기기 */
+.hidden {
+    display: none;
+}
+
+
+/* 상단, 메인, 하단 크기 // 중앙 정렬 */
+#top,
+#main,
+#bottom {
+    margin: 0 auto;
+    width: 144rem;
+}
+
+
+/************************ 상단 영역 *************************/
+
+/* 상단 메뉴 드래그 up 하면 위에서 내려오고 드래그 down 하면 사라지고
+
+우측 배너가 상단메뉴 라인에 따라서 올라갔다 내려갔다 할 수 있을까? */
+
+
+#top {
+    position: sticky;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 상단 로고 */
+.logo img {
+    vertical-align: bottom;
+    width: 20rem;
+    height: 7rem;
+}
+
+/* 상단 GNB */
+.topMenu ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 12rem;
+}
+
+.topMenu li {
+    height: 12rem;
+    line-height: 12rem;
+    padding: 0 5rem 0 5rem;
+    box-sizing: border-box;
+}
+
+/* 맨 오른쪽 메뉴 우측 마진 x */
+.topMenu li:last-child {
+    padding: 0 0 0 5rem;
+}
+
+.topMenu a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #071F60;
+}
+
+/* 우측 고정 배너 */
+.fixedBan {
+    position: fixed;
+    top: 0;
+    margin-top: 14rem;
+    right: 1vw;
+    width: 12rem;
+    height: 12rem;
+    background: url(../img/fixNaviBan.png) no-repeat 0 0 / 100% 95%;
+}
+
+.fixedBan a {
+    text-decoration: none;
+}
+
+/* 우측 고정 배너 텍스트 */
+.fixScr {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding-top: 8.7rem;
+    text-align: center;
+}
+
+
+
+/************************ 메인 영역 *************************/
+
+#main {
+    height: 100%;
+}
+
+
+/*********************** 메인1 영역 ***********************/
+.cont1 {
+    position: relative;
+}
+
+.cont1 h2 {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 10rem;
+    box-sizing: border-box;
+
+}
+
+/* 메인1 타이포 */
+.cont1 h2 span {
+    width: 70rem;
+    font-size: 10rem;
+    line-height: 13rem;
+    text-align: right;
+    font-family: 'Pacifico', cursive;
+    color: #071F60;
+}
+
+.cont1 h2 span:last-child {
+    font-style: italic;
+}
+
+.cont1 .main1Typo1 {
+    transform: translate(0, 30%);
+    opacity: 0;
+    animation: Updown 1s ease-out forwards;
+}
+.cont1 .main1Typo2 {
+    transform: translate(0, 30%);
+    opacity: 0;
+    animation: Updown 1s ease-out .3s forwards;
+}
+.cont1 .main1Typo3 {
+    transform: translate(0, 30%);
+    opacity: 0;
+    animation: Updown 1s ease-out .7s forwards;
+}
+
+
+/* 메인 1 배경 */
+.bgAni {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    transform: translate(0, 30%);
+    opacity: 0;
+    animation: Updown 2s ease-out forwards;
+}
+.bgAni img{
+    width: 110%;
+}
+
+@keyframes Updown {
+    50%{
+        transform: translate(0, 5%);
+        opacity: .5;
+    }
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    
+}
+
+
+/* 원형 로고 */
+.cont1 h2 .cirLogo {
+    position: relative;
+    margin-right: 30%;
+    margin-top: 15rem;
+    animation: rotate_image 10s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+.cont1 h2 .cirLogo img {
+    vertical-align: bottom;
+    width: 15rem;
+}
+
+@keyframes rotate_image {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/*********************** 메인1 영역 끝 ***********************/
+
+
+/*********************** 메인2 영역 ***********************/
+
+
+
+
+
+
+/************************ 하단 영역 *************************/
+
+/* 하단 전체 영억 */
+#bottom {
+    padding-bottom: 2vh;
+}
+
+/* 하단 로고 // 관련 링크 */
+.btMenu {
+    width: 144rem;
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 하단로고 */
+.btlogo img {
+    vertical-align: bottom;
+    width: 22rem;
+}
+
+
+/* 하단 sns 아이콘 */
+.snsIcon {
+    display: flex;
+    justify-content: space-between;
+    width: 7rem;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+/* sns 아이콘 */
+.fbIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: url(../img/sns_icon.png) no-repeat 0 0/200% 200%;
+}
+
+.fbIcon:hover {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: url(../img/sns_icon.png) no-repeat 0 -3.2rem/200% 200%;
+}
+
+.istaIcon {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: url(../img/sns_icon.png) no-repeat -3.2rem 0/200% 200%;
+}
+
+.istaIcon:hover {
+    width: 3.2rem;
+    height: 3.2rem;
+    background: url(../img/sns_icon.png) no-repeat -3.2rem -3.2rem/200% 200%;
+}
+
+
+/* 관련 링크 */
+.btLink {
+    display: flex;
+}
+
+.btLink ul {
+    width: max-content;
+    padding: 0 5rem 0 5rem;
+    box-sizing: border-box;
+
+}
+
+.btLink ul>li {
+    display: flex;
+}
+
+.btLink ul>li a {
+    font-size: 1.8rem;
+    color: #071F60;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+
+}
+
+.btLink ul>li:first-child a {
+    font-weight: bold;
+    color: #071F60;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.btLink ul>li a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* 하단 관련사 링크 / 회사정보 영역 */
+.btInfo {
+    display: flex;
+    /* 수직 정렬 */
+    align-items: center;
+    /* 가로 정렬 */
+    justify-content: space-between;
+    height: 10rem;
+    box-sizing: border-box;
+    padding-top: 1.5rem;
+}
+
+/* 관련사 링크 */
+.familyLink {
+    width: 30rem;
+    height: 5rem;
+
+}
+
+.familyLink select {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 2px solid #222;
+    background-color: transparent;
+}
+
+.familyLink option {
+    font-size: 2rem;
+}
+
+
+/* 회사 정보 */
+.info {
+    color: #666;
+    font-size: 1.3rem;
+    margin-right: 10rem;
+}
