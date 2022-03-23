@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+body * {
+    outline: 1px solid green;
+}
+
+.disNone {
+    display: none;
+}
+
+#cont {
+    width:90%;
+    margin : 0 auto;
+    overflow-x: hidden;
+}
+
+.rolling {
+    width: 80%;
+    height: 50vh;
+    margin: 0 auto;
+}
+
+.drinkDisplay {
+    margin: 0 auto;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drinkDisplay ul {
+    display: flex;
+}
+
+ul.drinkDisplay img {
+    vertical-align: bottom;
+    width: 200px;
+}
+
+.chino {}
+
+.coffee {}
+
+
+/* 애니메이션 */
+.roller.original{
+    animation: 28s linear 0s infinite normal forwards running rollingleft1;
+}
+.roller.clone{
+    animation: 28s linear 0s infinite normal none running rollingleft2;
+}
+@keyframes rollingleft1 { /* 원본용 */
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    50.01%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes rollingleft2 { /* 클론용 */
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.menuBtn ul {
+    display: flex;
+    justify-content: center;
+}
+
+.menuBtn li button{
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
