@@ -246,7 +246,7 @@ body * {
     margin: 0 auto;
 }
 
-.cont2 h3 {
+.cont2 h2 {
     height: 80vh;
     display: flex;
     align-items: center;
@@ -255,7 +255,7 @@ body * {
     text-align: center;
 }
 
-.cont2 h3 span {
+.cont2 h2 span {
     padding: 1rem;
     color: #071F60;
 }
@@ -276,51 +276,58 @@ body * {
     font-size: 6rem;
 }
 
+/* 오른쪽 큰 원 */
 .circleImg1 {
     position: relative;
     z-index: -1;
     $size: 100px;
-    right: -70vw;
-    top: -40vw;
+    right: -75vw;
+    top: -80vh;
     height: $size;
     width: $size;
     transform:
-        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
-    /* background: url(../img/circleImg) no-`peat; */
+        translateX(calc(var(--mouse-x) * 0.15px)) translateY(calc(var(--mouse-y) * 0.15px));
 }
 .circleImg1 img {
+    vertical-align: bottom;
     width: 40rem;
 }
 
+
+/* 왼쪽 큰 원 */
 .circleImg2 {
     position: relative;
-    left: -20vw;
-    top: -50vw;
+    z-index: -1;
+    right: 20vw;
+    top: -100vh;
     $size: 100px;
     height: $size;
     width: $size;
     transform:
-        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
-    /* background: url(../img/circleImg) no-repeat; */
+        translateX(calc(var(--mouse-x) * 0.23px)) translateY(calc(var(--mouse-y) * 0.23px));
 }
 
 .circleImg2 img {
+    vertical-align: bottom;
     width: 29rem;
 }
 
+
+/* 왼쪽 작은 원 */
 .circleImg3 {
     position: relative;
-    left: -5vw;
-    top: -50vw;
+    z-index: -1;
+    right: 5vw;
+    top: -95vh;
     $size: 100px;
     height: $size;
     width: $size;
     transform:
-        translateX(calc(var(--mouse-x) * 0.2px)) translateY(calc(var(--mouse-y) * 0.2px));
-    /* background: url(../img/circleImg) no-repeat; */
+        translateX(calc(var(--mouse-x) * 0.15px)) translateY(calc(var(--mouse-y) * 0.152px));
 }
 
 .circleImg3 img {
+    vertical-align: bottom;
     width: 15rem;
     height: 11rem;
 }
