@@ -6,9 +6,13 @@ font-family: 'Noto Sans KR', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Noto+Sans+KR:wght@500&display=swap');
 /*    
 네이비 : #071F60
-    옐로우 : #ffe600
+옐로우 : #ffe600
 */
-
+:root {
+    /* 폰트 컬러 전역 변수 선언 */
+    --font-color-navy: #071F60;
+    --font-color-yellow: #ffe600;
+}
 
 /************************** 공통 css **************************/
 
@@ -68,6 +72,8 @@ body * {
     width: 144rem;
 }
 
+
+
 /************************ 상단 영역 *************************/
 
 /* 상단 메뉴 드래그 up 하면 위에서 내려오고 드래그 down 하면 사라지고
@@ -114,7 +120,7 @@ body * {
     font-size: 2rem;
     text-decoration: none;
     font-family: 'Noto Sans KR', sans-serif;
-    color: #071F60;
+    color: var(--font-color-navy);
 }
 
 /* 우측 고정 배너 */
@@ -174,11 +180,11 @@ body * {
     line-height: 11rem;
     text-align: right;
     font-family: 'Lemon', cursive;
-    color: #071F60;
+    color: var(--font-color-navy);
 }
 
 .cont1 h2 span:first-child {
-    color: #ffe600;
+    color: var(--font-color-yellow);
 }
 
 .cont1 h2 span:last-child {
@@ -239,10 +245,10 @@ body * {
 
 
 /*********************** 메인2 영역 ***********************/
-.cont2{
+.cont2 {
     overflow: hidden;
-    width:100%;
-    height:80vh;
+    width: 100%;
+    height: 80vh;
     margin: 0 auto;
 }
 
@@ -257,7 +263,7 @@ body * {
 
 .cont2 h2 span {
     padding: 1rem;
-    color: #071F60;
+    color: var(--font-color-navy);
 }
 
 .cont2 span:first-child {
@@ -288,6 +294,7 @@ body * {
     transform:
         translateX(calc(var(--mouse-x) * 0.15px)) translateY(calc(var(--mouse-y) * 0.15px));
 }
+
 .circleImg1 img {
     vertical-align: bottom;
     width: 40rem;
@@ -410,7 +417,7 @@ body * {
 
 .btLink ul>li a {
     font-size: 1.8rem;
-    color: #071F60;
+    color: var(--font-color-navy);
     margin-bottom: 1.5rem;
     text-decoration: none;
 
@@ -418,7 +425,7 @@ body * {
 
 .btLink ul>li:first-child a {
     font-weight: bold;
-    color: #071F60;
+    color: var(--font-color-navy);
     font-size: 2rem;
     margin-bottom: 3rem;
 }
