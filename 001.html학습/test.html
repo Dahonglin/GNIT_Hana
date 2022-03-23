@@ -14,53 +14,37 @@
     <div id="cont">
         <div class="menuBtn">
             <ul>
-                <li><button onclick="writeDrinkList(this.value)" value="coffee">커피</button></li>
-                <li><button onclick="writeDrinkList(this.value)" value="juice">음료</button></li>
-                <li><button onclick="writeDrinkList(this.value)" value="dessert">아이스크림/디저트</button></li>
-                <li><button onclick="writeDrinkList(this.value)" value="chino">빽스치노</button></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="커피" name="coffee"></input></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="음료" name="juice"></input></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="아이스크림/디저트" name="dessert"></input></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="빽스치노" name="chino"></input></li>
             </ul>
         </div>
         <div class="rolling">
             <!-- 실제 보이는 영역 -->
-            <div class="roller">
-                <!-- 배너 내용 -->
-                <ul class="drinkDisplay">
-                    <!-- 음료 리스트 -->
-                </ul>
-            </div>
+            <div class="img-moving"></div>
         </div>
     </div>
     <script>
-        function writeDrinkList(drinkType) {
-            let drinkList = '';
-            for (let i = 1; i < 18; i++) {
-                i = padValue(i);
-
-                function padValue(i) {
-                    return (i < 10) ? "0" + i : i;
-                }
-                let drinkImg = '<li><a href="#"><img src="./DalPaik_PJ/img/drink/' + drinkType + i + '.png" alt="' + i +
-                    '번째 이미지"></a></li>';
-                drinkList = drinkList + drinkImg;
-                document.querySelector('.drinkDisplay').innerHTML = drinkList;
+        function chnDrink(drinkType) {
+            let drinkBg = document.querySelector('.img-moving');
+            if (drinkType == 'coffee') {
+                drinkBg.style.background = 'transparent url("./DalPaik_PJ/img/drink/coffee.png") repeat-x left top';
+                drinkBg.style.backgroundSize = '150% auto';
+            }
+            if (drinkType == 'juice') {
+                drinkBg.style.background = 'transparent url("./DalPaik_PJ/img/drink/juice.png") repeat-x left top';
+                drinkBg.style.backgroundSize = '150% auto';
+            }
+            if (drinkType == 'dessert') {
+                drinkBg.style.background = 'transparent url("./DalPaik_PJ/img/drink/dessert.png") repeat-x left top';
+                drinkBg.style.backgroundSize = '150% auto';
+            }
+            if (drinkType == 'chino') {
+                drinkBg.style.background = 'transparent url("./DalPaik_PJ/img/drink/chino.png") repeat-x left top';
+                drinkBg.style.backgroundSize = '150% auto';
             }
         }
-
-        //롤링 배너 복제본 생성
-        let roller = document.querySelector('.roller');
-        roller.id = 'roller1';
-
-        let clone = roller.cloneNode(true);
-        clone.id = 'roller2';
-        document.querySelector('.rolling').appendChild(clone); //부착
-
-        //원본, 복제본 배너 위치 지정
-        document.querySelector('#roller1').style.left = '0px';
-        document.querySelector('#roller2').style.left = document.querySelector('.roller ul').offsetWidth + 'px';
-
-        //클래스 할당
-        roller.classList.add('original');
-        clone.classList.add('clone');
     </script>
 </body>
 

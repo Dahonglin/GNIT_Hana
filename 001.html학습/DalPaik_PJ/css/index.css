@@ -12,6 +12,8 @@ font-family: 'Noto Sans KR', sans-serif;
     /* 폰트 컬러 전역 변수 선언 */
     --font-color-navy: #071F60;
     --font-color-yellow: #ffe600;
+    --font-family-lemon: 'Lemon', cursive;
+    --font-family-notoSan: 'Noto Sans KR', sans-serif;
 }
 
 /************************** 공통 css **************************/
@@ -41,7 +43,7 @@ ol {
 
 /* 작업 가이드라인 */
 body * {
-    outline: 1px dashed green;
+    /* outline: 1px dashed green; */
 }
 
 /* 대체 텍스트 */
@@ -119,7 +121,7 @@ body * {
 .topMenu a {
     font-size: 2rem;
     text-decoration: none;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: var(--font-family-notoSan);
     color: var(--font-color-navy);
 }
 
@@ -182,7 +184,7 @@ body * {
     font-size: 9.5rem;
     line-height: 11rem;
     text-align: right;
-    font-family: 'Lemon', cursive;
+    font-family: var(--font-family-lemon);
     color: var(--font-color-navy);
 }
 
@@ -270,18 +272,18 @@ body * {
 }
 
 .cont2 span:first-child {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: var(--font-family-notoSan);
     font-size: 3rem;
 }
 
 .cont2 span:last-child p {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: var(--font-family-notoSan);
     font-size: 2rem;
 }
 
 .cont2 span:nth-child(2),
 .cont2 span:nth-child(3) {
-    font-family: 'Lemon', cursive;
+    font-family: var(--font-family-lemon);
     font-size: 6rem;
 }
 
@@ -345,6 +347,121 @@ body * {
 /*********************** 메인2 영역 끝 ***********************/
 
 
+/*********************** 메인3 영역 ***********************/
+
+.cont3 {
+    position: relative;
+    width:100%;
+    height: 100vh;
+    margin : 0 auto;
+    background: url(../img/drinkShadow.png)repeat-x;
+    background-position: 0 -1000%;
+}
+.cont3 h2 {
+    display: flex;
+    padding-top: 10rem;
+    font-family: var(--font-family-notoSan);
+    flex-direction: column;
+    align-items: center;
+}
+.cont3 h2 span {
+    font-size: 5rem;
+    color: var(--font-color-navy);
+    box-sizing: border-box;
+}
+
+.cont3 h2 span p{
+    font-size: 2rem;
+    color: var(--font-color-navy);
+    box-sizing: border-box;
+}
+
+
+/* 버튼 ui */
+
+.menuBtn ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+}
+
+.menuBtn li input{
+    width: 14rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 3.8rem;
+    font-size: 1.5rem;
+    font-family: var(--font-family-notoSan);
+    background: #fff;
+    border: 1px solid #ccc;
+    color: var(--font-color-navy);
+    cursor: pointer;
+}
+
+.menuBtn li input:hover{
+    background: var(--font-color-yellow);
+
+}
+
+.rolling {
+    height: 50vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+}
+
+.drinkDisplay {
+    margin: 0 auto;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drinkDisplay ul {
+    display: flex;
+}
+
+ul.drinkDisplay img {
+    vertical-align: bottom;
+    width: 200px;
+}
+
+.img-moving{
+    position: absolute;
+    height: 35vh;
+    bottom: 20vh;
+	left: 0;
+	right: 0;
+    z-index: -1;
+    background: transparent url("../img/drink/coffee.png") repeat-x left top;
+	background-size: 310rem auto;
+    animation:movement 15s linear infinite;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: movement;
+}
+@keyframes movement{
+    0% {
+        background-position:0px 0px;
+    }
+    100%{
+        background-position: 2426px 0px;
+    }
+}
+
+
+/*********************** 메인3 영역 끝 ***********************/
+
+
+
+
 /*********************** 메인4 영역 ***********************/
 
 .cont4 {
@@ -361,8 +478,8 @@ body * {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-family: 'Noto Sans KR', sans-serif;
-    margin: 10rem 0 10rem 0;
+    font-family: var(--font-family-notoSan);
+    margin-bottom: 10rem;
     background: url(../img/subMenuBg.jpg);
 }
 

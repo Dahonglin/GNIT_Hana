@@ -16,15 +16,14 @@ body * {
 }
 
 #cont {
-    width:90%;
+    width:100%;
     margin : 0 auto;
-    overflow-x: hidden;
 }
 
 .rolling {
-    width: 80%;
     height: 50vh;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .drinkDisplay {
@@ -49,14 +48,46 @@ ul.drinkDisplay img {
 .coffee {}
 
 
+
+.img-moving{
+    position: absolute;
+    height: 350px;
+    top: 100px;
+    bottom: 0;
+	left: 0;
+	right: 0;
+    z-index: -1;
+    background: transparent url("./DalPaik_PJ/img/drink/coffee.png") repeat-x left top;
+	background-size: 150% auto;
+    animation:movement 15s linear infinite;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: movement;
+}
+@keyframes movement{
+    0% {
+        background-position:0px 0px;
+    }
+    100%{
+        background-position: 2426px 0px;
+    }
+}
+
 /* 애니메이션 */
-.roller.original{
+/* .roller.original{
     animation: 28s linear 0s infinite normal forwards running rollingleft1;
 }
 .roller.clone{
     animation: 28s linear 0s infinite normal none running rollingleft2;
-}
-@keyframes rollingleft1 { /* 원본용 */
+} */
+
+/* 원본용 */
+/* @keyframes rollingleft1 { 
     0% {
         transform: translateX(0);
     }
@@ -69,16 +100,16 @@ ul.drinkDisplay img {
     100%{
         transform: translateX(0);
     }
-}
-
-@keyframes rollingleft2 { /* 클론용 */
+} */
+/* 클론용 */
+/* @keyframes rollingleft2 { 
     0% {
         transform: translateX(-200%);
     }
     100% {
         transform: translateX(0);
     }
-}
+} */
 
 
 .menuBtn ul {
@@ -86,7 +117,7 @@ ul.drinkDisplay img {
     justify-content: center;
 }
 
-.menuBtn li button{
+.menuBtn li input{
     width: 140px;
     height: 40px;
     text-align: center;
