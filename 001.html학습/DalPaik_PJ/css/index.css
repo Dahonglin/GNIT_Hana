@@ -293,24 +293,24 @@ body * {
 }
 
 .cont2 h2 span {
-    padding: 1rem;
+    padding: .5rem;
     color: var(--font-color-navy);
 }
 
 .cont2 span:first-child {
     font-family: var(--font-family-notoSan);
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .cont2 span:last-child p {
     font-family: var(--font-family-notoSan);
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .cont2 span:nth-child(2),
 .cont2 span:nth-child(3) {
     font-family: var(--font-family-lemon);
-    font-size: 6rem;
+    font-size: 9rem;
 }
 
 /* 오른쪽 큰 원 */
@@ -498,7 +498,7 @@ body * {
 }
 
 .cont4 h2 span:first-child p {
-    font-size: 4.3rem;
+    font-size: 5.5rem;
     color: var(--font-color-navy);
 }
 
