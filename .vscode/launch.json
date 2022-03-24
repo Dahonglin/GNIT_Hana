@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open 01.static.html",
-            "file": "c:\\Users\\HANA\\github\\GNIT_Hana\\001.html학습\\04Robot_PJ\\01.static.html"
+            "name": "Open JS3-1.제어문.html",
+            "file": "c:\\Users\\HANA\\github\\GNIT_Hana\\003.JS학습\\JS3-1.제어문.html"
         }
     ]
 }

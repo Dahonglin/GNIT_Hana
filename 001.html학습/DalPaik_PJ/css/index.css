@@ -44,7 +44,7 @@ ol {
 
 /* 작업 가이드라인 */
 body * {
-    outline: 1px dashed green;
+    /* outline: 1px dashed green; */
 }
 
 /* 대체 텍스트 */
@@ -85,7 +85,6 @@ body * {
 
 
 #top {
-    position: sticky;
     height: 12rem;
     display: flex;
     align-items: center;
@@ -100,30 +99,91 @@ body * {
 }
 
 /* 상단 GNB */
-.topMenu ul {
+.topMenu>ul {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 12rem;
 }
 
-.topMenu li {
-    height: 12rem;
-    line-height: 12rem;
+.topMenu>ul>li {
     padding: 0 5rem 0 5rem;
     box-sizing: border-box;
 }
 
 /* 맨 오른쪽 메뉴 우측 마진 x */
-.topMenu li:last-child {
+.topMenu>ul>li:last-child {
     padding: 0 0 0 5rem;
 }
 
-.topMenu a {
+.topMenu>ul>li>a {
+    display: inline-block;
     font-size: 2rem;
+    height: 12rem;
+    line-height: 12rem;
     text-decoration: none;
     font-family: var(--font-family-notoSan);
     color: var(--font-color-navy);
+    border-bottom: 4px solid #fff;
+}
+
+.topMenu>ul>li:hover>a {
+    border-bottom: 4px solid var(--font-color-navy);
+}
+
+
+/* 서브 메뉴 */
+.smenu {
+    position: absolute;
+    /* 서브메뉴숨기기 */
+    z-index: 3;
+    height: 0;
+    overflow: hidden;
+    /* 트랜지션 선언_밑에 오버 시 height값 조정 */
+    transition: height .3s ease-out;
+}
+
+/* 서브메뉴 ol 세팅 */
+.smenu>ol {
+    margin-top: 3rem;
+}
+.smenu>ol>li {
+    margin-top: 2rem;
+}
+
+/* 서브메뉴 a */
+.smenu a {
+    font-family: var(--font-family-notoSan);
+    color: var(--font-color-navy);
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    text-decoration: none;
+}
+
+.smenu a:hover{
+    text-decoration: underline;
+}
+
+/* 서브메뉴 BG */
+.topMenu>ul>li.sm::after {
+    content: '';
+    /* div처럼 사용 */
+    display: block;
+    position: absolute;
+    top: 122px;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background: url(../img/subMenuBg.jpg);
+    /* 트랜지션 선언_밑에 오버 시 height값 조정 */
+    transition: height .3s ease-out;
+}
+
+
+/* 상위 li에 마우스 오버 시 .smenu 보이기*/
+.topMenu>ul>li.sm:hover::after,
+.topMenu>ul>li:hover .smenu {
+    height: 20rem;
 }
 
 /* 우측 고정 배너 */
@@ -166,6 +226,7 @@ body * {
 /*********************** 메인1 영역 ***********************/
 .cont1 {
     position: relative;
+    z-index: -1;
     margin: 0 auto;
     width: 144rem;
 }
@@ -197,55 +258,18 @@ body * {
     font-style: italic;
 }
 
-/* 애니메이션 라이브러리 사용으로 주석처리 */
-/* .cont1 .main1Typo1 {
-    transform: translate(0, 30%);
-    opacity: 0;
-    animation: Updown .6s ease-out forwards;
-}
-
-.cont1 .main1Typo2 {
-    transform: translate(0, 30%);
-    opacity: 0;
-    animation: Updown .6s ease-out .3s forwards;
-}
-
-.cont1 .main1Typo3 {
-    transform: translate(0, 30%);
-    opacity: 0;
-    animation: Updown .6s ease-out .7s forwards;
-} */
-
 
 /* 메인 1 배경 */
 .bgAni {
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     bottom: 0;
-    /* 애니메이션 라이브러리 사용으로 주석처리 */
-    /* transform: translate(0, 30%);
-    opacity: 0;
-    animation: Updown .5s ease-out forwards; */
 }
 
 .bgAni img {
     width: 110%;
+    vertical-align: bottom;
 }
-
-/* 애니메이션 라이브러리 사용으로 주석처리 */
-/* 
-@keyframes Updown {
-    50% {
-        transform: translate(0, 5%);
-        opacity: .5;
-    }
-
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-
-} */
 
 /*********************** 메인1 영역 끝 ***********************/
 
@@ -256,6 +280,7 @@ body * {
     width: 100%;
     height: 80vh;
     margin: 0 auto;
+    margin-top: 10rem;
 }
 
 .cont2 h2 {
@@ -353,10 +378,8 @@ body * {
 .cont3 {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 85rem;
     margin: 0 auto;
-    /* background: url(../img/drinkShadow.png)repeat-x;
-    background-position: 0 -1000%; */
 }
 
 .cont3 h2 {
@@ -387,7 +410,6 @@ body * {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
-
 }
 
 .menuBtn li input {
@@ -403,53 +425,34 @@ body * {
     cursor: pointer;
 }
 
+.menuBtn li:first-child input {
+    background: var(--font-color-yellow);
+}
+
 .menuBtn li input:hover {
     background: var(--font-color-yellow);
-
 }
 
-.rolling {
-    height: 50vh;
-    margin: 0 auto;
-    overflow-x: hidden;
+.drinkBg {
+    position: relative;
+    z-index: -9;
+    width: 100%;
+    height: 100%;
+    background: url(../img/drinkShadow.png)repeat-x 0 0 /100% 50%;
+    background-position: 0 70%;
 
-}
-
-.drinkDisplay {
-    margin: 0 auto;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.drinkDisplay ul {
-    display: flex;
-}
-
-ul.drinkDisplay img {
-    vertical-align: bottom;
-    width: 200px;
 }
 
 .img-moving {
     position: absolute;
-    height: 35vh;
-    bottom: 20vh;
+    z-index: -1;
+    height: 35rem;
+    top: 40rem;
     left: 0;
     right: 0;
-    z-index: -1;
-    background: transparent url("../img/drink/coffee.png") repeat-x left top;
+    background: url("../img/drink/coffee.png") repeat-x left top;
     background-size: 310rem auto;
     animation: movement 15s linear infinite;
-    animation-duration: 15s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: movement;
 }
 
 @keyframes movement {
@@ -458,7 +461,7 @@ ul.drinkDisplay img {
     }
 
     100% {
-        background-position: 2426px 0px;
+        background-position:  2426px 0px;
     }
 }
 
@@ -473,12 +476,12 @@ ul.drinkDisplay img {
 .cont4 {
     overflow: hidden;
     width: 100%;
-    height: 80vh;
+    height: 100%;
     margin: 0 auto;
 }
 
 .cont4 h2 {
-    height: 60vh;
+    height: 60rem;
     display: flex;
     align-items: center;
     flex-direction: column;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+
+</head>
+
+<body>
+    <div class="cont3">
+        <h2>
+            <span data-aos="fade-in" data-aos-duration="700">빽다방이 선사하는 다채로운 맛과 향기</span>
+            <span data-aos="fade-in" data-aos-duration="1000">
+                <p>커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께</p>
+                <p>비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다.</p>
+            </span>
+        </h2>
+        <div class="menuBtn">
+            <ul>
+                <li><input type="button" onclick="chnDrink(this.name)" value="커피" name="coffee"></input></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="음료" name="juice"></input></li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="아이스크림/디저트" name="dessert"></input>
+                </li>
+                <li><input type="button" onclick="chnDrink(this.name)" value="빽스치노" name="chino"></input></li>
+            </ul>
+        </div>
+        <!-- 음료수 슬라이더 -->
+        <div class="rolling">
+            <div class="img-moving"></div>
+        </div>
+        <div class="drinkBg"></div>
+    </div>
+    <script>
+        // 메인 3번째 음료 슬라이드
+        function chnDrink(drinkType) {
+            let drinkBg = document.querySelector('.img-moving');
+            let btnOver = document.querySelector('.btnSelect');
+
+            switch (drinkType) {
+                case 'coffee':
+                    drinkBg.style.background = 'transparent url("./img/drink/coffee.png") repeat-x left top';
+                    drinkBg.style.backgroundSize = '310rem auto';
+                    break;
+                case 'juice':
+                    drinkBg.style.background = 'transparent url("./img/drink/juice.png") repeat-x left top';
+                    drinkBg.style.backgroundSize = '310rem auto';
+                    break;
+                case 'dessert':
+                    drinkBg.style.background = 'transparent url("./img/drink/dessert.png") repeat-x left top';
+                    drinkBg.style.backgroundSize = '310rem auto';
+                    break;
+                case 'chino':
+                    drinkBg.style.background = 'transparent url("./img/drink/chino.png") repeat-x left top';
+                    drinkBg.style.backgroundSize = '310rem auto';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

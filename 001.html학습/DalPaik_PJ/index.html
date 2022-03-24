@@ -22,10 +22,46 @@
             <!-- 탑 gnb메뉴 -->
             <nav class="topMenu">
                 <ul>
-                    <li><a href="#" class="a_ex">빽다방</a></li>
-                    <li><a href="#" class="a_ex">메뉴·매장</a></li>
-                    <li><a href="#" class="a_ex">창업안내</a></li>
-                    <li><a href="#" class="a_ex">새로운 소식</a></li>
+                    <li class="sm"><a href="#" class="a_ex">빽다방</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">CEO 인사말</a></li>
+                                <li><a href="#">빽다방 소개</a></li>
+                                <li><a href="#">커피 이야기</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="sm"><a href="#" class="a_ex">메뉴·매장</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">메뉴 보기</a></li>
+                                <li><a href="#">매장 찾기</a></li>
+                                <li><a href="#">커피 클래스</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="sm"><a href="#" class="a_ex">창업안내</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">가맹 정보</a></li>
+                                <li><a href="#">창업 상담</a></li>
+                                <li><a href="#">관련 절차</a></li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="sm"><a href="#" class="a_ex">새로운 소식</a>
+                        <!-- 서브메뉴 -->
+                        <div class="smenu">
+                            <ol>
+                                <li><a href="#">새소식</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">우수점포</a></li>
+                            </ol>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <!-- fixed 우측 배너 -->
@@ -66,12 +102,10 @@
                         <p>호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다.</p>
                     </span>
                 </h2>
-                <div>
-                    <div>
-                        <div class="circleImg1"><img src="./img/circleImg.png" alt="2번 메인 배경 이미지1"></div>
-                        <div class="circleImg2"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지2"></div>
-                        <div class="circleImg3"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지3"></div>
-                    </div>
+                <div class="circleBg">
+                    <div class="circleImg1"><img src="./img/circleImg.png" alt="2번 메인 배경 이미지1"></div>
+                    <div class="circleImg2"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지2"></div>
+                    <div class="circleImg3"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지3"></div>
                 </div>
             </div>
             <!-- 메인 컨텐츠 3번 -->
@@ -96,6 +130,7 @@
                 <div class="rolling">
                     <div class="img-moving"></div>
                 </div>
+                <div class="drinkBg"></div>
             </div>
             <!-- 메인 컨텐츠 4번 -->
             <div class="cont4">
@@ -199,7 +234,7 @@
         });
 
         // 메인 2번째 마우스 움직임 애니메이션
-        var docStyle = document.documentElement.style;
+        let docStyle = document.documentElement.style;
 
         // setting CSS variables inside this JS where they 
         // can be declaratively used inside the CSS file.
@@ -210,25 +245,44 @@
 
         // 메인 3번째 음료 슬라이드
         function chnDrink(drinkType) {
-            let drinkBg = document.querySelector('.img-moving');
-            let btnOver = document.querySelector('.menuBtn');
+            const drinkBg = document.querySelector('.img-moving');
+            const coffeeOn = document.querySelector('.menuBtn li:nth-child(1) input');
+            const juiceOn = document.querySelector('.menuBtn li:nth-child(2) input');
+            const dessertOn = document.querySelector('.menuBtn li:nth-child(3) input');
+            const chinoOn = document.querySelector('.menuBtn li:nth-child(4) input');
 
             switch (drinkType) {
                 case 'coffee':
                     drinkBg.style.background = 'transparent url("./img/drink/coffee.png") repeat-x left top';
                     drinkBg.style.backgroundSize = '310rem auto';
+                    coffeeOn.style.background = 'var(--font-color-yellow)';
+                    juiceOn.style.background = '#fff';
+                    dessertOn.style.background = '#fff';
+                    chinoOn.style.background = '#fff';
                     break;
                 case 'juice':
                     drinkBg.style.background = 'transparent url("./img/drink/juice.png") repeat-x left top';
                     drinkBg.style.backgroundSize = '310rem auto';
+                    coffeeOn.style.background = '#fff';
+                    juiceOn.style.background = 'var(--font-color-yellow)';
+                    dessertOn.style.background = '#fff';
+                    chinoOn.style.background = '#fff';
                     break;
                 case 'dessert':
                     drinkBg.style.background = 'transparent url("./img/drink/dessert.png") repeat-x left top';
                     drinkBg.style.backgroundSize = '310rem auto';
+                    coffeeOn.style.background = '#fff';
+                    juiceOn.style.background = '#fff';
+                    dessertOn.style.background = 'var(--font-color-yellow)';
+                    chinoOn.style.background = '#fff';
                     break;
                 case 'chino':
                     drinkBg.style.background = 'transparent url("./img/drink/chino.png") repeat-x left top';
                     drinkBg.style.backgroundSize = '310rem auto';
+                    coffeeOn.style.background = '#fff';
+                    juiceOn.style.background = '#fff';
+                    dessertOn.style.background = '#fff';
+                    chinoOn.style.background = 'var(--font-color-yellow)';
                     break;
             }
         }

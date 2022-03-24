@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+body * {
+    outline: 1px solid green;
+}
+
+.disNone {
+    display: none;
+}
+
+.cont3 {
+    position: relative;
+    width: 100%;
+    height: 85rem;
+    margin: 0 auto;
+}
+
+.cont3 h2 {
+    display: flex;
+    padding-top: 10rem;
+    font-family: var(--font-family-notoSan);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cont3 h2 span {
+    font-size: 5rem;
+    color: var(--font-color-navy);
+    box-sizing: border-box;
+}
+
+.cont3 h2 span p {
+    font-size: 2rem;
+    color: var(--font-color-navy);
+    box-sizing: border-box;
+}
+
+
+/* 버튼 ui */
+
+.menuBtn ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.menuBtn li input {
+    width: 14rem;
+    height: 4rem;
+    text-align: center;
+    line-height: 3.8rem;
+    font-size: 1.5rem;
+    font-family: var(--font-family-notoSan);
+    background: #fff;
+    border: 1px solid #ccc;
+    color: var(--font-color-navy);
+    cursor: pointer;
+}
+
+.menuBtn li input:hover {
+    background: var(--font-color-yellow);
+}
+
+.btnSelect {
+    background: var(--font-color-yellow);
+}
+
+.drinkBg {
+    position: relative;
+    z-index: -9;
+    width: 100%;
+    height: 100%;
+    background: url(./img/drinkShadow.png)repeat-x 0 0 /100% 50%;
+    background-position: 0 70%;
+
+}
+
+.img-moving {
+    position: absolute;
+    z-index: -1;
+    height: 35rem;
+    top: 40rem;
+    left: 0;
+    right: 0;
+    background: url("./img/drink/coffee.png") repeat-x left top;
+    background-size: 310rem auto;
+    animation: movement 15s linear infinite;
+}
+
+@keyframes movement {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position:  2426px 0px;
+    }
+}
