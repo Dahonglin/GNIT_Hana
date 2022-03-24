@@ -4,6 +4,7 @@ font-family: 'Lemon', cursive;
 font-family: 'Noto Sans KR', sans-serif;
 */
 @import url('https://fonts.googleapis.com/css2?family=Lemon&family=Noto+Sans+KR:wght@500&display=swap');
+
 /*    
 네이비 : #071F60
 옐로우 : #ffe600
@@ -43,7 +44,7 @@ ol {
 
 /* 작업 가이드라인 */
 body * {
-    /* outline: 1px dashed green; */
+    outline: 1px dashed green;
 }
 
 /* 대체 텍스트 */
@@ -351,26 +352,29 @@ body * {
 
 .cont3 {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100vh;
-    margin : 0 auto;
-    background: url(../img/drinkShadow.png)repeat-x;
-    background-position: 0 -1000%;
+    margin: 0 auto;
+    /* background: url(../img/drinkShadow.png)repeat-x;
+    background-position: 0 -1000%; */
 }
+
 .cont3 h2 {
     display: flex;
     padding-top: 10rem;
     font-family: var(--font-family-notoSan);
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
+
 .cont3 h2 span {
     font-size: 5rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
 }
 
-.cont3 h2 span p{
+.cont3 h2 span p {
     font-size: 2rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
@@ -386,7 +390,7 @@ body * {
 
 }
 
-.menuBtn li input{
+.menuBtn li input {
     width: 14rem;
     height: 4rem;
     text-align: center;
@@ -399,7 +403,7 @@ body * {
     cursor: pointer;
 }
 
-.menuBtn li input:hover{
+.menuBtn li input:hover {
     background: var(--font-color-yellow);
 
 }
@@ -428,16 +432,16 @@ ul.drinkDisplay img {
     width: 200px;
 }
 
-.img-moving{
+.img-moving {
     position: absolute;
     height: 35vh;
     bottom: 20vh;
-	left: 0;
-	right: 0;
+    left: 0;
+    right: 0;
     z-index: -1;
     background: transparent url("../img/drink/coffee.png") repeat-x left top;
-	background-size: 310rem auto;
-    animation:movement 15s linear infinite;
+    background-size: 310rem auto;
+    animation: movement 15s linear infinite;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-delay: 0s;
@@ -447,11 +451,13 @@ ul.drinkDisplay img {
     animation-play-state: running;
     animation-name: movement;
 }
-@keyframes movement{
+
+@keyframes movement {
     0% {
-        background-position:0px 0px;
+        background-position: 0px 0px;
     }
-    100%{
+
+    100% {
         background-position: 2426px 0px;
     }
 }
@@ -492,6 +498,7 @@ ul.drinkDisplay img {
     font-size: 4.3rem;
     color: var(--font-color-navy);
 }
+
 .cont4 h2 span:nth-child(2) p {
     font-size: 2rem;
     color: var(--font-color-navy);
@@ -505,7 +512,7 @@ ul.drinkDisplay img {
     border-radius: 1.6rem;
     border: 2px solid var(--font-color-navy);
     box-sizing: border-box;
-    transition:.2s linear;
+    transition: .2s linear;
 }
 
 .shopBtn a {
@@ -519,7 +526,7 @@ ul.drinkDisplay img {
     border: 2px solid var(--font-color-navy);
 }
 
-.shopBtn:hover a{
+.shopBtn:hover a {
     color: var(--font-color-navy);
 }
 
