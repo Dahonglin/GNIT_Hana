@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 도깨비 초기화 css - reset.css */
+/* 요소 초기화 css */
+
+/* 초기화 css */
+* {
+    padding: 0px;
+    margin: 0 auto;
+}
+
+/* 헤딩태그 글자크기 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    /* 글자크기 100%는 기본글자크기와 같아지는 셋팅
+    기본글자크기는 16px */
+}
+
+/* ul, ol 초기화 */
+ul,
+ol {
+    list-style: none;
+    /* 블릿 스타일 없앰 */
+}

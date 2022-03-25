@@ -1,0 +1,334 @@
+@charset "utf-8";
+/* 도깨비 공통 css - common.css */
+/* 페이지 공통 모듈 디자인 */
+
+html {
+    font-size: 10px;
+    /* rem단위 계산을 쉽게하기 위해 10px로 셋팅! */
+}
+
+/******************* 1. 상단영역 *******************/
+/* 겉박스 */
+#top {
+    /* 겉박스 */
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    z-index: 99;
+}
+
+/* 속박스 */
+.top {
+    height: 125px;
+}
+
+/* 로고 박스 */
+#logo {
+    text-align: center;
+    padding: 20px;
+}
+
+/* 로고 이미지 가로 크기 */
+#logo img {
+    width: 100px;
+}
+
+/******* 상단 sns / 회원가입 메뉴 *******/
+
+.snsbx{ /* 최상위 박스 */
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* x축 방향으로 자기 크기의 절반 반대방향 이동(중앙정렬)  */
+    width: 1200px;
+    max-width: 100%;
+    /* 1200 이었다가 화면이 줄어들면 100%로 변경 */
+}
+
+.sns {
+    float: right;
+    margin-right: 50px;
+}
+
+.sns ul::after{ /* clear 세팅 */
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sns li{
+    float: left;
+    margin : 0 5px;
+}
+
+/* sns 메뉴용 li만 디자인 */
+/* 두번째 li 이후 모든 li 형제들 : 틸드(~) 형제들 선택자 */
+.sns li:nth-child(2)~li {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    margin: 0 1px;
+}
+/* 스프라이트 기법을 이용하여 sns 아이콘 셋업 */
+.sns li:nth-child(3):hover {/* 트위터 오버시 */
+    background-position: 0 -30px;
+}
+.sns li:nth-child(4) {/* 인스타그램 */
+    background-position: -30px 0;
+}
+.sns li:nth-child(4):hover {/* 인스타오버시 */
+    background-position: -30px -30px;
+}
+.sns li:nth-child(5) {/* 페북 */
+    background-position: -60px 0;
+}
+.sns li:nth-child(5):hover {/* 페북오버시 */
+    background-position: -60px -30px;
+}
+
+
+.sns li:nth-child(2){ /* 회원가입 li */
+    margin-right: 20px;
+}
+
+
+.sns a{
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.4rem;
+    line-height: 30px;
+}
+
+/* sns 설명글 숨기기 */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/***************** GNB 메뉴 *****************/
+.gnb {
+    width: 573px;
+    margin: 0 auto;
+}
+
+/* 가상요소로 clear 하기 */
+.gnb>ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 옆으로 흐르게 */
+.gnb>ul>li {
+    float: left;
+    padding: 0 15px;
+}
+
+/* GNB 메뉴 링크 */
+.gnb>ul>li>a {
+    display: inline-block;
+    /* 인라인블록이면 위아래로 영역이 줄간격만큼 확장됨! */
+    color: #222;
+    text-decoration: none;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.6rem;
+    line-height: 40px;
+    border-bottom: 4px solid rgba(255, 255, 255, 0);
+    /* 미리보더를 만들고 하위메뉴에 영향이 없도록함! */
+}
+
+/* 상위메뉴 li에 마우스 오버시 a요소 빨간색 하단보더넣기 */
+.gnb>ul>li:hover>a {
+    border-bottom: 4px solid red;
+    /* 인라인블록이어서 보더가 크기에 영향을 미치지 않음! */
+}
+
+
+/* 서브 메뉴 */
+.smenu {
+    position: absolute;
+    /* 서브메뉴숨기기 */
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    /* 트랜지션 */
+    transition: height .4s ease-out;
+}
+
+/* 서브메뉴 ol 세팅 */
+.smenu>ol {
+    padding: 10px 0;
+}
+
+/* 서브메뉴 a */
+.smenu a {
+    font-size: 1.4rem;
+    line-height: 30px;
+
+    /* 글자색+밑줄 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
+클래스 sm이 부여된 li만 적용된다!*/
+.gnb>ul>li.sm::after {
+    content: '';
+    display: block;
+    /* div와 비슷! */
+    position: absolute;
+    top: 126px;
+    /* 겉박스 하단보더 1px보이게 1px더함! */
+    left: 0;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면이 부모! */
+    height: 0px;
+    background-color: #fff;
+    /* 세부위치조정은 마진으로!!! */
+    /* margin-top: 4px; */
+    /* #top의 하단보더를 가리므로 아래쪽으로 위치이동함! */
+    /* 트랜지션: 속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* li.sm에 마우스 오버시 가상요소 내려오기! */
+/* 공통으로 하단보더설정 */
+.gnb>ul>li.sm:hover::after {
+    border-bottom: 2px solid red;
+}
+
+/* 상위 li에 마우스 오버 시 .smenu 보이기*/
+/* 높이값 다르게 세팅 */
+
+/* 프로그램 소개 */
+.gnb>ul>li.sm.sm1:hover::after,
+.gnb>ul>li.sm1:hover .smenu {
+    height: 120px;
+}
+
+/* 동영상 */
+.gnb>ul>li.sm.sm2:hover::after,
+.gnb>ul>li.sm2:hover .smenu {
+    height: 140px;
+}
+
+/* 사진첩 */
+.gnb>ul>li.sm.sm3:hover::after,
+.gnb>ul>li.sm3:hover .smenu {
+    height: 100px;
+}
+
+/* 모바일용 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본 디자인 없애기 */
+    background-color: transparent;
+    border: none;
+    /* 모바일 아닐때 안보임 */
+    display: none;
+}
+
+/* 버튼 모양 변경 위해 가상 요소로 내용 넣기 */
+.ham::before {
+    content: '≡';
+
+}
+/* 크롬 브라우저 버튼 포커스 아웃라인 제거 */
+.ham:focus{
+    outline: none;
+}
+
+
+/******************* 3. 하단 영역 *******************/
+/* 겉박스 */
+#info {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 속박스 */
+.info {
+    position: relative;
+    /* 부모자격부여 - .sel 선택박스 */
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    /* 크기유지 - 보더 패딩 포함 */
+}
+
+.blink {
+    max-width: 845px;
+    margin: 0 auto;
+}
+
+/* 가상요소로 clear 하기 */
+.blink>ul::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 옆으로 흐르게 */
+.blink>ul>li {
+    float: left;
+    padding: 0 15px;
+}
+
+/* 하단 메뉴 링크 */
+.blink>ul>li>a {
+    color: #000;
+    text-decoration: none;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font: bold 1.4rem/2.8 'Noto Sans KR', sans-serif;
+    /*
+        font 한번에 세팅하기
+        font : 스두크/줄체
+        font : 스타일 두께 크기/줄간격 글자체
+    */
+}
+
+.blink>ul>li>a:hover {
+    text-decoration: underline;
+    color: crimson;
+}
+
+
+/* 회사 주소 박스 */
+.addr {
+    max-width: 785px;
+    margin: 10px auto;
+    border: 4px double #222;
+    font: 1.4rem/2 'Noto Sans KR', sans-serif;
+    text-align: center;
+    /* 원래 address 요소는 italic 체인데 폰트 한번에 쓰기에서
+        스타일 설정을 하지 않으면 기본 normal이 적용됨. */
+    padding: 10px;
+    box-sizing: border-box;
+    word-spacing: -3px;
+}
+
+/* 하단 로고 박스 */
+.blogo {
+    text-align: center;
+}
+/* 브랜드 바로가기 */
+#sel {
+    font: 1.4rem/2 'Noto Sans KR', sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    /* 부보는 .info */
+    padding: 5px;
+}

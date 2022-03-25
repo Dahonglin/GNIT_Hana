@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Door - 3D Perspective Animation</title>
+    <style>
+        /* 웹폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+        /* font-family: 'Comfortaa', cursive; */
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: powderblue;
+        }
+
+        /* 타이틀 */
+        .tit {
+            font-family: 'Comfortaa', cursive;
+            font-style: 42px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 2px #222;
+        }
+
+        /* 전체문 */
+        .cont {
+            position: relative;
+            top: 100px;
+            width: 200px;
+            height: 300px;
+            background-color: saddlebrown;
+            margin: 0 auto;
+        }
+
+        /* 뚫린부분 */
+        .frame {
+            position: relative;
+            top: 20px;
+            width: 150px;
+            height: 280px;
+            background: url(./images/seashore.jpg) no-repeat center/auto 100%;
+            margin: 0 auto;
+
+            /* 
+            
+                [3D 원근 설정]
+                1. 세팅 위치 :
+                3D 원근 설정을 할 대상의 부모 요소
+
+                2. 설정 방법 : 
+                perspective:수치; 
+                - 수치는 px 단위로 숫자가 클 수록
+                소실점이 먼 것이므로 각도가 작아짐
+                (이 거리는 소실점 까지의 거리를 나타냄)
+            
+            */
+            perspective: 480px;
+
+            /*********************************************** 
+                [ 뷰포인트(관찰자위치) 변경옵션 ]
+                perpective-origin : 가로 세로;
+                - 가로축: left, center, right, px, % 등 단위
+                - 세로축: top, center, bottom, px, % 등 단위
+                -> 두 값 중에 하나만 쓸 수 있고 복합일 경우
+                2가지를 같이 셋팅함!
+            ***********************************************/
+        }
+
+        /* 문 */
+        .door {
+            position: relative;
+            /* 부모자격을 주기 위해 */
+            /* 핸들을 absolute로 만들어 위치를 조절하기 때문 */
+            width: 150px;
+            height: 280px;
+            background-color: teal;
+
+            /* 문 Y축 회전  */
+            transform: rotateY(0);
+            /* 축 변경하기 */
+            transform-origin: left;
+            /* 
+            
+                트랜스폼 회전축 변경 속성
+                transform-origin: 가로축 세로축;
+                - 가로축 : left, center, right, px, % 등 단위
+                - 세로축 : top, center, bottom, px, % 등 단위
+            */
+            animation:
+                openFirst 1s ease-in-out forwards,
+                doorAni 2s ease-in-out 1s infinite alternate;
+            /* 애니메이션 상태관리하기 */
+            animation-play-state: paused;
+            /* 
+                paused : 멈춤
+                running : 재생 
+            */
+        }
+
+        /* 오버 시 애니메이션 작동 */
+        .cont:hover .door {
+            animation-play-state: running;
+        }
+
+        /* 문짝 처음 열기 키프레임 */
+        @keyframes openFirst {
+            to {
+                transform: rotateY(60deg);
+            }
+        }
+
+        /* 키프레임 */
+        @keyframes doorAni {
+            0% {
+                transform: rotateY(60deg);
+            }
+
+            100% {
+                transform: rotateY(-60deg);
+            }
+        }
+
+        /* 손잡이 */
+        .handle {
+            position: absolute;
+            /* 부모는 .door */
+            top: 140px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        /* 엘사 */
+        #elsa {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            /* 부모는 .frame */
+            width: 150px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        #elsa img {
+            margin-left: 130px;
+            margin-top: 28px;
+            transform: rotate(0deg);
+            transform-origin: bottom;
+            animation: elsa 1s ease-in-out infinite alternate;
+            animation-play-state: paused;
+        }
+
+        .cont:hover #elsa img {
+            animation-play-state: running;
+        }
+
+        /* 엘사 키프레임 */
+        @keyframes elsa {
+            to {
+                transform: rotate(-10deg);
+            }
+
+        }
+
+        /**************** 전체창문부모 ****************/
+        .cont2 {
+            position: absolute;
+            top: 210px;
+            left: 70%;
+            width: 150px;
+            height: 150px;
+            background-color: saddlebrown;
+        }
+
+        /* 창틀 */
+        .frame2 {
+            position: relative;
+            top: 10px;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto;
+            background: url(./images/seashore.jpg) no-repeat top/auto 200%;
+
+            /********************************** 
+                [ 3D 원근설정 ]
+                1. 셋팅위치:
+                3D원근 설정을 할 대상의 부모요소
+                2. 설정방법:
+                perspective: 수치;
+                - 수치는 px단위로 숫자가 클수록
+                소실점이 먼것이므로 각도가 작아짐
+                (이 거리는 기준점에서 소실점까지
+                의 거리임)
+            **********************************/
+            perspective: 500px;
+
+            /*********************************************** 
+                [ 뷰포인트(관찰자위치) 변경옵션 ]
+                perpective-origin : 가로 세로;
+                - 가로축: left, center, right, px, % 등 단위
+                - 세로축: top, center, bottom, px, % 등 단위
+                -> 두 값 중에 하나만 쓸 수 있고 복합일 경우
+                2가지를 같이 셋팅함!
+            ***********************************************/
+        }
+
+        /* 창문 */
+        .door2 {
+            position: relative;
+            /* 부모자격 - .handle */
+            width: 130px;
+            height: 130px;
+            background-color: rgba(93, 93, 93, 0.5);
+
+            text-align: center;
+            /* 글자중앙 - 세로글자면 세로방향 중앙이다! */
+            writing-mode: vertical-lr;
+            /* 
+                글자진행방향 설정속성
+                writing-mode
+                옵션값
+                horizontal-tb 가로글자 방향 위에서 아래(기본값)
+                vertical-rl 세로글자방향 오른쪽에서 왼쪽으로
+                vertical-lr 세로글자방향 왼쪽에서 오른쪽으로
+            */
+
+            padding: 0 30px;
+            border: 5px solid yellowgreen;
+            box-sizing: border-box;
+            /* 박스크기유지 */
+
+            /* 문짝 X축으로 회전하기 */
+            transform: rotateX(0);
+            /* 회전축 변경하기 */
+            transform-origin: top;
+            /* 
+                트랜스폼 회전축 변경속성
+                transform-origin: 가로축 세로축
+                - 가로축: left, center, right, px, % 등 단위
+                - 세로축: top, center, bottom, px, % 등 단위
+            */
+            transition: all .4s;
+        }
+
+        /* 오버시 창문열기 */
+        .cont2:hover .door2 {
+            transform: rotateX(65deg);
+        }
+
+        /* 창문손잡이 */
+        .handle2 {
+            position: absolute;
+            bottom: 10px;
+            left: calc(50% - 10px);
+            /* 부모는? .door2 */
+
+            width: 20px;
+            height: 5px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="tit">Open door</h1>
+        <!-- 전체문 컨테이너 -->
+        <div class="cont">
+            <!-- 문 열렸을때 뚫린부분 -->
+            <div class="frame">
+                <!-- 문 -->
+                <div class="door">
+                    <!-- 손잡이 -->
+                    <div class="handle"></div>
+                </div>
+                <!-- 엘사 -->
+                <div id="elsa">
+                    <img src="./images/elsa.png" alt="엘사">
+                </div>
+            </div>
+        </div>
+        <div class="cont2">
+            <!-- 창문열었을때 뚫린부분 -->
+            <div class="frame2">
+                <!-- 창문짝 -->
+                <div class="door2">
+                    여기에 <br>
+                    마우스 <br>
+                    오버해
+                    <!-- 손잡이 -->
+                    <div class="handle2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

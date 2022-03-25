@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* 도깨비 서브페이지 css - temp.css */
+
+/* 외부 css 합치기 */
+@import url(reset.css);
+@import url(core.css);
+@import url(common.css);
+
+
+/* 컨텐츠 영역 최소 높이 */
+.cont {
+    min-height: 60rem;
+}
