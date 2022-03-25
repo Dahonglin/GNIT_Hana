@@ -670,4 +670,5 @@ body * {
     color: #666;
     font-size: 1.3rem;
     margin-right: 10rem;
+    font-style: unset;
 }
