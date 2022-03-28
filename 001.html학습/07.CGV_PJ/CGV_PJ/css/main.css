@@ -13,7 +13,7 @@ body{
 
 /* 공사중표시 */
 body *{
-    outline: 2px dotted lime;
+    /* outline: 2px dotted lime; */
 }
 
 /* 레이아웃 공통 class */
@@ -40,6 +40,7 @@ body *{
 h1.tit{
     display: flex;
     padding-top: 35px;
+    height: 100%;
     justify-content: center;
     align-items: flex-end;
 }
@@ -50,10 +51,6 @@ h1.tit{
     background: url(../images/logo_cgv.png) no-repeat;
     background-position: -15px -55px;
     background-size: 120%;
-}
-
-.sub_tit {
-
 }
 
 /* 타이틀 글루우 효과 애니메이션 키프레임 */
@@ -70,122 +67,88 @@ h1.tit{
 }
 /* GNB ul */
 .glist{
-    position: relative;
-    z-index: 1;
-    /* 메뉴가 영사기보다 위! */
     display: flex;
     /* 플렉스박스 */
 }
+
+.glist a{
+    display: block;
+    width: 100%;
+    height: 30px;
+}
+
+.glist a:hover{
+    color:#fb4357;
+}
 /* GNB li 리스트 */
 .glist>li{
-    position: relative;
-    /* 부모자격 - .smenu */
-    padding: 0 10px;
-    padding-bottom: 5px;
-    /* 아래쪽 패딩으로 서브메뉴 간극없앰 */
+    padding: 0 20px;
+    padding-bottom: 0px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
+
 }
 /* GNB 서브메뉴 */
 .smenu{
     position: absolute;
-    left: 50%;
-    transform: translate(-50%,5px);
-    /* x축방향으로 자신의 크기의 절반 왼쪽이동(중앙맞춤)
-    y축방향으로 5px이동 */
-    width: 140px;
-    background: 
-    url(../images/bg_smenu.png) no-repeat center/cover;
-    padding: 3px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #fff;
-
-    display: none;/* 처음에 안보임! */
+    /* 서브메뉴숨기기 */
+    z-index: 1;
+    height: 0;
+    overflow: hidden;
+    top: 179px;
+    margin-top: 10px;
+    /* 트랜지션 */
+    transition: height .3s ease-out;
 }
 /* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
 .glist>li:hover .smenu{
-    display: block;
+    display:flex;
+    height: 30px;
 }
 
-/* 가상요소로 삼각형 만들기 */
-.smenu::before{
+
+.smenu ol {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.smenu>ol>li{
+    float: left;
+    margin-right: 20px;
+}
+
+
+/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
+가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
+클래스 sm이 부여된 li만 적용된다!*/
+.gnb>ul>li.sm::after {
     content: '';
     display: block;
+    /* div와 비슷! */
     position: absolute;
-    top: -10px;
-    left: 50%;
-    /* 부모는? .smenu */
-    transform: translateX(-50%);
-    /* x축 정중앙이동 */
-
-    /* 삼각형만들기 */
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid #353535;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    /* 양쪽보더는 투명색(transparent) 
-    border-top으로 하면 역삼각형이 나옴 */
-
+    top: 180px;
+    /* 겉박스 하단보더 1px보이게 1px더함! */
+    left: 0;
+    /* 부모는? 보이는 화면 */
+    width: 100%;
+    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
+    보이는 화면이 부모! */
+    height: 0px;
+    background-color: #fff;
+    transition: height .4s ease-out;
 }
 
-/* 서브메뉴 ol */
-.smenu ol{
-    border: 1px solid #ccc;
-    padding: 10px;
+.gnb>ul>li.sm:hover::after {
+    height: 50px;
+    border-bottom: 1px solid #CCC;
 }
-/* 서브메뉴 li */
-.smenu li{
-    font-size: 16px;
-    line-height: 2;
-}
-/* 서브메뉴 li중 보더탑 구분선 class */
-.bdt{
-    border-top: 1px solid #ccc;
-}
-/* 서브메뉴 a요소 확장 */
-.smenu a{
-    display: block;
-    /* li부모요소 가로 끝까지 차지함! */
-}
-/* 서브메뉴 a에 마우스 오버시 글자색 빨강 */
-.smenu a:hover{
-    color: red;
-}
-/* 서브메뉴 a에 오버시 가상요소로 이모지 보이기 */
-/* 이모지는 윈도우키+세미콜론(;) 단축키임! */
-/* "영화"메뉴 이모지 */
-.glist>li:nth-child(1) .smenu li a:hover::after{
-    content: '😍';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "예매"메뉴 이모지 */
-.glist>li:nth-child(2) .smenu li a:hover::after{
-    content: '🎬';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "극장"메뉴 이모지 */
-.glist>li:nth-child(3) .smenu li a:hover::after{
-    content: '🔔';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-/* "이벤트&컬처"메뉴 이모지 */
-.glist>li:nth-child(4) .smenu li a:hover::after{
-    content: '📣';
-    float: right;
-    /* 인라인요소 오른쪽 끝으로 보냄! */
-}
-
 
 
 /******************* 2. 메인영역 *******************/
 #cont{
     position: relative;
     /* 부모자격 */
-    height: 755px;
+    height: 800px;
 }
 /* 2-1. 스크린 박스 */
 #screen{
@@ -207,15 +170,15 @@ h1.tit{
 /* 2-2. 예고편 선택메뉴 */
 .mlist{
     position: absolute;
-    bottom: 58px;
+    bottom: 0;
     left: 50%;
     /* 부모는? #cont */
     transform: translateX(-50%);
     /* x축 중앙이동 -> 정중앙 */
-
     overflow: hidden;
     /* 영화설명 숨기기 
     - 부모자격이 있는 요소가 숨길수 있음! */
+    padding-bottom: 20px;
 }
 /* ul 플렉스박스 */
 .mlist ul{
@@ -234,33 +197,45 @@ h1.tit{
 /* 영화정보박스 */
 .movtxt{
     position: absolute;
-    top: 100%;/* 부모의 높이값 만큼 */
     /* 부모는? .mlist */
-    width: 99px;
-    height: 140px;
-
+    width: 178px;
+    height:  245px;
     background-color: rgba(0, 0, 0, 0.7);
-
     /* 글자셋팅 */
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 14px;
     line-height: 2;
     text-align: center;
-
     /* 트랜지션: 속시이지 */
     transition: top .4s ease-out;
 }
-/* 부모li에 마우스 오버시 설명박스 올라오기 */
 .mlist ul>li:hover .movtxt{
     top: 0;
 }
 
-/* 첫번째 li 영화제목 */
+.movtxt {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 15px;
+
+}
+
+.movtxt li {
+    width: 105px;
+    height: 40px;
+    line-height: 38px;
+    background: #fff;
+    border: 2px solid #000;
+    box-sizing: border-box;
+}
+
 .movtxt li:first-child{
-    color: aqua;
-    font-size: 17px;
-    letter-spacing: -1px;
-    margin-top: 30%;
+    background: #fb4357;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 
@@ -268,14 +243,14 @@ h1.tit{
 #info{
     position: relative;
     /* 부모자격 - .sns */
-    height: 100px;
+    height: 140px;
 }
 /* 3-1.회사정보 */
 #info address{
     color: #c3c3c3;
     font-style: normal;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 20px;
 
     /* 안쪽여백 */
@@ -289,10 +264,35 @@ h1.tit{
     margin-right: 20px;
 }
 
+.footMenu {
+    width: 100%;
+    float: left;
+    padding: 20px 0 20px 0;
+}
+
+.footMenu ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footMenu ol>li {
+    margin-right: 20px;
+}
+
+.footMenu ol>li:last-child{
+    margin-right: 0px;
+}
+
+.footMenu a{
+    color: #fff;
+    font-size: 12px;
+}
+
 /* 3-2. sns박스 */
 ul.sns{
     position: absolute;
-    top: 35px;
+    top: 80px;
     right: 20px;
     /* 부모는? #info */
 
