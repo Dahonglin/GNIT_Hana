@@ -10,6 +10,72 @@
 
     <!-- 페이드 애니메이션 라이브러리 -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // 로딩구역 선언
+        window.addEventListener("load", ()=> {
+
+            // 페이드 애니메이션 라이브러리 초기화
+            AOS.init({
+    
+            });
+    
+            // 메인 2번째 마우스 움직임 애니메이션
+            let docStyle = document.documentElement.style;
+    
+            // setting CSS variables inside this JS where they 
+            // can be declaratively used inside the CSS file.
+            document.addEventListener('mousemove', function (e) {
+                docStyle.setProperty('--mouse-x', e.clientX);
+                docStyle.setProperty('--mouse-y', e.clientY);
+            });
+    
+            // 메인 3번째 음료 슬라이드
+            function chnDrink(drinkType) {
+                const drinkBg = document.querySelector('.img-moving');
+                const coffeeOn = document.querySelector('.menuBtn li:nth-child(1) input');
+                const juiceOn = document.querySelector('.menuBtn li:nth-child(2) input');
+                const dessertOn = document.querySelector('.menuBtn li:nth-child(3) input');
+                const chinoOn = document.querySelector('.menuBtn li:nth-child(4) input');
+    
+                switch (drinkType) {
+                    case 'coffee':
+                        drinkBg.style.background = 'transparent url("./img/drink/coffee.png") repeat-x left top';
+                        drinkBg.style.backgroundSize = '310rem auto';
+                        coffeeOn.style.background = 'var(--font-color-yellow)';
+                        juiceOn.style.background = '#fff';
+                        dessertOn.style.background = '#fff';
+                        chinoOn.style.background = '#fff';
+                        break;
+                    case 'juice':
+                        drinkBg.style.background = 'transparent url("./img/drink/juice.png") repeat-x left top';
+                        drinkBg.style.backgroundSize = '310rem auto';
+                        coffeeOn.style.background = '#fff';
+                        juiceOn.style.background = 'var(--font-color-yellow)';
+                        dessertOn.style.background = '#fff';
+                        chinoOn.style.background = '#fff';
+                        break;
+                    case 'dessert':
+                        drinkBg.style.background = 'transparent url("./img/drink/dessert.png") repeat-x left top';
+                        drinkBg.style.backgroundSize = '310rem auto';
+                        coffeeOn.style.background = '#fff';
+                        juiceOn.style.background = '#fff';
+                        dessertOn.style.background = 'var(--font-color-yellow)';
+                        chinoOn.style.background = '#fff';
+                        break;
+                    case 'chino':
+                        drinkBg.style.background = 'transparent url("./img/drink/chino.png") repeat-x left top';
+                        drinkBg.style.backgroundSize = '310rem auto';
+                        coffeeOn.style.background = '#fff';
+                        juiceOn.style.background = '#fff';
+                        dessertOn.style.background = '#fff';
+                        chinoOn.style.background = 'var(--font-color-yellow)';
+                        break;
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -200,7 +266,6 @@
                     <select title="FAMILY SITE" id="familyLink" onchange="window.open(value,'_blank');">
                         <option value="#">FAMILY SITE</option>
                         <option value="https://www.theborn.co.kr/">더본코리아</option>
-                        <option value="#">더본코리아</option>
                         <option value="#">창업센터</option>
                         <option value="#">새마을식당</option>
                         <option value="#">한신포차</option>
@@ -226,67 +291,5 @@
             </div>
         </footer>
     </div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // 페이드 애니메이션 라이브러리 초기화
-        AOS.init({
-
-        });
-
-        // 메인 2번째 마우스 움직임 애니메이션
-        let docStyle = document.documentElement.style;
-
-        // setting CSS variables inside this JS where they 
-        // can be declaratively used inside the CSS file.
-        document.addEventListener('mousemove', function (e) {
-            docStyle.setProperty('--mouse-x', e.clientX);
-            docStyle.setProperty('--mouse-y', e.clientY);
-        });
-
-        // 메인 3번째 음료 슬라이드
-        function chnDrink(drinkType) {
-            const drinkBg = document.querySelector('.img-moving');
-            const coffeeOn = document.querySelector('.menuBtn li:nth-child(1) input');
-            const juiceOn = document.querySelector('.menuBtn li:nth-child(2) input');
-            const dessertOn = document.querySelector('.menuBtn li:nth-child(3) input');
-            const chinoOn = document.querySelector('.menuBtn li:nth-child(4) input');
-
-            switch (drinkType) {
-                case 'coffee':
-                    drinkBg.style.background = 'transparent url("./img/drink/coffee.png") repeat-x left top';
-                    drinkBg.style.backgroundSize = '310rem auto';
-                    coffeeOn.style.background = 'var(--font-color-yellow)';
-                    juiceOn.style.background = '#fff';
-                    dessertOn.style.background = '#fff';
-                    chinoOn.style.background = '#fff';
-                    break;
-                case 'juice':
-                    drinkBg.style.background = 'transparent url("./img/drink/juice.png") repeat-x left top';
-                    drinkBg.style.backgroundSize = '310rem auto';
-                    coffeeOn.style.background = '#fff';
-                    juiceOn.style.background = 'var(--font-color-yellow)';
-                    dessertOn.style.background = '#fff';
-                    chinoOn.style.background = '#fff';
-                    break;
-                case 'dessert':
-                    drinkBg.style.background = 'transparent url("./img/drink/dessert.png") repeat-x left top';
-                    drinkBg.style.backgroundSize = '310rem auto';
-                    coffeeOn.style.background = '#fff';
-                    juiceOn.style.background = '#fff';
-                    dessertOn.style.background = 'var(--font-color-yellow)';
-                    chinoOn.style.background = '#fff';
-                    break;
-                case 'chino':
-                    drinkBg.style.background = 'transparent url("./img/drink/chino.png") repeat-x left top';
-                    drinkBg.style.backgroundSize = '310rem auto';
-                    coffeeOn.style.background = '#fff';
-                    juiceOn.style.background = '#fff';
-                    dessertOn.style.background = '#fff';
-                    chinoOn.style.background = 'var(--font-color-yellow)';
-                    break;
-            }
-        }
-    </script>
 </body>
-
 </html>
