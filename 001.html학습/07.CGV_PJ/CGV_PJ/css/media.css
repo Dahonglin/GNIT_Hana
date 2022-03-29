@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CGV PJ 메인 페이지 CSS - main.css */
+
+/* 외부CSS합치기 */
+@import url(reset.css);
+@import url(core.css);
+
+
+@media (max-width: 768px) {
+
+    /* 레이아웃 공통 class */
+    .part {
+        max-width: 100vw;
+        /* 최대 1200px, 이하일땐 auto */
+        margin: 0 auto;
+        /* 마영오! - 가로중앙 */
+    }
+
+    #cont {
+        max-width: 100vw;
+        height: 170vh;
+    }
+
+    .tit_sub {
+        display: none;
+    }
+
+    .gnb {
+        display: none;
+    }
+
+    h1.tit {
+        align-items: center;
+        margin-bottom: 5vh;
+    }
+
+    #screen {
+        position: relative;
+        max-width: 100vw;
+        height: 60vh;
+    }
+
+    .mlist {
+        position: relative;
+        float: none;
+        width: 100vw;
+        margin-top: 20%;
+    }
+
+    .mlist ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mlist ul>li {
+        overflow: hidden;
+    }
+
+    .mlist img {
+        width: 40vw;
+        height: 100%;
+    }
+
+    /* 영화정보박스 */
+    .movtxt {
+        display: none;
+    }
+
+    .moba_movtxt {
+        position: absolute;
+        top: 0;
+        width: 40vw;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* 글자셋팅 */
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 14px;
+        line-height: 2;
+        text-align: center;
+        margin: 0 auto;
+        opacity: 0;
+    }
+
+    .moba_movtxt li {
+        transform: translate(20%, 150%);
+        width: 105px;
+        height: 40px;
+        line-height: 38px;
+        background: #fff;
+        border: 2px solid #000;
+        box-sizing: border-box;
+    }
+
+    .moba_movtxt li:first-child {
+        background: #fb4357;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .mlist li:nth-child(3) .moba_movtxt {
+        top: 290px;
+    }
+
+    .mlist li:nth-child(4) .moba_movtxt {
+        top: 290px;
+    }
+
+    .mlist li:nth-child(5) .moba_movtxt {
+        top: 580px;
+    }
+
+    .mlist ul>li:hover .moba_movtxt {
+        opacity: 1;
+    }
+
+
+    .footMenu {
+        display: none;
+    }
+
+    ul.sns {
+        position: relative;
+        top: 0px;
+        right: 0px;
+        transform: translateX(35%);
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+
+    address img {
+        display: none;
+    }
+
+    address {
+        text-align: center;
+        padding: 10px;
+    }
+    address span {
+        font-size: 15px;
+    }
+}

@@ -268,7 +268,6 @@ h1.tit{
     /* 부모는? #cont */
     transform: translateX(-50%);
     /* x축 중앙이동 -> 정중앙 */
-
     overflow: hidden;
     /* 영화설명 숨기기 
     - 부모자격이 있는 요소가 숨길수 있음! */
@@ -302,7 +301,6 @@ h1.tit{
     font-size: 14px;
     line-height: 2;
     text-align: center;
-
     /* 트랜지션: 속시이지 */
     transition: top .4s ease-out;
 }
