@@ -6,80 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빽다방</title>
+    <!-- 메인CSS -->
     <link rel="stylesheet" href="./css/index.css">
+    <!-- 미디어쿼리 -->
+    <link rel="stylesheet" href="./css/media.css">
 
     <!-- 페이드 애니메이션 라이브러리 -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    <!-- 애니메이션 JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // 로딩구역 선언
-        window.addEventListener("load", ()=> {
-
-            // 페이드 애니메이션 라이브러리 초기화
-            AOS.init({
-    
-            });
-    
-            // 메인 2번째 마우스 움직임 애니메이션
-            let docStyle = document.documentElement.style;
-    
-            // setting CSS variables inside this JS where they 
-            // can be declaratively used inside the CSS file.
-            document.addEventListener('mousemove', function (e) {
-                docStyle.setProperty('--mouse-x', e.clientX);
-                docStyle.setProperty('--mouse-y', e.clientY);
-            });
-    
-            // 메인 3번째 음료 슬라이드
-            function chnDrink(drinkType) {
-                const drinkBg = document.querySelector('.img-moving');
-                const coffeeOn = document.querySelector('.menuBtn li:nth-child(1) input');
-                const juiceOn = document.querySelector('.menuBtn li:nth-child(2) input');
-                const dessertOn = document.querySelector('.menuBtn li:nth-child(3) input');
-                const chinoOn = document.querySelector('.menuBtn li:nth-child(4) input');
-    
-                switch (drinkType) {
-                    case 'coffee':
-                        drinkBg.style.background = 'transparent url("./img/drink/coffee.png") repeat-x left top';
-                        drinkBg.style.backgroundSize = '310rem auto';
-                        coffeeOn.style.background = 'var(--font-color-yellow)';
-                        juiceOn.style.background = '#fff';
-                        dessertOn.style.background = '#fff';
-                        chinoOn.style.background = '#fff';
-                        break;
-                    case 'juice':
-                        drinkBg.style.background = 'transparent url("./img/drink/juice.png") repeat-x left top';
-                        drinkBg.style.backgroundSize = '310rem auto';
-                        coffeeOn.style.background = '#fff';
-                        juiceOn.style.background = 'var(--font-color-yellow)';
-                        dessertOn.style.background = '#fff';
-                        chinoOn.style.background = '#fff';
-                        break;
-                    case 'dessert':
-                        drinkBg.style.background = 'transparent url("./img/drink/dessert.png") repeat-x left top';
-                        drinkBg.style.backgroundSize = '310rem auto';
-                        coffeeOn.style.background = '#fff';
-                        juiceOn.style.background = '#fff';
-                        dessertOn.style.background = 'var(--font-color-yellow)';
-                        chinoOn.style.background = '#fff';
-                        break;
-                    case 'chino':
-                        drinkBg.style.background = 'transparent url("./img/drink/chino.png") repeat-x left top';
-                        drinkBg.style.backgroundSize = '310rem auto';
-                        coffeeOn.style.background = '#fff';
-                        juiceOn.style.background = '#fff';
-                        dessertOn.style.background = '#fff';
-                        chinoOn.style.background = 'var(--font-color-yellow)';
-                        break;
-                }
-            }
-        });
-    </script>
+    <!-- 메인 JS -->
+    <script src="./js/AOS.js"></script>
+    <script src="./js/mainImg.js"></script>
+    <script src="./js/drink.js"></script>
 </head>
 
 <body>
-
     <!-- 상단 영역 -->
     <div id="wrap">
         <header id="top">
