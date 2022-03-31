@@ -18,7 +18,7 @@
 
     #cont {
         max-width: 100vw;
-        height: 170vh;
+        height: 200vh;
     }
 
     .tit_sub {
@@ -57,10 +57,12 @@
 
     .mlist ul>li {
         overflow: hidden;
+        margin: 0 min(1vw,9px);
+        /* 양쪽을 유동적으로 선택 */
     }
 
     .mlist img {
-        width: 40vw;
+        width: 178px;
         height: 100%;
     }
 
@@ -70,10 +72,11 @@
     }
 
     .moba_movtxt {
+        display: block;
         position: absolute;
         top: 0;
-        width: 40vw;
-        height: 200px;
+        width: 178px;
+        height: 255px;
         background-color: rgba(0, 0, 0, 0.7);
         /* 글자셋팅 */
         font-family: 'Noto Sans KR', sans-serif;
@@ -85,7 +88,7 @@
     }
 
     .moba_movtxt li {
-        transform: translate(20%, 150%);
+        transform: translate(40%, 200%);
         width: 105px;
         height: 40px;
         line-height: 38px;
@@ -101,15 +104,15 @@
     }
 
     .mlist li:nth-child(3) .moba_movtxt {
-        top: 290px;
+        top: 259px;
     }
 
     .mlist li:nth-child(4) .moba_movtxt {
-        top: 290px;
+        top: 259px;
     }
 
     .mlist li:nth-child(5) .moba_movtxt {
-        top: 580px;
+        top: 518px;
     }
 
     .mlist ul>li:hover .moba_movtxt {
