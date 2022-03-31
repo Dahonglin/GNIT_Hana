@@ -169,7 +169,7 @@ h1.tit{
 /* 2-2. 예고편 선택메뉴 */
 .mlist{
     position: absolute;
-    bottom: 3vh;
+    bottom: 1.5vh;
     left: 50%;
     /* 부모는? #cont */
     transform: translateX(-50%);
