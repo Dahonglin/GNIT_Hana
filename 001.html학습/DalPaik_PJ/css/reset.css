@@ -14,6 +14,7 @@ html,body{
     width: 100%;
 }
 body{
+    background-color: rgb(251, 248, 239);
     overflow-x: hidden;
     /* 가로스크롤 없앰은 body만 준다! */
 }
