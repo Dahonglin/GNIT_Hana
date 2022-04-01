@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* 보그 PJ 공통 CSS - common.css */
+
+/* 상단영역 */
+
+.top {
+    min-height: 206px;
+}
+/* 하단 영역 */
+.info {
+    min-height: 285px;
+}
