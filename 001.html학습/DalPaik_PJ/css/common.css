@@ -48,7 +48,7 @@
     text-decoration: none;
     font-family: var(--font-family-notoSan);
     color: var(--font-color-navy);
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid rgb(251, 248, 239);
 }
 
 .topMenu>ul>li:hover>a {
