@@ -145,7 +145,6 @@
 
 /* 하단 로고 // 관련 링크 */
 .btMenu {
-    width: 144rem;
     height: 30rem;
     display: flex;
     justify-content: space-between;

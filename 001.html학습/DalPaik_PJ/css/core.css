@@ -44,7 +44,8 @@ font-family: 'Noto Sans KR', sans-serif;
 
 /* 상단, 하단 크기 // 중앙 정렬 */
 #top,
-#bottom {
+#bottom,
+.btMenu {
     margin: 0 auto;
-    width: 144rem;
+    max-width: 144rem;
 }
