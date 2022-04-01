@@ -123,13 +123,8 @@
     .movtxt {
         width: 28vw;
         /* 한줄에 3개 오도록 크기조정 */
-        font-size: 4vw;
+        font-size: 3vw;
     }
-
-    .movtxt li:first-child {
-        font-size: 4.2vw;
-    }
-
 }
 
 /************** 600px 이하 끝 **************/

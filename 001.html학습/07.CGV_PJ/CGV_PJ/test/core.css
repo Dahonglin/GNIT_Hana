@@ -3,12 +3,8 @@
 /* 웹폰트, 공용클래스 */
 
 /*********** 1. 웹폰트 : CDN ***********/
-/* Cute Font, Jua, Audiowide 체 */
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cute+Font&family=Jua&display=swap');
-/* 
-    font-family: 'Audiowide', cursive;
-    font-family: 'Cute Font', cursive;
-    font-family: 'Jua', sans-serif;
+/* font-family: 'Noto Sans KR', sans-serif; 체 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');/* 
 */
 
 /************* 2. 공통 class *************/
@@ -41,5 +37,11 @@
     overflow: hidden;
 }
 
+/* a 태그 확장 */
+.a_ex {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 
