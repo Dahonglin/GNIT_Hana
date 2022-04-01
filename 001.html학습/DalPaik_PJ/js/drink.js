@@ -83,6 +83,7 @@ window.addEventListener("load", () => {
                         chinoOn.style.background = data[j];
                         break;
                 }
+
             }
         }
     }
