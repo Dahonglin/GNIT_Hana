@@ -10,6 +10,7 @@ body {
     height: 100%;
     background: url(../images/intro.jpg)no-repeat left top/cover;
 }
+
 /* 
 body * {
     outline: 1px solid lime;
@@ -27,42 +28,30 @@ body * {
     width: 400px;
     width: 400px;
     height: 200px;
-    background:url(../images/logo_neon_no.png)no-repeat left top/cover;
+    background: url(../images/logo_neon_no.png)no-repeat left top/cover;
     margin-bottom: 100px;
 }
 
 .logo:hover {
-    background:url(../images/logo_neon.png)no-repeat left top/cover;
+    background: url(../images/logo_neon.png)no-repeat left top/cover;
     animation: logoAni 4s ease-in infinite alternate;
 }
 
 @keyframes logoAni {
-    0%{
-        background:url(../images/logo_neon_no.png)no-repeat left top/cover;
+
+    0%,
+    20%,
+    40%,
+    57%,
+    100% {
+        background: url(../images/logo_neon_no.png)no-repeat left top/cover;
     }
-    10%{
-        background:url(../images/logo_neon.png)no-repeat left top/cover;
-    }
-    20%{
-        background:url(../images/logo_neon_no.png)no-repeat left top/cover;
-    }
-    25%{
-        background:url(../images/logo_neon.png)no-repeat left top/cover;
-    }
-    40%{
-        background:url(../images/logo_neon_no.png)no-repeat left top/cover;
-    }
-    50%{
-        background:url(../images/logo_neon.png)no-repeat left top/cover;
-    }
-    57%{
-        background:url(../images/logo_neon_no.png)no-repeat left top/cover;
-    }
-    79%{
-        background:url(../images/logo_neon.png)no-repeat left top/cover;
-    }
-    100%{
-        background:url(../images/logo_neon_no.png)no-repeat left top/cover;
+
+    10%,
+    25%,
+    50%,
+    79% {
+        background: url(../images/logo_neon.png)no-repeat left top/cover;
     }
 }
 
@@ -84,41 +73,48 @@ body * {
 }
 
 @keyframes subTitAni {
-    100%{
+    100% {
         opacity: 1;
         top: 0%;
     }
 }
 
-.subtit div:nth-child(2){
+.subtit div:nth-child(2) {
     animation-delay: .1s;
 }
 
-.subtit div:nth-child(3){
+.subtit div:nth-child(3) {
     animation-delay: .2s;
 }
 
-.subtit div:nth-child(4){
+.subtit div:nth-child(4) {
     animation-delay: .3s;
 }
-.subtit div:nth-child(5){
+
+.subtit div:nth-child(5) {
     animation-delay: .4s;
 }
-.subtit div:nth-child(6){
+
+.subtit div:nth-child(6) {
     animation-delay: .5s;
 }
-.subtit div:nth-child(7){
+
+.subtit div:nth-child(7) {
     animation-delay: .6s;
 }
-.subtit div:nth-child(8){
+
+.subtit div:nth-child(8) {
     animation-delay: .7s;
 }
-.subtit div:nth-child(9){
+
+.subtit div:nth-child(9) {
     animation-delay: .8s;
 }
-.subtit div:nth-child(10){
+
+.subtit div:nth-child(10) {
     animation-delay: .9s;
 }
-.subtit div:nth-child(11){
+
+.subtit div:nth-child(11) {
     animation-delay: 1s;
 }

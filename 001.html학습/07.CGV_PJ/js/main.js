@@ -22,6 +22,14 @@ function chgMV(mvid){ // mvid - 영화아이디값 전달변수
 /////// 로딩구역 ///////////////////////////
 window.addEventListener("load",() => {
 
+    // 햄버거 버튼
+    document.querySelector('.ham').addEventListener('click', addClassOn);
+    const glist = document.querySelector('.glist');
+
+    function addClassOn() {
+        glist.classList.toggle('on');
+    }
+
     console.log("로딩완료!");
     
     
@@ -30,7 +38,6 @@ window.addEventListener("load",() => {
         "듄":"-5Dc8EMVYBo",
         "유체이탈자":"_fuaoomS7zs",
         "이터널스":"BdkSkI61aGo",
-        "연애 빠진 로맨스":"dWEQjU3GCE0",
         "프렌치 디스패치":"Y1_Ujpsn1Jc",
         "스파이더맨:노웨이홈":"yFZh-Wqi7RI"
     }; ///// mcode객체 ///////

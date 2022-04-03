@@ -4,142 +4,13 @@
 /* 외부CSS합치기 */
 @import url(reset.css);
 @import url(core.css);
+@import url(common.css);
 
+/* 메인배경 */
 body{
     background-color: #000;
     background: url(../images/bg1.jpg) no-repeat;
     background-size: 100% 300%;
-}
-
-/* 공사중표시 */
-body *{
-    /* outline: 2px dotted lime; */
-}
-
-/* 레이아웃 공통 class */
-.part{
-    max-width: 1000px;
-    /* 최대 1200px, 이하일땐 auto */
-    margin: 0 auto;
-    /* 마영오! - 가로중앙 */
-}
-
-/******************* 1. 상단영역 *******************/
-#top{
-    display: flex;
-    position: relative;
-    z-index: 999;
-    height: 180px;
-    width: 100%;
-    background-color: #fff;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* 1-1. 페이지 타이틀 */
-h1.tit{
-    display: flex;
-    padding-top: 35px;
-    height: 100%;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.logo {
-    width: 150px;
-    height: 70px;
-    background: url(../images/logo_cgv.png) no-repeat;
-    background-position: -15px -55px;
-    background-size: 120%;
-}
-
-/* 타이틀 글루우 효과 애니메이션 키프레임 */
-@keyframes titAni {
-    to{
-        text-shadow: 0 0 12px aquamarine;
-    }
-} /* 키프레임 */
-
-/* 1-2. 전체메뉴(GNb) */
-.gnb{
-    margin: 0 auto;
-    margin-top: 40px;
-}
-/* GNB ul */
-.glist{
-    display: flex;
-    /* 플렉스박스 */
-}
-
-.glist a{
-    display: block;
-    width: 100%;
-    height: 30px;
-}
-
-.glist a:hover{
-    color:#fb4357;
-}
-/* GNB li 리스트 */
-.glist>li{
-    padding: 0 20px;
-    padding-bottom: 0px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-
-}
-/* GNB 서브메뉴 */
-.smenu{
-    position: absolute;
-    /* 서브메뉴숨기기 */
-    z-index: 1;
-    height: 0;
-    overflow: hidden;
-    top: 179px;
-    margin-top: 10px;
-    /* 트랜지션 */
-    transition: height .3s ease-out;
-}
-/* 상위메뉴 li에 마우스 오버시 하위메뉴 보이기 */
-.glist>li:hover .smenu{
-    display:flex;
-    height: 30px;
-}
-
-
-.smenu ol {
-    height: 30px;
-    margin-top: 5px;
-}
-
-.smenu>ol>li{
-    float: left;
-    margin-right: 20px;
-}
-
-/* 하위메뉴가 있는 상위 li요소에 마우스 오버시
-가상요소로 페이지 끝까지 차지하는 흰색배경 만들기  
-클래스 sm이 부여된 li만 적용된다!*/
-.gnb>ul>li.sm::after {
-    content: '';
-    display: block;
-    /* div와 비슷! */
-    position: absolute;
-    top: 180px;
-    /* 겉박스 하단보더 1px보이게 1px더함! */
-    left: 0;
-    /* 부모는? 보이는 화면 */
-    width: 100%;
-    /* 앱솔루트 크기에 %사용시 부모를 기준함! 
-    보이는 화면이 부모! */
-    height: 0px;
-    background-color: #fff;
-    transition: height .4s ease-out;
-}
-
-.gnb>ul>li.sm:hover::after {
-    height: 50px;
-    border-bottom: 1px solid #CCC;
 }
 
 
@@ -147,16 +18,25 @@ h1.tit{
 #cont{
     position: relative;
     /* 부모자격 */
-    height: 800px;
+    /* height: 788px; 
+    -> 비율유지위해 높이값을 없앰! */
+}
+/* 메인 상영관 이미지와 같은 비율로 패딩탑밀기 설정 */
+/* #cont는 이미 .rbx때문에 가상요소 before가 있음! */
+#cont::before{
+    padding-top: 85%;
 }
 /* 2-1. 스크린 박스 */
+/* 비율유지박스 자식으로 위치와 크기를 %로 설정하면
+부모를 따라 자연스럽게 비율유지가 된다!!! */
 #screen{
     position: absolute;
-    top: 20px;
-    left: 0px;
+    top: 2%;
+    /* 가운데 */
+    left: 5%;
     /* 부모는? #cont */
-    width: 1000px;
-    height: 500px;
+    width: 90%;
+    height: 55%;
     background-color: #000;
 }
 /* 스크린 아이프레임 */
@@ -169,71 +49,65 @@ h1.tit{
 /* 2-2. 예고편 선택메뉴 */
 .mlist{
     position: absolute;
-    bottom: 1.5vh;
+    bottom: 7%;/* 퍼센트로 변경! */
     left: 50%;
     /* 부모는? #cont */
     transform: translateX(-50%);
     /* x축 중앙이동 -> 정중앙 */
-    overflow: hidden;
-    /* 영화설명 숨기기 
-    - 부모자격이 있는 요소가 숨길수 있음! */
+
 }
 /* ul 플렉스박스 */
 .mlist ul{
     display: flex;
 }
-
 /* 각 리스트 */
 .mlist ul>li{
+    position: relative;
+    /* 부모자격 */
+    overflow: hidden;
+    /* 영화설명 숨기기 
+    - 부모자격이 있는 요소가 숨길수 있음! */
     margin: 0 min(1vw,9px);
-    /* 양쪽을 유동적으로 선택 */
+    /* 양쪽마진만 9px과 1vw중 작은것! */
 }
 
 .mlist img{
     width: min(15vw,178px);
     /* min(유동사이즈,특정사이즈) 작은쪽선택
     -> 최대크기 지정의 효과! */
-    /* height: 140px; 
-    -> 가로크기만 줘서 비율유지함! */
+    /* -> 가로크기만 줘서 비율유지함! */
 }
 
 /* 영화정보박스 */
 .movtxt{
     position: absolute;
-    /* 부모는? .mlist */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    opacity:0;
+    /* 부모는? .mlist ul>li*/
     width: min(15vw,178px);
-    height:  100%;
+    /* 이미지 가로크기와 똑같이 잡는다! */
+    height: 100%;
+
     background-color: rgba(0, 0, 0, 0.7);
+
     /* 글자셋팅 */
     font-family: 'Noto Sans KR', sans-serif;
     font-size: min(1.2vw,14px);
     line-height: 2;
     text-align: center;
-    /* 트랜지션: 속시이지 */
-    transition: top .4s ease-out;
-}
-.mlist ul>li:hover .movtxt{
-    top: 0;
-}
 
-.moba_movtxt {
-    display: none;
-}
-
-.movtxt {
-    display: flex;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 15px;
-
+    /* 트랜지션: 속시이지 - 지연시간 0.3초 */
+    transition: opacity .1s ease-in;
 }
 
 .movtxt li {
-    width: 105px;
-    height: 40px;
-    line-height: 38px;
+    width: min(18vw,105px);
+    height: min(4.3vh,40px);
+    line-height: min(4vh,40px);
     background: #fff;
     border: 2px solid #000;
     box-sizing: border-box;
@@ -245,99 +119,8 @@ h1.tit{
     margin-bottom: 10px;
 }
 
-
-/******************* 3. 하단영역 *******************/
-#info{
-    position: relative;
-    /* 부모자격 - .sns */
-    height: 140px;
-}
-/* 3-1.회사정보 */
-#info address{
-    color: #c3c3c3;
-    font-style: normal;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 13px;
-    line-height: 20px;
-
-    /* 안쪽여백 */
-    padding-top: 20px;
-    padding-left: 20px;
-}
-/* 하단로고 이미지 */
-#info img{
-    float: left;
-    /* 이미지 자신은 왼쪽, 글자는 오른쪽에 흐르게함 */
-    margin-right: 20px;
+/* 부모li에 마우스 오버시 설명박스 올라오기 */
+.mlist ul>li:hover .movtxt{
+    opacity:1;
 }
 
-.footMenu {
-    width: 100%;
-    float: left;
-    padding: 20px 0 20px 0;
-}
-
-.footMenu ol {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.footMenu ol>li {
-    margin-right: 20px;
-}
-
-.footMenu ol>li:last-child{
-    margin-right: 0px;
-}
-
-.footMenu a{
-    color: #fff;
-    font-size: 12px;
-}
-
-/* 3-2. sns박스 */
-ul.sns{
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    /* 부모는? #info */
-
-    display: flex;
-    /* 플렉스박스 */
-
-}
-.sns li{
-    width: 34px;
-    height: 34px;
-    background: url(../images/sprites_logo.png) no-repeat;
-    /* outline: 1px solid lime; */
-    margin: 0 2px;
-    
-    filter: grayscale(100%);
-    /* 필터: 흑백처리 */
-}
-/* 오버시 칼라 */
-.sns li:hover{
-    filter: grayscale(0%);
-}
-
-/* 배경위치 */
-/* 페이스북 */
-.sns li:first-child{
-    background-position: -510px -429px;
-}
-/* 트위터 */
-.sns li:nth-child(2){
-    background-position: -552px -429px;
-}
-/* 인스타그램 */
-.sns li:last-child{
-    background-position: -594px -429px;
-}
-/* sns a링크 확장 */
-.sns a{
-    display: block;
-    width: 100%;
-    height: 100%;
-}

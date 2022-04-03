@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV에 오신것을 환영합니다!</title>
     <link rel="stylesheet" href="css/main.css">
+    <!-- 미디어쿼리 아래에 넣음! -->
     <link rel="stylesheet" href="css/media.css">
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -126,11 +127,15 @@
                     </li>
                 </ul>
             </nav>
+            <!-- 모바일용 햄버거 버튼 -->
+            <button class="ham"></button>
         </header>
     </div>
     <!-- 2. 메인영역 -->
     <div>
-        <main id="cont" class="part">
+        <!-- 비율유지클래스 적용 .rbx -->
+        <main id="cont" class="part rbx">
+            <!-- 비율유지 속박스 .rbxIn -->
             <div class="rbxIn">
                 <!-- 2-1.스크린 박스 -->
                 <div id="screen">
@@ -158,70 +163,50 @@
                 <nav class="mlist">
                     <ul>
                         <li>
-                            <a href="#" onclick="chgMV('-5Dc8EMVYBo')">
+                            <a href="#">
                                 <img src="./images/m1.jpg" alt="듄">
                                 <!-- 영화정보 -->
                                 <ol class="movtxt">
                                     <li>영상보기</li>
                                     <li>예매하기</li>
                                 </ol>
-                                <ol class="moba_movtxt">
-                                    <li>영상보기</li>
-                                    <li>예매하기</li>
-                                </ol>
                             </a>
                         </li>
                         <li>
-                            <a href="#" onclick="chgMV('_fuaoomS7zs')">
+                            <a href="#">
                                 <img src="./images/m2.jpg" alt="유체이탈자">
                                 <!-- 영화정보 -->
                                 <ol class="movtxt">
                                     <li>영상보기</li>
                                     <li>예매하기</li>
                                 </ol>
-                                <ol class="moba_movtxt">
-                                    <li>영상보기</li>
-                                    <li>예매하기</li>
-                                </ol>
                             </a>
                         </li>
                         <li>
-                            <a href="#" onclick="chgMV('BdkSkI61aGo')">
+                            <a href="#">
                                 <img src="./images/m3.jpg" alt="이터널스">
                                 <!-- 영화정보 -->
                                 <ol class="movtxt">
                                     <li>영상보기</li>
                                     <li>예매하기</li>
                                 </ol>
-                                <ol class="moba_movtxt">
-                                    <li>영상보기</li>
-                                    <li>예매하기</li>
-                                </ol>
                             </a>
                         </li>
                         <li>
-                            <a href="#" onclick="chgMV('Y1_Ujpsn1Jc')">
+                            <a href="#">
                                 <img src="./images/m5.jpg" alt="프렌치 디스패치">
                                 <!-- 영화정보 -->
                                 <ol class="movtxt">
                                     <li>영상보기</li>
                                     <li>예매하기</li>
                                 </ol>
-                                <ol class="moba_movtxt">
-                                    <li>영상보기</li>
-                                    <li>예매하기</li>
-                                </ol>
                             </a>
                         </li>
                         <li>
-                            <a href="#" onclick="chgMV('yFZh-Wqi7RI')">
+                            <a href="#">
                                 <img src="./images/m6.jpg" alt="스파이더맨:노웨이홈">
                                 <!-- 영화정보 -->
                                 <ol class="movtxt">
-                                    <li>영상보기</li>
-                                    <li>예매하기</li>
-                                </ol>
-                                <ol class="moba_movtxt">
                                     <li>영상보기</li>
                                     <li>예매하기</li>
                                 </ol>
@@ -286,6 +271,7 @@
             </ul>
         </footer>
     </div>
+
 </body>
 
 </html>
