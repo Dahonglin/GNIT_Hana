@@ -22,6 +22,29 @@
     height: 7rem;
 }
 
+/* 언어별 아이콘 */
+.lang {
+    /* 빈공간 모두 채움 */
+    margin-top: 2%;
+    flex-grow: 1;
+
+}
+
+.lang li {
+    float: left;
+    padding-left: 1.2rem;
+}
+
+.lang a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--font-color-navy);
+}
+
+.lang a:hover{
+   opacity: .5;
+}
+
 /* 상단 GNB */
 .topMenu>ul {
     display: flex;
@@ -71,6 +94,7 @@
 .smenu>ol {
     margin-top: 3rem;
 }
+
 .smenu>ol>li {
     margin-top: 2rem;
 }
@@ -84,7 +108,7 @@
     text-decoration: none;
 }
 
-.smenu a:hover{
+.smenu a:hover {
     text-decoration: underline;
 }
 
