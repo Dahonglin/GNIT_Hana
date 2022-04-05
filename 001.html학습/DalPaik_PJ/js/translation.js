@@ -8,7 +8,6 @@ $.i18n.init({
         namespaces: ['gnb', 'gnbSub', 'ban', 'main2', 'main3', 'main3Btn', 'main4'],
         defaultNs: 'gnb'
     },
-    //resGetPath: 'js/locales/translation.json'
     resStore: {
         "ko-KR": {
             // 메인 상단 메뉴
@@ -135,11 +134,11 @@ $.i18n.init({
             }
         }
     }
-}, function () {
+}, () => {
     $('.translation').i18n();
 });
 
-let changeLang = function (lang) {
+const changeLang = (lang) => {
     $.i18n.setLng(lang);
     $('.translation').i18n();
 }
