@@ -13,7 +13,7 @@ window.addEventListener("load", () => {
 
     // 버튼들 선택자 저장
     // 배열 형태로 저장해서 가져옴.
-    let drinkBtn = document.querySelectorAll(".menuBtn li button");
+    let drinkBtn = document.querySelectorAll(".menuBtn li");
 
     // 초기화(클래스지우기)
     const initBtn = () => {
@@ -24,9 +24,8 @@ window.addEventListener("load", () => {
     for (let i of drinkBtn) {
         // drinkName에 버튼에 설정 되어 있는 이름을 할당함.
         // drinkName으로 가져온 버튼에 저장 된 객체 데이터들을 저장함.
-        let drinkName = i.value;
+        let drinkName = i.innerText;
         // 버튼에 이름 목록 뿌려줌
-        i.innerText = drinkName;
         i.onclick = () => {
 
             // 버튼 초기화

@@ -83,7 +83,7 @@
 .smenu {
     position: absolute;
     /* 서브메뉴숨기기 */
-    z-index: 3;
+    z-index: 6;
     height: 0;
     overflow: hidden;
     /* 트랜지션 선언_밑에 오버 시 height값 조정 */
@@ -118,6 +118,7 @@
     /* div처럼 사용 */
     display: block;
     position: absolute;
+    z-index: 5;
     top: 122px;
     left: 0;
     width: 100%;

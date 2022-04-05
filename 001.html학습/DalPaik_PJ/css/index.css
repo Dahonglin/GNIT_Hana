@@ -225,8 +225,8 @@
     cursor: pointer;
 }
 
-.menuBtn li button:hover,
-.menuBtn li button.on  {
+.menuBtn li:hover  button,
+.menuBtn li.on  button{
     background: var(--font-color-yellow);
 }
 

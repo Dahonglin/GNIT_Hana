@@ -6,17 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>빽다방</title>
+
     <!-- 메인CSS -->
     <link rel="stylesheet" href="./css/index.css">
     <!-- 미디어쿼리 -->
     <link rel="stylesheet" href="./css/media.css">
 
     <!-- Fade 애니메이션 라이브러리 -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <!-- 애니메이션 JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- 메인 JS -->
+    
+    <!-- JQuery (i18n) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+    </script>
+    <!-- i18n 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.9.0/i18next.min.js"></script>
+    <!-- 국제화 언어 변경 (i18n) -->
+    <script src="./js/translation.js"></script>
 
+    <!-- 메인 JS -->
     <!-- 텍스트 애니메이션 -->
     <script src="./js/AOS.js"></script>
     <!-- 메인2번 원형 3D -->
@@ -25,62 +35,63 @@
     <script src="./js/drink.js"></script>
     <!-- 하단 패밀리링크 -->
     <script src="./js/familylink.js"></script>
+
 </head>
 
-<body>
+<!-- 번역 부분 (사이트 전체) -->
+<body class="translation">
     <!-- 상단 영역 -->
     <div id="wrap">
         <header id="top">
             <!-- 상단 로고 -->
             <h1 class="logo"><a href="#"><img src="./img/paikLogo.png" alt="빽다방 로고"></a></h1>
             <!-- 언어 -->
-            <!-- <h2 class="lang">
+            <h2 class="lang">
                 <ol>
-                    <li><a href="#">🇰🇷</a></li>
-                    <li><a href="#">🇺🇸</a></li>
-                    <li><a href="#">🇨🇳</a></li>
+                    <li><a href="javascript:void(0);" onclick="changeLang('ko-KR');">🇰🇷</a></li>
+                    <li><a href="javascript:void(0);" onclick="changeLang('en-US');">🇺🇸</a></li>
                 </ol>
-            </h2> -->
+            </h2>
             <!-- 탑 gnb메뉴 -->
             <nav class="topMenu">
                 <ul>
-                    <li class="sm"><a href="#" class="a_ex">빽다방</a>
+                    <li class="sm"><a href="#" class="a_ex" data-i18n="gnb:paikdabang">빽다방</a>
                         <!-- 서브메뉴 -->
                         <div class="smenu">
                             <ol>
-                                <li><a href="#">CEO 인사말</a></li>
-                                <li><a href="#">빽다방 소개</a></li>
-                                <li><a href="#">커피 이야기</a></li>
+                                <li><a href="#" data-i18n="gnbSub:ceo">CEO 인사말</a></li>
+                                <li><a href="#" data-i18n="gnbSub:info">빽다방 소개</a></li>
+                                <li><a href="#" data-i18n="gnbSub:story">커피 이야기</a></li>
                             </ol>
                         </div>
                     </li>
-                    <li class="sm"><a href="#" class="a_ex">메뉴·매장</a>
+                    <li class="sm"><a href="#" class="a_ex" data-i18n="gnb:menu">메뉴·매장</a>
                         <!-- 서브메뉴 -->
                         <div class="smenu">
                             <ol>
-                                <li><a href="#">메뉴 보기</a></li>
-                                <li><a href="#">매장 찾기</a></li>
-                                <li><a href="#">커피 클래스</a></li>
+                                <li><a href="#" data-i18n="gnbSub:subMenu">메뉴 보기</a></li>
+                                <li><a href="#" data-i18n="gnbSub:search">매장 찾기</a></li>
+                                <li><a href="#" data-i18n="gnbSub:class">커피 클래스</a></li>
                             </ol>
                         </div>
                     </li>
-                    <li class="sm"><a href="#" class="a_ex">창업안내</a>
+                    <li class="sm"><a href="#" class="a_ex" data-i18n="gnb:franchise">창업안내</a>
                         <!-- 서브메뉴 -->
                         <div class="smenu">
                             <ol>
-                                <li><a href="#">가맹 정보</a></li>
-                                <li><a href="#">창업 상담</a></li>
-                                <li><a href="#">관련 절차</a></li>
+                                <li><a href="#" data-i18n="gnbSub:franInfo">가맹 정보</a></li>
+                                <li><a href="#" data-i18n="gnbSub:franSum">창업 상담</a></li>
+                                <li><a href="#" data-i18n="gnbSub:guide">관련 절차</a></li>
                             </ol>
                         </div>
                     </li>
-                    <li class="sm"><a href="#" class="a_ex">새로운 소식</a>
+                    <li class="sm"><a href="#" class="a_ex" data-i18n="gnb:news">새로운 소식</a>
                         <!-- 서브메뉴 -->
                         <div class="smenu">
                             <ol>
-                                <li><a href="#">새소식</a></li>
-                                <li><a href="#">이벤트</a></li>
-                                <li><a href="#">우수점포</a></li>
+                                <li><a href="#" data-i18n="gnbSub:subNews">새소식</a></li>
+                                <li><a href="#" data-i18n="gnbSub:event">이벤트</a></li>
+                                <li><a href="#" data-i18n="gnbSub:goodCS">우수점포</a></li>
                             </ol>
                         </div>
                     </li>
@@ -89,13 +100,12 @@
             <!-- fixed 우측 배너 -->
             <div class="fixedBan">
                 <a href="#" class="a_ex">
-                    <span class="ir">신제품 출시</span>
-                    <div class="fixScr">신제품 출시</div>
+                    <span class="ir" data-i18n="ban:fixed">신제품 출시</span>
+                    <div class="fixScr" data-i18n="ban:fixed">신제품 출시</div>
                 </a>
             </div>
         </header>
     </div>
-
     <!-- 메인 영역 -->
     <div id="container">
         <main id="main">
@@ -115,12 +125,13 @@
             <!-- 메인 컨텐츠 2번 -->
             <section class="cont2">
                 <h2>
-                    <span data-aos="fade-up" data-aos-duration="700">친구 같은 브랜드의 진정한 가치</span>
+                    <span data-aos="fade-up" data-aos-duration="700" data-i18n="main2:main2txt1">친구 같은 브랜드의 진정한
+                        가치</span>
                     <span data-aos="fade-up" data-aos-duration="800">Paik's Coffee Life begins</span>
                     <span data-aos="fade-up" data-aos-duration="900">with imagination</span>
                     <span data-aos="fade-up" data-aos-duration="1000">
-                        <p>합리적인 커피 문화를 만들어 갑니다.</p>
-                        <p>호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다.</p>
+                        <p data-i18n="main2:main2txt2">합리적인 커피 문화를 만들어 갑니다.</p>
+                        <p data-i18n="main2:main2txt3">호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다.</p>
                     </span>
                 </h2>
                 <div class="circleBg">
@@ -132,18 +143,20 @@
             <!-- 메인 컨텐츠 3번 -->
             <section class="cont3">
                 <h2>
-                    <span data-aos="fade-in" data-aos-duration="700">빽다방이 선사하는 다채로운 맛과 향기</span>
+                    <span data-aos="fade-in" data-aos-duration="700" data-i18n="main3:main3txt1">빽다방이 선사하는 다채로운 맛과
+                        향기</span>
                     <span data-aos="fade-in" data-aos-duration="1000">
-                        <p>커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께</p>
-                        <p>비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다.</p>
+                        <p data-i18n="main3:main3txt2">커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께</p>
+                        <p data-i18n="main3:main3txt3">비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다.</p>
                     </span>
                 </h2>
                 <div class="menuBtn">
                     <ul>
-                        <li><button type="button" value="커피" class="on"></button></li>
-                        <li><button type="button" value="음료"></button></li>
-                        <li><button type="button" value="아이스크림/디저트"></button></li>
-                        <li><button type="button" value="빽스치노"></button></li>
+                        <li class="on"><button type="button" value="커피" data-i18n="main3Btn:main3Btn1">커피</button></li>
+                        <li><button type="button" value="음료" data-i18n="main3Btn:main3Btn2">음료</button></li>
+                        <li><button type="button" value="아이스크림/디저트" data-i18n="main3Btn:main3Btn3">아이스크림/디저트</button>
+                        </li>
+                        <li><button type="button" value="빽스치노" data-i18n="main3Btn:main3Btn4">빽스치노</button></li>
                     </ul>
                 </div>
                 <!-- 음료수 슬라이더 -->
@@ -157,22 +170,21 @@
             <section class="cont4">
                 <h2>
                     <span data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
-                        <p>언제나 친구처럼 친근한 창업</p>
-                        <p>점주 만족도 최상인 카페 브랜드 빽다방</p>
+                        <p data-i18n="main4:main4txt1">언제나 친구처럼 친근한 창업</p>
+                        <p data-i18n="main4:main4txt2">점주 만족도 최상인 카페 브랜드 빽다방</p>
                     </span>
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-offset="0">
-                        <p>빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해</p>
-                        <p>카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다.</p>
+                        <p data-i18n="main4:main4txt3">빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해</p>
+                        <p data-i18n="main4:main4txt4">카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다.</p>
                     </span>
                     <span data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
-                        <div class="shopBtn"><a href="#" class="a_ex">가맹점 개설 안내</a></div>
+                        <div class="shopBtn"><a href="#" class="a_ex" data-i18n="main4:main4txt5">가맹점 개설 안내</a></div>
                     </span>
                 </h2>
             </section>
     </div>
     </main>
     </div>
-
     <!-- 하단 영역 -->
     <div id="bottom">
         <footer>
@@ -188,7 +200,6 @@
                         <a href="#" class="a_ex istaIcon">
                             <span class="ir">빽다방 페이스북 바로가기</span>
                         </a>
-
                     </div>
                 </div>
                 <!-- 관련 링크 -->
@@ -211,10 +222,8 @@
                         <li><a href="#">서비스 이용약관</a></li>
                         <li><a href="#">위치기반서비스 이용약관</a></li>
                     </ul>
-
                 </div>
             </div>
-
             <div class="btInfo">
                 <!-- 관련사 링크 -->
                 <div class="familyLink">
