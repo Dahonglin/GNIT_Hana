@@ -2,7 +2,7 @@ $.i18n.init({
     // 기본 언어 한글 세팅
     lng: 'ko-KR',
     debug: true,
-    useLocalStorage: false,
+    useLocalStorage: true,
     localStorageExpirationTime: 86400000,
     ns: {
         namespaces: ['gnb', 'gnbSub', 'ban', 'main2', 'main3', 'main3Btn', 'main4'],
