@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>다국어 메뉴(객체의 활용)</title>
+    <style>
+        html,
+        body,
+        h1,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*탑영역*/
+        #top {
+            position: relative;
+            /*부모자격*/
+            width: 1000px;
+            margin: 0 auto;
+            /*outline: 1px dashed red;*/
+        }
+
+        /*로고*/
+        #logo {
+            text-align: center;
+        }
+
+        #logo img {
+            height: 40px;
+            margin-top: 50px;
+        }
+
+        /*선택박스*/
+        .sel {
+            position: absolute;
+            right: 0;
+        }
+
+        /*GNB메뉴*/
+        #gnb {
+            width: 1000px;
+            margin-top: 30px;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        #gnb ul {
+            list-style: none;
+            /*블릿없앰*/
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        #gnb ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #gnb li {
+            float: left;
+            width: 200px;
+        }
+
+        #gnb a {
+            display: block;
+            width: 100%;
+            color: #333;
+            text-decoration: none;
+            text-align: center;
+            font: bold 32px/80px Verdana, "맑은 고딕";
+        }
+
+        #gnb a:hover {
+            color: #f00;
+            text-decoration: overline;
+        }
+
+        /*컨텐츠 영역*/
+        #cont {
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        #cont img {
+            width: 800px;
+        }
+
+        /*회사정보*/
+        #info {
+            width: 1000px;
+            margin: 10px auto;
+            border: 2px solid #ccc;
+            color: #333;
+            text-align: center;
+            font: bold 18px/80px Verdana, "맑은 고딕";
+        }
+
+        #info address {
+            font-style: normal;
+            /*주소요소 기본 이탤릭 해제*/
+        }
+
+        option {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        ///// 전역변수 구역 ///////
+        // 언어별 메뉴 글자 셋팅하기 ///
+        var lang = {
+            //한국어
+            "ko": {
+                "메뉴1": ["빽다방", "CEO 인사말", "빽다방 소개","커피 이야기"],
+                "메뉴2": ["메뉴·매장", "메뉴 보기", "매장 찾기","커피 클래스"]
+            },
+            //영어
+            "en": {
+                "메뉴1": ["Paik's Coffee", "aaa", "bbb","ccc"],
+                "메뉴2": ["Menu·Store", "aaa", "bbb","ccc"]
+            }
+
+        }; ///////// lang 객체 ///////
+
+        ////////////// 로드구역 ////////////////////////
+        window.addEventListener("load", () => {
+
+            console.log("로딩완료!");
+
+            // 대상선정
+            // (1) 이벤트 대상: .sel
+            let sel = document.querySelectorAll(".lang option");
+            // (2) 변경 대상: GNB메뉴
+            let gnb =  document.querySelectorAll(".topMenu .sm");
+            for (let i =0; i<gnb.length;i++){
+                gnb[i].classList.add('sm'+(i+1));
+            }
+
+            let gnb1 = document.querySelectorAll(".topMenu .sm1 a");
+            let gnb2 = document.querySelectorAll(".topMenu .sm2 a");
+            let gnb3 = document.querySelectorAll(".topMenu .sm3 a");
+            let gnb4 = document.querySelectorAll(".topMenu .sm4 a");
+
+            // (4) 변경 대상: 하단 회사정보 -> #info address
+            let addr = document.querySelector("#info address");
+            ////////////////////////////////////////////////
+            // 1. 선택박스 선택변경시 change이벤트에 따라 변경
+            // 이벤트 대상: .sel
+            // 이벤트 종류: change
+            // 변경대상: 메뉴, 메인이미지, 하단정보
+            /////////////////////////////////////////////////
+            for (let x of sel) {
+                x.onclick = () => {
+                    // 1. 선택 option value 값 읽어오기
+                    // 화살표함수에서는 this대신 event.currentTarget
+                    let opt = event.currentTarget.value;
+                    console.log("변경!", opt);
+
+                    // 2. 언어코드에 따른 객체 데이터 읽어오기
+                    let data = lang[opt];
+                    console.log("데이터:", data);
+
+                    // 3. "메뉴" 데이터에 따른 메뉴 셋팅하기
+                    // 배열값이므로 forEach문 사용!
+                    // 배열값 대상: data["메뉴"]
+                    data["메뉴1"].forEach((val, idx) => gnb1[idx].innerText = val); //////// forEach /////////
+                    data["메뉴2"].forEach((val, idx) => gnb2[idx].innerText = val); //////// forEach /////////
+
+                }; ///////// change 함수 /////////////////
+            }
+
+
+
+
+
+        }); ////////// 로드구역 ////////////////////////
+    </script>
+
+
+</head>
+
+<body>
+    <!--탑영역-->
+    <header id="top">
+        <h2 class="lang">
+            <ol>
+                <li>
+                    <option value="ko">🇰🇷</option>
+                </li>
+                <li>
+                    <option value="en">🇺🇸</option>
+                </li>
+            </ol>
+        </h2>
+        <!-- 탑 gnb메뉴 -->
+        <nav class="topMenu">
+            <ul>
+                <li class="sm"><a href="#" class="a_ex">빽다방</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li><a href="#">CEO 인사말</a></li>
+                            <li><a href="#">빽다방 소개</a></li>
+                            <li><a href="#">커피 이야기</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="sm"><a href="#" class="a_ex">메뉴·매장</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li><a href="#">메뉴 보기</a></li>
+                            <li><a href="#">매장 찾기</a></li>
+                            <li><a href="#">커피 클래스</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="sm"><a href="#" class="a_ex">창업안내</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li><a href="#">가맹 정보</a></li>
+                            <li><a href="#">창업 상담</a></li>
+                            <li><a href="#">관련 절차</a></li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="sm"><a href="#" class="a_ex">새로운 소식</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li><a href="#">새소식</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">우수점포</a></li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- fixed 우측 배너 -->
+    <div class="fixedBan">
+        <a href="#" class="a_ex">
+            <span class="ir" data-i18n="ban:fixed">신제품 출시</span>
+            <div class="fixScr" data-i18n="ban:fixed">신제품 출시</div>
+        </a>
+    </div>
+    <section class="cont2">
+        <h2>
+            <span data-aos="fade-up" data-aos-duration="700" data-i18n="main2:main2txt1">친구 같은 브랜드의 진정한
+                가치</span>
+            <span data-aos="fade-up" data-aos-duration="800">Paik's Coffee Life begins</span>
+            <span data-aos="fade-up" data-aos-duration="900">with imagination</span>
+            <span data-aos="fade-up" data-aos-duration="1000">
+                <p data-i18n="main2:main2txt2">합리적인 커피 문화를 만들어 갑니다.</p>
+                <p data-i18n="main2:main2txt3">호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다.</p>
+            </span>
+        </h2>
+        <div class="circleBg">
+            <div class="circleImg1"><img src="./img/circleImg.png" alt="2번 메인 배경 이미지1"></div>
+            <div class="circleImg2"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지2"></div>
+            <div class="circleImg3"><img src="./img/circleImg2.png" alt="2번 메인 배경 이미지3"></div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
