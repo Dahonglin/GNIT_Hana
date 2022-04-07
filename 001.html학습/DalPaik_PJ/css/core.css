@@ -43,7 +43,7 @@ font-family: 'Noto Sans KR', sans-serif;
 
 
 /* 상단, 하단 크기 // 중앙 정렬 */
-#top,
+
 .btMenu,
 .btInfo {
     margin: 0 auto;

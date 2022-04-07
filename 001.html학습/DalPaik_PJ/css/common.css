@@ -7,16 +7,31 @@
 
 우측 배너가 상단메뉴 라인에 따라서 올라갔다 내려갔다 할 수 있을까? */
 
-
+#wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.topnavi {
+    display: flex;
+    width: max(50%,1440px);;
+}
 #top {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
     height: 12rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    transition: height .3s;
+    background-color: rgb(251, 248, 239);
 }
 
 /* 상단 로고 */
 .logo img {
+    padding-top: 2rem;
     vertical-align: bottom;
     width: 20rem;
     height: 7rem;
@@ -25,7 +40,7 @@
 /* 언어별 아이콘 */
 .lang {
     /* 빈공간 모두 채움 */
-    margin-top: 2%;
+    padding-top: 6rem;
     flex-grow: 1;
 
 }
@@ -43,11 +58,16 @@
     color: var(--font-color-navy);
 }
 
-.lang option:hover{
-   opacity: .5;
+.lang option:hover {
+    opacity: .5;
 }
 
 /* 상단 GNB */
+
+.topmenu {
+    box-sizing: border-box;
+}
+
 .topMenu>ul {
     display: flex;
     justify-content: flex-start;
@@ -57,7 +77,7 @@
 
 .topMenu>ul>li {
     padding: 0 5rem 0 5rem;
-    box-sizing: border-box;
+
 }
 
 /* 맨 오른쪽 메뉴 우측 마진 x */
@@ -73,7 +93,8 @@
     text-decoration: none;
     font-family: var(--font-family-notoSan);
     color: var(--font-color-navy);
-    border-bottom: 4px solid rgb(251, 248, 239);
+    border-bottom: 4px solid transparent;
+    box-sizing: border-box;
 }
 
 .topMenu>ul>li:hover>a {
@@ -121,10 +142,10 @@
     display: block;
     position: absolute;
     z-index: 5;
-    top: 122px;
+    top: 120px;
     left: 0;
-    width: 100%;
     height: 0px;
+    width:100%;
     background: url(../img/subMenuBg.jpg);
     /* 트랜지션 선언_밑에 오버 시 height값 조정 */
     transition: height .3s ease-out;
@@ -147,6 +168,7 @@
     width: 12rem;
     height: 12rem;
     background: url(../img/fixNaviBan.png) no-repeat 0 0 / 100% 95%;
+    transition: height .3s;
 }
 
 .fixedBan a {
@@ -161,6 +183,15 @@
     text-decoration: none;
     padding-top: 8.7rem;
     text-align: center;
+}
+
+/* 상단 메뉴 스크롤 액션 */
+#top.close { 
+    height: 0;
+    overflow: hidden;
+}
+.fixBanTop {
+    top: -10rem;
 }
 
 

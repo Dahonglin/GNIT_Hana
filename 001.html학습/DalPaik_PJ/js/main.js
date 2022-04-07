@@ -1,9 +1,6 @@
 // 로딩구역 선언
 window.addEventListener("load", () => {
 
-    // 페이드 애니메이션 라이브러리 초기화
-    AOS.init();
-
     // 메인 2번째 마우스 움직임 애니메이션
     let docStyle = document.documentElement.style;
     document.addEventListener('mousemove', (e) => {

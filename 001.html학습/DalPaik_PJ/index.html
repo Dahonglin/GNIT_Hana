@@ -16,15 +16,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- 애니메이션 JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- 메인 JS -->
 
+    <!-- 기본 JS 상단/하단 AOS 애니메이션 초기화 -->
+    <script src="./js/common.js"></script>
     <!-- 언어 변경 -->
     <script src="./js/translation.js"></script>
     <!-- 메인 이미지 JS -->
     <script src="./js/main.js"></script>
-    <!-- 하단 패밀리링크 -->
-    <script src="./js/familylink.js"></script>
 
 </head>
 
@@ -32,64 +34,66 @@
     <!-- 상단 영역 -->
     <div id="wrap">
         <header id="top">
-            <!-- 상단 로고 -->
-            <h1 class="logo"><a href="index.html"><img src="./img/paikLogo.png" alt="빽다방 로고"></a></h1>
-            <!-- 언어 -->
-            <h2 class="lang">
-                <ol>
-                    <li>
-                        <option value="ko">🇰🇷</option>
-                    </li>
-                    <li>
-                        <option value="en">🇺🇸</option>
-                    </li>
-                </ol>
-            </h2>
-            <!-- 탑 gnb메뉴 -->
-            <nav class="topMenu">
-                <ul>
-                    <li class="sm"><a href="#" class="a_ex">빽다방</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li><a href="#">CEO 인사말</a></li>
-                                <li><a href="#">빽다방 소개</a></li>
-                                <li><a href="#">커피 이야기</a></li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li class="sm"><a href="#" class="a_ex">메뉴·매장</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li><a href="#">메뉴 보기</a></li>
-                                <li><a href="#">매장 찾기</a></li>
-                                <li><a href="#">커피 클래스</a></li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li class="sm"><a href="#" class="a_ex">창업안내</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li><a href="#">가맹 정보</a></li>
-                                <li><a href="#">창업 상담</a></li>
-                                <li><a href="#">관련 절차</a></li>
-                            </ol>
-                        </div>
-                    </li>
-                    <li class="sm"><a href="#" class="a_ex">새로운 소식</a>
-                        <!-- 서브메뉴 -->
-                        <div class="smenu">
-                            <ol>
-                                <li><a href="#">새소식</a></li>
-                                <li><a href="#">이벤트</a></li>
-                                <li><a href="#">우수점포</a></li>
-                            </ol>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+            <div class="topnavi">
+                <!-- 상단 로고 -->
+                <h1 class="logo"><a href="index.html"><img src="./img/paikLogo.png" alt="빽다방 로고"></a></h1>
+                <!-- 언어 -->
+                <h2 class="lang">
+                    <ol>
+                        <li>
+                            <option value="ko">🇰🇷</option>
+                        </li>
+                        <li>
+                            <option value="en">🇺🇸</option>
+                        </li>
+                    </ol>
+                </h2>
+                <!-- 탑 gnb메뉴 -->
+                <nav class="topMenu">
+                    <ul>
+                        <li class="sm"><a href="#" class="a_ex">빽다방</a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li><a href="#">CEO 인사말</a></li>
+                                    <li><a href="#">빽다방 소개</a></li>
+                                    <li><a href="#">커피 이야기</a></li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li class="sm"><a href="#" class="a_ex">메뉴·매장</a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li><a href="#">메뉴 보기</a></li>
+                                    <li><a href="#">매장 찾기</a></li>
+                                    <li><a href="#">커피 클래스</a></li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li class="sm"><a href="#" class="a_ex">창업안내</a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li><a href="#">가맹 정보</a></li>
+                                    <li><a href="#">창업 상담</a></li>
+                                    <li><a href="#">관련 절차</a></li>
+                                </ol>
+                            </div>
+                        </li>
+                        <li class="sm"><a href="#" class="a_ex">새로운 소식</a>
+                            <!-- 서브메뉴 -->
+                            <div class="smenu">
+                                <ol>
+                                    <li><a href="#">새소식</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">우수점포</a></li>
+                                </ol>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
             <!-- fixed 우측 배너 -->
             <div class="fixedBan">
                 <a href="#" class="a_ex">
