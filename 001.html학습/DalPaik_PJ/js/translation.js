@@ -12,26 +12,33 @@ var lang = {
 
         "fixBan": "신메뉴 출시",
 
-        "main2": ["친구 같은 브랜드의 진정한 가치", "합리적인 커피 문화를 만들어 갑니다.",
+        "main2": [
+            "친구 같은 브랜드의 진정한 가치", "합리적인 커피 문화를 만들어 갑니다.",
             "호기심으로 시작했던 카페 메뉴가 모두에게 사랑 받는 시그니처 메뉴로 성장하게 되었습니다."
         ],
-        "main3": ["빽다방이 선사하는 다채로운 맛과 향기", "커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께",
+
+        "main3": [
+            "빽다방이 선사하는 다채로운 맛과 향기", "커피의 본질적인 것을 통한 커피의 전문성을 부각 시키는 컨텐츠와 함께",
             "비쥬얼, 맛, 건강함, 그리고 마시는 재미까지 함께 선사합니다."
         ],
         "main3Btn": ["커피", "음료", "아이스크림/디저트", "빽스치노"],
-        "main4": ["언제나 친구처럼 친근한 창업", "점주 만족도 최상인 카페 브랜드 빽다방",
+
+        "main4": [
+            "언제나 친구처럼 친근한 창업", "점주 만족도 최상인 카페 브랜드 빽다방",
             "빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해",
             "카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다."
         ],
+        "main4Btn": "가맹점 개설 안내",
 
-        //         // 메인 4 텍스트
-        // "main4": {
-        //     "main4txt1": "언제나 친구처럼 친근한 창업",
-        //     "main4txt2": "점주 만족도 최상인 카페 브랜드 빽다방",
-        //     "main4txt3": "빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해",
-        //     "main4txt4": "카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다.",
-        //     "main4txt5": "가맹점 개설 안내"
-        // }
+        "btnMenu": [
+            "고객센터", "문의하기 (Contack us)", "고객 상담 센터 1234-1234",
+            "창업 안내", "협력업체 문의", "가맹 문의", "제휴·마케팅 문의", "브랜드 소개서",
+            "개인정보 보호 및 약관", "개인정보 처리방침", "서비스 이용약관", "위치기반서비스 이용약관"
+        ],
+
+        "info": `(주)더본코리아 사업자등록번호 211-86-00870 대표이사 백종원
+        주소: 서울시 강남구 봉은사로 1길 39 유성빌딩 5~6층 팩스: 02-511-3864
+        본사 대표전화: 02-549-3864 가맹상담전화: 02-3447-0410 고객센터: 1544-2360`
     },
     //영어
     "en": {
@@ -51,16 +58,24 @@ var lang = {
             "We provide visual, taste, health, and fun to drink along with",
             "content that emphasizes the specialty of coffee through the essentials of coffee."
         ],
-        "main3Btn": ["Coffee", "Juice", "Dessert", "Paik's Chino"]
+        "main3Btn": ["Coffee", "Juice", "Dessert", "Paik's Chino"],
 
+        "main4": [
+            "A business that is always friendly like a friend", "The cafe brand with the highest satisfaction among the owners",
+            "Paik's coffee lowers the threshold for cafe start-up and realizes the value of true win-win through",
+            "‘opening a customized store’ that meets the various business conditions of partners."
+        ],
+        "main4Btn": "Franchise Guide",
 
-        // "main4": {
-        //     "main4txt1": "A business that is always friendly like a friend",
-        //     "main4txt2": "The cafe brand with the highest satisfaction among the owners",
-        //     "main4txt3": "Paik's coffee lowers the threshold for cafe start-up and realizes the value of true win-win through",
-        //     "main4txt4": "‘opening a customized store’ that meets the various business conditions of partners.",
-        //     "main4txt5": "Franchise guide"
-        // }
+        "btnMenu": [
+            "C/S Center", "Inquery (Contack us)", "C/S Center 1234-1234",
+            "Franchise", "Franchise offer", "Franchise guide", "Marketing offer", "Portfolio",
+            "Privacy", "Privacy policy", "Agreement policy", "Location policy"
+        ],
+
+        "info": `Theborn Korea Co., Ltd. Business registration number 211-86-00870 CEO Baek Jong-won
+        Address: 5-6F Yuseong Building, 39 Bongeunsa-ro 1-gil, Gangnam-gu, Seoul Fax: 02-511-3864
+        Headquarters Main Phone: 02-549-3864 Affiliate Helpline: 02-3447-0410 Customer Center: 1544-2360`
     }
 
 }; ///////// lang 객체 ///////
@@ -78,30 +93,39 @@ window.addEventListener("load", () => {
 
     // 우측 배너
     let fixBan = document.querySelectorAll(".fixBan");
-    console.log(fixBan);
 
     // 메인2
     let main2 = document.querySelectorAll(".main2");
+
     // 메인3
     let main3 = document.querySelectorAll(".main3");
     // 메인3 슬라이드 버튼
     let main3Btn = document.querySelectorAll(".menuBtn button");
 
+    // 메인4
+    let main4 = document.querySelectorAll(".main4");
+    // 메인4 슬라이드 버튼
+    let main4Btn = document.querySelector(".shopBtn a");
+    
+    // 하단메뉴
+    let btnMenu = document.querySelectorAll(".btLink a");
+    // 하단정보
+    let info = document.querySelector(".info");
+
 
     for (let x of sel) {
         x.onclick = () => {
             //버튼 밸류값 (언어값) 받아오기
-            let opt = event.currentTarget.value;
+            let code = event.currentTarget.value;
 
             // 언어코드에 따른 객체 데이터 읽어오기
-            let data = lang[opt];
+            let data = lang[code];
 
             // 대메뉴 / 서브메뉴 변경
             data["GNB"].forEach((val, idx) => gnb[idx].innerText = val);
 
             // 우측 고정 배너
-            fixBan[0].innerText = data["fixBan"];
-            fixBan[1].innerText = data["fixBan"];
+            fixBan.forEach((idx) => idx.innerText = data["fixBan"]);
 
             // 메인2
             data["main2"].forEach((val, idx) => main2[idx].innerText = val);
@@ -109,6 +133,16 @@ window.addEventListener("load", () => {
             data["main3"].forEach((val, idx) => main3[idx].innerText = val);
             // 메인3 슬라이드 버튼
             data["main3Btn"].forEach((val, idx) => main3Btn[idx].innerText = val);
+
+            // 메인4
+            data["main4"].forEach((val, idx) => main4[idx].innerText = val);
+            // 메인4 버튼
+            main4Btn.innerText = data["main4Btn"];
+            
+            // 하단 고객센터
+            data["btnMenu"].forEach((val, idx) => btnMenu[idx].innerText = val);
+            // 하단 회사정보
+            info.innerText = data["info"];
 
         }; ///////// change 함수 /////////////////
     }

@@ -22,6 +22,18 @@ window.addEventListener("load", () => {
     // 객체 선언 셀렉트 박스 : #familyLink
     let familyLink = document.querySelector('#familyLink');
 
+    // 새창으로 띄우기
+    familyLink.addEventListener("change", () => {
+        // select.options– < option > 하위 요소를 담고 있는 컬렉션
+        // select.value– 현재 선택된 < option > 값
+        // select.selectedIndex– 현재 선택된 < option > 의 번호(인덱스)
+        // select.options[select.selectedIndex].value
+        // 셀렉트 옵션들을 담고 있는 컬렉션[선택된 옵션의 인덱스].값
+        let val = familyLink.options[familyLink.selectedIndex].value; // option value값 저장
+        if (val != "#") { // value값이 #(임시페이지)가 아닐 때 
+            window.open(val); // 새 창으로 홈페이지 띄움
+        }
+    });
 
     (() => {
         let temp = ''; //임시 변수 선언 + 초기화
@@ -33,6 +45,7 @@ window.addEventListener("load", () => {
             // fLink[x] - 키에 해당하는 값이 나옴 
         }
         familyLink.innerHTML = temp;
+
     })();
 
 });

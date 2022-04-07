@@ -13,21 +13,16 @@
     <link rel="stylesheet" href="./css/media.css">
 
     <!-- Fade 애니메이션 라이브러리 -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- 애니메이션 JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    
     <!-- 메인 JS -->
 
     <!-- 언어 변경 -->
     <script src="./js/translation.js"></script>
-    <!-- 텍스트 애니메이션 -->
-    <script src="./js/AOS.js"></script>
-    <!-- 메인2번 원형 3D -->
-    <script src="./js/mainImg.js"></script>
-    <!-- 메인3번 음료 슬라이더 -->
-    <script src="./js/drink.js"></script>
+    <!-- 메인 이미지 JS -->
+    <script src="./js/main.js"></script>
     <!-- 하단 패밀리링크 -->
     <script src="./js/familylink.js"></script>
 
@@ -38,12 +33,16 @@
     <div id="wrap">
         <header id="top">
             <!-- 상단 로고 -->
-            <h1 class="logo"><a href="#"><img src="./img/paikLogo.png" alt="빽다방 로고"></a></h1>
+            <h1 class="logo"><a href="index.html"><img src="./img/paikLogo.png" alt="빽다방 로고"></a></h1>
             <!-- 언어 -->
             <h2 class="lang">
                 <ol>
-                    <li><option value="ko">🇰🇷</option></li>
-                    <li><option value="en">🇺🇸</option></li>
+                    <li>
+                        <option value="ko">🇰🇷</option>
+                    </li>
+                    <li>
+                        <option value="en">🇺🇸</option>
+                    </li>
                 </ol>
             </h2>
             <!-- 탑 gnb메뉴 -->
@@ -164,12 +163,12 @@
             <section class="cont4">
                 <h2>
                     <span data-aos="fade-up" data-aos-duration="700" data-aos-offset="0">
-                        <p>언제나 친구처럼 친근한 창업</p>
-                        <p>점주 만족도 최상인 카페 브랜드 빽다방</p>
+                        <p class="main4">언제나 친구처럼 친근한 창업</p>
+                        <p class="main4">점주 만족도 최상인 카페 브랜드 빽다방</p>
                     </span>
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-offset="0">
-                        <p>빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해</p>
-                        <p>카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다.</p>
+                        <p class="main4">빽다방은 파트너 여러분들의 다양한 창업 조건에 맞는 ‘맞춤형 점포 개설’을 통해</p>
+                        <p class="main4">카페 창업의 문턱을 낮추고 진정한 상생의 가치를 구현합니다.</p>
                     </span>
                     <span data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                         <div class="shopBtn"><a href="#" class="a_ex">가맹점 개설 안내</a></div>
@@ -192,7 +191,7 @@
                             <span class="ir">빽다방 페이스북 바로가기</span>
                         </a>
                         <a href="#" class="a_ex istaIcon">
-                            <span class="ir">빽다방 페이스북 바로가기</span>
+                            <span class="ir">빽다방 인스타그램 바로가기</span>
                         </a>
                     </div>
                 </div>
@@ -221,7 +220,7 @@
             <div class="btInfo">
                 <!-- 관련사 링크 -->
                 <div class="familyLink">
-                    <select title="FAMILY SITE" id="familyLink" onchange="window.open(value,'_blank');">
+                    <select title="FAMILY SITE" id="familyLink" onchange="value">
                         <option value="#">FAMILY SITE</option>
                     </select>
                 </div>

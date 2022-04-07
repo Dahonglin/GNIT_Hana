@@ -1,6 +1,17 @@
-// 로딩 구역 설정
+// 로딩구역 선언
 window.addEventListener("load", () => {
 
+    // 페이드 애니메이션 라이브러리 초기화
+    AOS.init();
+
+    // 메인 2번째 마우스 움직임 애니메이션
+    let docStyle = document.documentElement.style;
+    document.addEventListener('mousemove', (e) => {
+        docStyle.setProperty('--mouse-x', e.clientX);
+        docStyle.setProperty('--mouse-y', e.clientY);
+    });
+
+    // 메인 3번째 음료수 슬라이더
     // 음료 부분 객체로 저장
     let drink = {
         '커피': "coffee",
@@ -34,7 +45,7 @@ window.addEventListener("load", () => {
 
             // 현재 클릭 된 나자신에게 on넣기
             i.classList.add("on");
-            
+
             // 배경 바꾸기
             drinkBg.style.background =
                 `transparent url("./img/drink/${drink[drinkName]}.png") repeat-x left top`;
@@ -43,5 +54,5 @@ window.addEventListener("load", () => {
         }
     }
 
-    // 로딩 구역 끝
+
 });
