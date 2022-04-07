@@ -47,7 +47,7 @@ window.addEventListener("load", () => {
             drinkBg.style.background =
                 `transparent url("./img/drink/${drink[drinkName]}.png") repeat-x left top`;
             // 배경 위치 설정
-            drinkBg.style.backgroundSize = `310rem auto`;
+            drinkBg.style.backgroundSize = `199rem auto`;
         }
     }
 

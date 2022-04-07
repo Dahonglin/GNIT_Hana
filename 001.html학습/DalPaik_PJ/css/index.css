@@ -252,7 +252,7 @@
     left: 0;
     right: 0;
     background: url("../img/drink/coffee.png") repeat-x left top;
-    background-size: 310rem auto;
+    background-size: 199rem auto;
     animation: movement 15s linear infinite;
 }
 
@@ -262,7 +262,7 @@
     }
 
     100% {
-        background-position: 2426px 0px;
+        background-position: 2100px 0px;
     }
 }
 
