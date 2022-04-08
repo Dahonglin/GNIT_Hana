@@ -2,10 +2,11 @@
 window.addEventListener("load", () => {
 
     // 메인 2번째 마우스 움직임 애니메이션
-    let docStyle = document.documentElement.style;
-    document.addEventListener('mousemove', (e) => {
-        docStyle.setProperty('--mouse-x', e.clientX);
-        docStyle.setProperty('--mouse-y', e.clientY);
+    //  body 셀렉
+    let docStyle = document.body.style;
+    document.addEventListener('mousemove', (val) => {
+        docStyle.setProperty('--mouse-x', val.screenX);
+        docStyle.setProperty('--mouse-y', val.screenY);
     });
 
     // 메인 3번째 음료수 슬라이더
