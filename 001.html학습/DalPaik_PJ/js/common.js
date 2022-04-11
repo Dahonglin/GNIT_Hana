@@ -4,11 +4,24 @@ window.addEventListener("load", () => {
     // 페이드 애니메이션 라이브러리 초기화
     AOS.init();
 
+    // 맨위로
+    $('.topBtn').on('click', function () {
+        $('html, body').animate({scrollTop:0},500);
+        console.log('맨위로');
+        if ($('html, body').scrollTop(0)) {
+            $("#top").removeClass('close');
+        }
+    });
+
+    // a태그 # 메뉴 막기
+    $('a').on('click', function () {
+        let aLink = $(this).attr('href');
+        if (aLink === '#') return false;
+    });
 
     // 마우스 휠 상단 메뉴 보이기/숨기기
     $("body").on('mousewheel', function (val) {
         let wheel = val.originalEvent.wheelDelta;
-
         if (wheel > 0) {
             //스크롤 올릴때 
             $("#top").removeClass('close');

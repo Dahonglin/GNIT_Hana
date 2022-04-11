@@ -169,10 +169,17 @@
     height: 12rem;
     background: url(../img/fixNaviBan.png) no-repeat 0 0 / 100% 95%;
     transition: height .3s;
+    cursor: pointer;
 }
 
 .fixedBan a {
     text-decoration: none;
+}
+
+.topBtn {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--font-color-navy);
 }
 
 /* 우측 고정 배너 텍스트 */
