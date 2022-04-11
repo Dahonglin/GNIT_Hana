@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 
     // 마우스 휠 상단 메뉴 보이기/숨기기
     $("body").on('mousewheel', function (val) {
-        var wheel = val.originalEvent.wheelDelta;
+        let wheel = val.originalEvent.wheelDelta;
 
         if (wheel > 0) {
             //스크롤 올릴때 
@@ -17,7 +17,6 @@ window.addEventListener("load", () => {
             $("#top").addClass('close');
         }
     });
-
 
     // 하단 패밀리 링크
     // 패밀리링크 객체 선언
