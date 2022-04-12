@@ -1,6 +1,14 @@
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("load", () => {
 
+    // 햄버거 버튼
+    document.querySelector('.ham').addEventListener('click', addClassOn);
+    const topNav = document.querySelector('.topMenu');
+
+    function addClassOn() {
+        topNav.classList.toggle('on');
+    }
+
     // 페이드 애니메이션 라이브러리 초기화
     AOS.init();
 

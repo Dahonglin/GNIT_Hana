@@ -3,6 +3,33 @@
 
 /******** 1050px 이하 미디어쿼리 ********/
 @media screen and (max-width:1050px) {
+    .logo {
+        padding-left: 2rem
+    }
+
+    .topMenu>ul>li {
+        padding: 0 2rem 0 2rem;
+    }
+
+    .topMenu>ul>li:last-child {
+        padding: 0 2rem 0 2rem;
+    }
+
+    .btInfo {
+        align-items: flex-start;
+        height: 15rem;
+        flex-direction: column;
+        padding-left: 2rem;
+    }
+
+    .btMenu {
+        padding-left: 2rem;
+    }
+
+    .familyLink {
+        display: inline;
+    }
+
     .btLink ul {
         padding: 0 2rem 0 2rem;
     }
@@ -10,7 +37,16 @@
 
 /******** 930px 이하 미디어쿼리 ********/
 @media screen and (max-width:930px) {
+
+    .logo {
+        padding-left: 1rem
+    }
+
     .topMenu>ul>li {
+        padding: 0 2rem 0 2rem;
+    }
+
+    .topMenu>ul>li:last-child {
         padding: 0 2rem 0 2rem;
     }
 
@@ -28,15 +64,72 @@
         font-size: 3.5rem;
     }
 
+    #slide {
+        transform: translate(-50%);
+    }
+
     .cont4 h2 span:first-child p {
         font-size: 4.5rem;
     }
 
-    .info {
-        margin: 0 3rem 0 3rem;
+    .btMenu {
+        padding-left: 1rem;
     }
 
-    #slide {
-        transform: translate(-50%);
+    .btInfo {
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+
+}
+
+/******** 800px 이하 미디어쿼리 ********/
+@media screen and (max-width:800px) {
+    #top {
+        align-items: flex-start;
+    }
+
+    /* 3.6 상단영역 클래스 설정변경 */
+    /* .top에 클래스 on을 주면 하위 요소 변경 */
+    .top.on .gnb {
+        display: block;
+    }
+
+    /* 상단영역 .top에 클래스 on 적용 시 버튼 변경 */
+    .top.on .ham::before {
+        content: '×';
+        color: #fff;
+    }
+
+    /* 상단영역 .top에 클래스 on 적용 시 버튼 고정 */
+    .top.on .ham {
+        position: fixed;
+        transform: scale(1.5);
+    }
+
+    .logo img {
+        padding-top: 2rem;
+    }
+
+    .topMenu {
+        display: none;
+    }
+
+    .fixedBan {
+        display: none;
+    }
+
+    .btMenu {
+        justify-content: center;
+        padding-left: 0rem;
+    }
+
+    .btInfo {
+        padding-left: 0rem;
+        max-width: 85vw;
+    }
+
+    .logoSns {
+        display: none;
     }
 }

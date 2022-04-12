@@ -12,10 +12,13 @@
     display: flex;
     justify-content: center;
 }
+
 .topnavi {
     display: flex;
-    width: max(50%,1440px);;
+    width: max(50%, 1440px);
+    ;
 }
+
 #top {
     position: fixed;
     z-index: 10;
@@ -145,7 +148,7 @@
     top: 120px;
     left: 0;
     height: 0px;
-    width:100%;
+    width: 100%;
     background: url(../img/subMenuBg.jpg);
     /* 트랜지션 선언_밑에 오버 시 height값 조정 */
     transition: height .3s ease-out;
@@ -193,12 +196,40 @@
 }
 
 /* 상단 메뉴 스크롤 액션 */
-#top.close { 
+#top.close {
     height: 0;
     overflow: hidden;
 }
+
 .fixBanTop {
     top: -10rem;
+}
+
+
+/* 모바일용 햄버거 버튼 */
+.ham {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 40px;
+    transform: scaleX(1.5);
+
+    /* 버튼 기본 디자인 없애기 */
+    background-color: transparent;
+    border: none;
+    /* 모바일 아닐때 안보임 */
+    display: inline;
+}
+
+/* 버튼 모양 변경 위해 가상 요소로 내용 넣기 */
+.ham::before {
+    content: '≡';
+
+}
+
+/* 크롬 브라우저 버튼 포커스 아웃라인 제거 */
+.ham:focus {
+    outline: none;
 }
 
 

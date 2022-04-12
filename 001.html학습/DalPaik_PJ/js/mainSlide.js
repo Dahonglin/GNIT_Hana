@@ -8,9 +8,6 @@ let abtn = document.querySelectorAll(".abtn");
 let slide = document.querySelector("#slide");
 // 변경 대상: 슬라이드 li요소들 -> #slide li
 let sli = slide.querySelectorAll("li");
-// 변경 대상: 블릿 -> .indic li
-let indic = document.querySelectorAll(".indic li");
-// console.log("블릿개수:",indic.length);
 
 // 슬라이드 번호변수
 let sno = 0; // 첫번호는 0
@@ -73,16 +70,9 @@ const goSlide = (dir, gb) => {
     // (2) 슬라이드li 초기화
     for (let x of sli) x.classList.remove("on");
 
-    // (3) 해당번호 li에 클래서 on넣기
+    // (3) 해당번호 li에 클래스 on넣기
     sli[sno].classList.add("on");
 
-    // 3. 슬라이드 순번과 동일한 순번의 블릿변경하기
-
-    // 초기화!(class="on"지우기)
-    for (let x of indic) x.classList.remove("on");
-
-    // 해당순번에 class="on" 넣기
-    indic[sno].classList.add("on");
 
 }; ////////////// goSlide함수 ///////////////
 
@@ -124,8 +114,6 @@ let autoT;
 ////////////////////
 // -> 슬라이드 이동버튼 클릭시 호출됨!
 const clearAuto = () => {
-
-    console.log("인터발지우기!");
 
     // 1. 인터발지우기 + 타임아웃지우기
     clearInterval(autoI);
