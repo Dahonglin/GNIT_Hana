@@ -4,13 +4,24 @@ window.addEventListener("load", () => {
     // 페이드 애니메이션 라이브러리 초기화
     AOS.init();
 
-    // 맨위로
+    // 변수 선언
+    let doc = $(document);
+    let htmlBody = $('html, body');
+    let top = $("#top");
+
+    // top 버튼 눌림
     $('.topBtn').on('click', function () {
-        $('html, body').animate({scrollTop:0},500);
-        console.log('맨위로');
-        if ($('html, body').scrollTop(0)) {
-            $("#top").removeClass('close');
-        }
+        htmlBody.animate({
+            scrollTop: 0
+        }, 500);
+        top.removeClass('close');
+    });
+    // 홈 버튼 눌림
+    doc.keydown(function (event) {
+        htmlBody.animate({
+            scrollTop: 0
+        }, 500);
+        top.removeClass('close');
     });
 
     // a태그 # 메뉴 막기
@@ -20,15 +31,10 @@ window.addEventListener("load", () => {
     });
 
     // 마우스 휠 상단 메뉴 보이기/숨기기
-    $("body").on('mousewheel', function (val) {
+    doc.on('mousewheel', function (val) {
         let wheel = val.originalEvent.wheelDelta;
-        if (wheel > 0) {
-            //스크롤 올릴때 
-            $("#top").removeClass('close');
-        } else {
-            //스크롤  내릴때 
-            $("#top").addClass('close');
-        }
+        ////////////////////// 스크롤 올릴때 /////////////////////스크롤  내릴때 
+        return (wheel > 0) ? top.removeClass('close') : top.addClass('close');
     });
 
     // 하단 패밀리 링크
