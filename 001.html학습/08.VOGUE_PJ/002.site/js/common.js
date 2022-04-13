@@ -1,5 +1,22 @@
 // 보그 PJ 공통 JS - common.js
 
+$(()=>{ //////////// jQB /////////////////////////
+
+    // 햄버거 버튼 클릭시 모바일 메뉴 보이기
+    // 햄버거 버튼 -> .hbtn
+    // 모바일 메뉴 -> #mobx
+    $(".hbtn").click(
+        ()=>$("#mobx").slideToggle(300));
+
+    // 검색 버튼 클릭시 검색창 보이기
+    // 검색 버튼 -> .sbtn
+    // 검색창 -> .mos
+    $(".sbtn").click(
+        ()=>$(".mos").slideToggle(300));
+
+}); ///////////////// jQB ////////////////////////
+
+
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -17,12 +34,23 @@ window.addEventListener("DOMContentLoaded", () => {
     let tbtn = document.querySelector(".tbtn");
 
     /// 위로가기버튼 클릭시 맨위로 이동하기 ////
+    // 모바일에서 스크롤없이 스와이퍼 이동시 무작동해결!
+    $(".tbtn").click(()=>{
+        // 제이쿼리 스크롤 애니메이션
+        $("html,body").animate({
+            scrollTop:"0"
+        },300);
+        // 스크롤 위치값 업데이트
+        pos=0;
+    }); /////// click ////////////
+
+
     // 부드러운 스크롤 위치변수 pos값을 0주면됨!
-    tbtn.onclick = () => {
-        pos = 0; // 맨위로 가기!
-        return false; 
-        // a요소 기본이동 막기
-    }; /////// click //////////
+    // tbtn.onclick = () => {
+    //     pos = 0; // 맨위로 가기!
+    //     return false; 
+    //     // a요소 기본이동 막기
+    // }; /////// click //////////
 
     /********************************** 
         [ 윈도우 스크롤 이벤트 함수 ]

@@ -1,14 +1,6 @@
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("load", () => {
 
-    // 햄버거 버튼
-    document.querySelector('.ham').addEventListener('click', addClassOn);
-    const topNav = document.querySelector('.topMenu');
-
-    function addClassOn() {
-        topNav.classList.toggle('on');
-    }
-
     // 페이드 애니메이션 라이브러리 초기화
     AOS.init();
 
@@ -44,6 +36,15 @@ window.addEventListener("load", () => {
         ////////////////////// 스크롤 올릴때 /////////////////////스크롤  내릴때 
         return (wheel > 0) ? top.removeClass('close') : top.addClass('close');
     });
+
+
+    // 햄버거 버튼
+    document.querySelector('.ham').addEventListener('click', addClassOn);
+    const topNav = document.querySelector('.topnavi');
+
+    function addClassOn() {
+        topNav.classList.toggle('on');
+    }
 
     // 하단 패밀리 링크
     // 패밀리링크 객체 선언
