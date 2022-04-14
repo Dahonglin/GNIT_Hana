@@ -85,7 +85,7 @@ $(() => { //////////// jQB /////////////////////////
 ///////////////// 로드구역 ///////////////////////
 window.addEventListener("DOMContentLoaded", () => {
 
-    console.log("로딩완료");
+    // console.log("로딩완료");
 
     /// 부드러운 스크롤 호출!
     startSS();

@@ -2,7 +2,7 @@
 
 $(()=>{ //////////// jQB /////////////////////////
 
-    console.log("로딩완료!");
+    // console.log("로딩완료!");
 
     // 메인 로고 클릭시 첫페이지로 이동하기
     $(".logo a").click(()=>location.href="index.html");

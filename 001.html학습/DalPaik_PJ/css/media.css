@@ -3,6 +3,10 @@
 
 /******** 1050px 이하 미디어쿼리 ********/
 @media screen and (max-width:1050px) {
+    #top {
+        width: 100vw;
+    }
+
     .logo {
         padding-left: 2rem
     }
@@ -35,56 +39,8 @@
     }
 }
 
-/******** 930px 이하 미디어쿼리 ********/
-@media screen and (max-width:930px) {
-
-    .logo {
-        padding-left: 1rem
-    }
-
-    .topMenu>ul>li {
-        padding: 0 2rem 0 2rem;
-    }
-
-    .topMenu>ul>li:last-child {
-        padding: 0 2rem 0 2rem;
-    }
-
-    .cont1 h2 span {
-        font-size: 7.5rem;
-        line-height: 8rem;
-    }
-
-    .cont2 span:nth-child(2),
-    .cont2 span:nth-child(3) {
-        font-size: 7rem;
-    }
-
-    .cont3 h2 span {
-        font-size: 3.5rem;
-    }
-
-    #slide {
-        transform: translate(-50%);
-    }
-
-    .cont4 h2 span:first-child p {
-        font-size: 4.5rem;
-    }
-
-    .btMenu {
-        padding-left: 1rem;
-    }
-
-    .btInfo {
-        padding-left: 1rem;
-        padding-top: 1rem;
-    }
-
-}
-
-/******** 800px 이하 미디어쿼리 ********/
-@media screen and (max-width:800px) {
+/******** 900px 이하 미디어쿼리 ********/
+@media screen and (max-width:900px) {
     #top {
         align-items: flex-start;
     }
@@ -112,8 +68,80 @@
         display: none;
     }
 
-    .fixedBan,.logoSns {
+    .fixedBan,
+    .logoSns {
         display: none;
+    }
+
+    .cont1 {
+        height: 70vh;
+    }
+
+    .cont1 h2 span {
+        font-size: 4.5rem;
+        line-height: 6.5rem;
+    }
+
+    .bgAni img {
+        width: 99%;
+        vertical-align: bottom;
+    }
+
+    .cont2 span:nth-child(2),
+    .cont2 span:nth-child(3) {
+        font-size: 4.5rem;
+    }
+
+    .circleImg1 {
+        right: -55vw;
+    }
+
+    .circleImg2 {
+        right: 40vw;
+    }
+
+    .circleImg3 {
+        top: -90vh;
+        right: 20vw;
+    }
+
+    .circleImg1 img {
+        width: 30rem;
+    }
+
+    .circleImg2 img {
+        width: 20rem;
+    }
+
+    .circleImg3 img {
+        width: 8rem;
+    }
+
+    .slideBan {
+        display: none;
+    }
+
+
+    .menuBtn li button {
+        width: 8rem;
+    }
+
+
+    .cont3 h2 span {
+        font-size: 3.5rem;
+    }
+
+    .cont3 h2 {
+        padding-top: 0rem;
+    }
+
+
+    .cont4 h2 {
+        height: 80vh;
+    }
+    
+    .cont4 h2 span:first-child p {
+        font-size: 3.5rem;
     }
 
     .btMenu {
@@ -124,5 +152,22 @@
     .btInfo {
         padding-left: 0rem;
         max-width: 85vw;
+    }
+
+    .btLink ul {
+        padding: 0 .5rem 0 .5rem;
+    }
+
+    .btLink ul>li a {
+        font-size: 1.2rem;
+
+    }
+
+    .btLink ul>li:first-child a {
+        font-size: 1.5rem;
+    }
+
+    .info {
+        padding-top: 1.5rem;
     }
 }
