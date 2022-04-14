@@ -77,6 +77,10 @@
         height: 70vh;
     }
 
+    .cont1 h2 {
+        padding: 2rem;
+    }
+
     .cont1 h2 span {
         font-size: 4.5rem;
         line-height: 6.5rem;
