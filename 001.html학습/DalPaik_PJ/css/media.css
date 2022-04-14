@@ -172,6 +172,7 @@
     }
 
     .info {
+        width: 80vw;
         padding-top: 1.5rem;
     }
 }
