@@ -41,8 +41,20 @@
 
 /******** 900px 이하 미디어쿼리 ********/
 @media screen and (max-width:900px) {
+
+    .topMenu,
+    .topMenu>ul>li.sm::after,
+    .fixedBan,
+    .logoSns {
+        display: none;
+    }
+
     #top {
         align-items: flex-start;
+    }
+
+    .logo img {
+        padding-top: 2rem;
     }
 
     .ham {
@@ -54,23 +66,55 @@
         content: '×';
     }
 
+    #top.close .ham::before {
+        content: '';
+    }
+
     /* 상단영역 .topMenu 클래스 on 적용 시 버튼 고정 */
     .topnavi.on .ham {
         position: fixed;
         transform: scale(1.5);
     }
 
-    .logo img {
-        padding-top: 2rem;
+    .topnavi.on {
+        flex-wrap: wrap;
     }
 
-    .topMenu {
-        display: none;
+    .topnavi.on .topMenu {
+        display: flex;
     }
 
-    .fixedBan,
-    .logoSns {
-        display: none;
+    .topMenu>ul {
+        display: flex;
+        height: 100vh;
+        background-color: rgb(251, 248, 239);
+    }
+
+    .topMenu>ul>li {
+        padding: 0;
+    }
+
+    .topnavi.on .topMenu>ul {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .topnavi.on .topMenu>ul>li {
+        width: 100vw;
+    }
+
+    .topnavi.on .topMenu>ul>li a {
+        font-size: 2.5rem;
+        margin-left: 5vw;
+    }
+
+    .topnavi.on .topMenu>ul>li a::before {
+        content: '∨ ';
+        position: relative;
+        top: -5%;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--font-color-navy);
     }
 
     .cont1 {
@@ -143,7 +187,7 @@
     .cont4 h2 {
         height: 80vh;
     }
-    
+
     .cont4 h2 span:first-child p {
         font-size: 3.5rem;
     }

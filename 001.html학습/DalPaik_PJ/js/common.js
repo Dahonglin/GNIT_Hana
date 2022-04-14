@@ -24,19 +24,25 @@ window.addEventListener("load", () => {
         top.removeClass('close');
     });
 
-    // a태그 # 메뉴 막기
-    $('a').on('click', function () {
-        let aLink = $(this).attr('href');
-        if (aLink === '#') return false;
-    });
 
     // 마우스 휠 상단 메뉴 보이기/숨기기
     doc.on('mousewheel', function (val) {
         let wheel = val.originalEvent.wheelDelta;
         ////////////////////// 스크롤 올릴때 /////////////////////스크롤  내릴때 
-        return (wheel > 0) ? top.removeClass('close') : top.addClass('close');
+        // return (wheel > 0) ? top.removeClass('close') : top.addClass('close');
+        if (wheel > 0) {
+            top.removeClass('close');
+        } else {
+            top.addClass('close');
+            $('.topnavi').removeClass('on');
+        }
     });
 
+    // a태그 # 메뉴 막기
+    $('a').on('click', function () {
+        let aLink = $(this).attr('href');
+        if (aLink === '#') return false;
+    });
 
     // 햄버거 버튼
     document.querySelector('.ham').addEventListener('click', addClassOn);
