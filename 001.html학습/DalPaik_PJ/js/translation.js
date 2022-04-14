@@ -58,7 +58,7 @@ var lang = {
             "We provide visual, taste, health, and fun to drink along with",
             "content that emphasizes the specialty of coffee through the essentials of coffee."
         ],
-        "main3Btn": ["Coffee", "Juice", "Dessert", "Paik's Chino"],
+        "main3Btn": ["Coffee", "Juice", "Dessert", "Chino"],
 
         "main4": [
             "A business that is always friendly like a friend", "The cafe brand with the highest satisfaction among the owners",
