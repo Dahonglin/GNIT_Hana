@@ -120,38 +120,48 @@
     .cont1 {
         height: 70vh;
     }
-
-    .cont1 h2 {
+    
+    .cont1 aside {
         padding: 2rem;
     }
-
-    .cont1 h2 div {
+    
+    .cont1 aside h2 {
         font-size: 4.5rem;
         line-height: 6.5rem;
     }
-
+    
     .bgAni img {
         width: 99%;
         vertical-align: bottom;
     }
 
-    .cont2 div:nth-child(2),
-    .cont2 div:nth-child(3) {
+    .cont2 aside {
+        height: 100vh;
+    }
+
+    .cont2 h2:nth-child(2),
+    .cont2 h2:nth-child(3) {
         font-size: 4.5rem;
     }
 
+    .cont2 h3 {
+        font-size: 2rem;
+    }
+
     .circleImg1 {
-        right: -55vw;
+        right: -65vw;
     }
-
+    
     .circleImg2 {
-        right: 40vw;
+        top: -100vh;
+        left: -25vw;
     }
-
+    
     .circleImg3 {
         top: -90vh;
-        right: 20vw;
+        left: 10vw;
     }
+    
 
     .circleImg1 img {
         width: 30rem;
@@ -162,7 +172,6 @@
     }
 
     .circleImg3 img {
-        width: 8rem;
     }
 
     .slideBan {
@@ -175,20 +184,26 @@
     }
 
 
-    .cont3 h2 div {
-        font-size: 3.5rem;
+    .cont3 aside h2 {
+        font-size: 3rem;
+        padding: 1rem;
+        padding-bottom: 0;
+    }
+    
+    .cont3 h3 {
+        font-size: 1.7rem;
+        padding: 1rem;
+        padding-bottom: 0;
     }
 
-    .cont3 h2 {
-        padding-top: 0rem;
+    .img-moving {
+        margin-top: 5vh;
+    }
+    .cont4 aside {
+        height: 70vh;
     }
 
-
-    .cont4 h2 {
-        height: 80vh;
-    }
-
-    .cont4 h2 div:first-child p {
+    .cont4 div h2 {
         font-size: 3.5rem;
     }
 

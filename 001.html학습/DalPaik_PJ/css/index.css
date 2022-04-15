@@ -25,7 +25,7 @@
     height: 90vh;
 }
 
-.cont1 h2 {
+.cont1 aside {
     height: 85vh;
     display: flex;
     align-items: flex-end;
@@ -35,7 +35,7 @@
 }
 
 /* 메인1 타이포 */
-.cont1 h2 div {
+.cont1 h2 {
     width: 80rem;
     font-size: 9.5rem;
     line-height: 11rem;
@@ -44,11 +44,11 @@
     color: var(--font-color-navy);
 }
 
-.cont1 h2 div:first-child {
+.cont1 h2:first-child {
     color: var(--font-color-yellow);
 }
 
-.cont1 h2 div:last-child {
+.cont1 h2:last-child {
     font-style: italic;
 }
 
@@ -76,35 +76,33 @@
     overflow: hidden;
 }
 
-.cont2 h2 {
+.cont2 aside {
     height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-}
-
-.cont2 h2 div {
-    padding: .5rem;
     color: var(--font-color-navy);
 }
 
-.cont2 div:first-child {
-    font-family: var(--font-family-notoSan);
+.cont2 h2 {
+    padding: .5rem;
     font-size: 4rem;
+    font-family: var(--font-family-notoSan);
 }
 
-.cont2 div:last-child p {
+.cont2 h2:nth-child(2),
+.cont2 h2:nth-child(3) {
+    font-family: var(--font-family-lemon);
+    font-size: 9rem;
+}
+
+.cont2 h3 {
     font-family: var(--font-family-notoSan);
     font-size: 2.5rem;
 }
 
-.cont2 div:nth-child(2),
-.cont2 div:nth-child(3) {
-    font-family: var(--font-family-lemon);
-    font-size: 9rem;
-}
 
 /* 오른쪽 큰 원 */
 .circleImg1 {
@@ -112,7 +110,7 @@
     z-index: -1;
     size: 100px;
     right: -75vw;
-    top: -80vh;
+    top: -100vh;
     height: size;
     width: size;
     transform:
@@ -129,8 +127,8 @@
 .circleImg2 {
     position: relative;
     z-index: -1;
-    right: 20vw;
-    top: -100vh;
+    left: -17vw;
+    top: -120vh;
     size: 100px;
     height: size;
     width: size;
@@ -148,8 +146,8 @@
 .circleImg3 {
     position: relative;
     z-index: -1;
-    right: 5vw;
-    top: -95vh;
+    left: 0vw;
+    top: -110vh;
     size: 100px;
     height: size;
     width: size;
@@ -186,7 +184,7 @@
     background: linear-gradient(to bottom, transparent 30%, #fff 50%);
 }
 
-.cont3 h2 {
+.cont3 aside {
     display: flex;
     padding-top: 10rem;
     font-family: var(--font-family-notoSan);
@@ -195,13 +193,13 @@
     text-align: center;
 }
 
-.cont3 h2 div {
+.cont3 h2 {
     font-size: 5rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
 }
 
-.cont3 h2 div p {
+.cont3 h3 {
     font-size: 2rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
@@ -337,7 +335,7 @@
     background-color: #fff;
 }
 
-.cont4 h2 {
+.cont4 aside {
     height: 60rem;
     display: flex;
     align-items: center;
@@ -349,17 +347,17 @@
     background: url(../img/subMenuBg.jpg);
 }
 
-.cont4 h2 div {
+.cont4 div {
     padding: 2rem;
     color: var(--font-color-navy);
 }
 
-.cont4 h2 div:first-child p {
+.cont4 aside h2 {
     font-size: 5.5rem;
     color: var(--font-color-navy);
 }
 
-.cont4 h2 div:nth-child(2) p {
+.cont4 aside h3 {
     font-size: 2rem;
     color: var(--font-color-navy);
 }
