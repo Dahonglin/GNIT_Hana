@@ -18,10 +18,12 @@ window.addEventListener("load", () => {
     });
     // 홈 버튼 눌림
     doc.keydown(function (event) {
-        htmlBody.animate({
-            scrollTop: 0
-        }, 500);
-        top.removeClass('close');
+        if (event.keyCode == 36) {
+            htmlBody.animate({
+                scrollTop: 0
+            }, 500);
+            top.removeClass('close');
+        }
     });
 
 

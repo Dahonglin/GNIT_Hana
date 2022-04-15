@@ -87,7 +87,7 @@ window.addEventListener("load", () => {
 
     // 대상선정
     // (1) 이벤트 대상: .sel
-    let sel = document.querySelectorAll(".lang option");
+    let sel = document.querySelectorAll(".lang button");
     // 상단 메뉴 선택
     let gnb = document.querySelectorAll(".topMenu a");
 

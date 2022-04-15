@@ -35,7 +35,7 @@
 }
 
 /* 메인1 타이포 */
-.cont1 h2 span {
+.cont1 h2 div {
     width: 80rem;
     font-size: 9.5rem;
     line-height: 11rem;
@@ -44,11 +44,11 @@
     color: var(--font-color-navy);
 }
 
-.cont1 h2 span:first-child {
+.cont1 h2 div:first-child {
     color: var(--font-color-yellow);
 }
 
-.cont1 h2 span:last-child {
+.cont1 h2 div:last-child {
     font-style: italic;
 }
 
@@ -85,23 +85,23 @@
     text-align: center;
 }
 
-.cont2 h2 span {
+.cont2 h2 div {
     padding: .5rem;
     color: var(--font-color-navy);
 }
 
-.cont2 span:first-child {
+.cont2 div:first-child {
     font-family: var(--font-family-notoSan);
     font-size: 4rem;
 }
 
-.cont2 span:last-child p {
+.cont2 div:last-child p {
     font-family: var(--font-family-notoSan);
     font-size: 2.5rem;
 }
 
-.cont2 span:nth-child(2),
-.cont2 span:nth-child(3) {
+.cont2 div:nth-child(2),
+.cont2 div:nth-child(3) {
     font-family: var(--font-family-lemon);
     font-size: 9rem;
 }
@@ -195,13 +195,13 @@
     text-align: center;
 }
 
-.cont3 h2 span {
+.cont3 h2 div {
     font-size: 5rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
 }
 
-.cont3 h2 span p {
+.cont3 h2 div p {
     font-size: 2rem;
     color: var(--font-color-navy);
     box-sizing: border-box;
@@ -349,17 +349,17 @@
     background: url(../img/subMenuBg.jpg);
 }
 
-.cont4 h2 span {
+.cont4 h2 div {
     padding: 2rem;
     color: var(--font-color-navy);
 }
 
-.cont4 h2 span:first-child p {
+.cont4 h2 div:first-child p {
     font-size: 5.5rem;
     color: var(--font-color-navy);
 }
 
-.cont4 h2 span:nth-child(2) p {
+.cont4 h2 div:nth-child(2) p {
     font-size: 2rem;
     color: var(--font-color-navy);
 }
@@ -379,6 +379,7 @@
     color: #fff;
     text-decoration: none;
     font-size: 2rem;
+    line-height: 2.1rem;
 }
 
 .shopBtn:hover {
