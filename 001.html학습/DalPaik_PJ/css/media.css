@@ -240,6 +240,10 @@
 
     .cont4 div h2 {
         font-size: 3.5rem;
+        line-height: 3.3rem;
+    }
+    .cont4 div h3 {
+        line-height: 2rem;
     }
 
     .btMenu {
