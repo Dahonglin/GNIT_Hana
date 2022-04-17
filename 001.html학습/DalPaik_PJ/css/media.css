@@ -206,7 +206,6 @@
         width: 20rem;
     }
 
-    .circleImg3 img {}
 
     .slideBan {
         display: none;
@@ -235,7 +234,7 @@
     }
 
     .cont4 aside {
-        height: 70vh;
+        height: 80vh;
     }
 
     .cont4 div h2 {
