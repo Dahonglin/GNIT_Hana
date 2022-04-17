@@ -278,4 +278,16 @@
         width: 80vw;
         padding-top: 1.5rem;
     }
+
+
+
+    /* 서브페이지 */
+    .sub_cont {
+        height: 130vh;
+    }
+    .tit {
+        padding-top: 10rem;
+    }
+    
+
 }

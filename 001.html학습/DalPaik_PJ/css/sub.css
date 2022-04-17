@@ -36,17 +36,18 @@
 
 .subtit {
     font-size: 2rem;
-    height: 24rem;
-    padding-top: 2rem;
+    height: 20rem;
+    padding-top: 3rem;
     color: var(--font-color-navy);
+    text-align: center;
 }
 
 .subDes {
     width: 100%;
-    height: 100%;
+    height: min(100rem,100%);
+    padding-top: 5rem;
     background-color: #fff;
     text-align: center;
-    padding-top: 5rem;
 }
 
 .subDes p {
