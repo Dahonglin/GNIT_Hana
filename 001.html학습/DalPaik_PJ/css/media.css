@@ -120,16 +120,16 @@
     .cont1 {
         height: 70vh;
     }
-    
-    .cont1 aside {
+
+    .cont1 {
         padding: 2rem;
     }
-    
-    .cont1 aside h2 {
+
+    .cont1 h2 {
         font-size: 4.5rem;
         line-height: 6.5rem;
     }
-    
+
     .bgAni img {
         width: 99%;
         vertical-align: bottom;
@@ -151,17 +151,17 @@
     .circleImg1 {
         right: -65vw;
     }
-    
+
     .circleImg2 {
         top: -100vh;
         left: -25vw;
     }
-    
+
     .circleImg3 {
         top: -90vh;
         left: 10vw;
     }
-    
+
 
     .circleImg1 img {
         width: 30rem;
@@ -171,8 +171,7 @@
         width: 20rem;
     }
 
-    .circleImg3 img {
-    }
+    .circleImg3 img {}
 
     .slideBan {
         display: none;
@@ -189,7 +188,7 @@
         padding: 1rem;
         padding-bottom: 0;
     }
-    
+
     .cont3 h3 {
         font-size: 1.7rem;
         padding: 1rem;
@@ -199,6 +198,7 @@
     .img-moving {
         margin-top: 5vh;
     }
+
     .cont4 aside {
         height: 70vh;
     }
@@ -215,6 +215,11 @@
     .btInfo {
         padding-left: 0rem;
         max-width: 85vw;
+    }
+
+    .btLink {
+        width: 90vw;
+        justify-content: space-between;
     }
 
     .btLink ul {
