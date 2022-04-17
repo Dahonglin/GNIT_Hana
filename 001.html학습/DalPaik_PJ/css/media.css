@@ -106,10 +106,12 @@
     .topnavi.on .topMenu>ul>li a {
         font-size: 2.5rem;
         margin-left: 5vw;
+        /* 트랜지션: 속시이지 */
+        transition: all .4s;
     }
 
     .topnavi.on .topMenu>ul>li a::before {
-        content: '∨ ';
+        content: '☕ ';
         position: relative;
         top: -5%;
         font-size: 1.3rem;
@@ -117,6 +119,39 @@
         color: var(--font-color-navy);
     }
 
+    .topMenu>ul>li:hover>a {
+        border-bottom: 2px solid var(--font-color-navy);
+    }
+
+    /* 서브메뉴 */
+    .topnavi.on .topMenu>ul>li:hover .smenu {
+        height: 17vh;
+    }
+
+    
+    /* 서브메뉴 */
+    .smenu {
+        position: static;
+        /* 변경 - static으로 변경하면 자리차지함! */
+        height: 0;
+        width: 100vw;
+        overflow: hidden;
+        /* 트랜지션: 속시이지 */
+        transition: height .4s ease-out;
+    }
+    
+    .topnavi.on .topMenu>ul>li .smenu>ol>li a{
+        font-size: 2rem;
+    }
+    
+    .topnavi.on .topMenu>ul>li .smenu>ol>li a::before {
+        content: '▪ ';
+        position: relative;
+        top: -5%;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--font-color-navy);
+    }
     .cont1 {
         height: 70vh;
     }
