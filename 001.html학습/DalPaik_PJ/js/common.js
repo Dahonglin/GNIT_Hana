@@ -26,7 +26,6 @@ window.addEventListener("load", () => {
         }
     });
 
-
     // 마우스 휠 상단 메뉴 보이기/숨기기
     doc.on('mousewheel', function (val) {
         let wheel = val.originalEvent.wheelDelta;
@@ -38,12 +37,6 @@ window.addEventListener("load", () => {
             top.addClass('close');
             $('.topnavi').removeClass('on');
         }
-    });
-
-    // a태그 # 메뉴 막기
-    $('a').on('click', function () {
-        let aLink = $(this).attr('href');
-        if (aLink === '#') return false;
     });
 
     // 햄버거 버튼

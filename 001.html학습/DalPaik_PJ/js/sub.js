@@ -1,14 +1,14 @@
 // 카테고리 페이지 JS  - sub.js
 
-// Get 방식으로 넘어온 값 받기!
+// Get 방식으로 넘어온 값 받기
 let pm = location.href;
 
 
-// 에러방지를 위해 물음표 체크!!!
+// 에러 체크
 if (pm.indexOf("?") === -1) {
     alert("비정상적인 접근입니다!");
     location.href = "index.html";
-} /////////// if ////////////////
+} 
 
 // 물음표와 이퀄로 자르고 값만 가져오기
 pm = pm.split("?")[1].split("=")[1];
