@@ -84,7 +84,6 @@ var lang = {
 window.addEventListener("load", () => {
 
     console.log("로딩완료!");
-
     // 대상선정
     // (1) 이벤트 대상: .sel
     let sel = document.querySelectorAll(".lang button");
@@ -106,45 +105,61 @@ window.addEventListener("load", () => {
     let main4 = document.querySelectorAll(".main4");
     // 메인4 슬라이드 버튼
     let main4Btn = document.querySelector(".shopBtn a");
-    
+
     // 하단메뉴
     let btnMenu = document.querySelectorAll(".btLink a");
     // 하단정보
     let info = document.querySelector(".info");
 
-
+    // 로컬 스토리지에 있는 언어값 불러옴
+    let langKey = localStorage.getItem("lang");
+    
+    // 로컬 스토리지에 저장되어 있는 언어로 번역 함수 호출
+    if (langKey === 'en') {
+        translate('en');
+        console.log('영어');
+    } else {
+        translate('ko');
+        console.log('한글');
+    }
+    
+    // 상단 언어 아이콘 클릭 시 번역 함수 호출
     for (let x of sel) {
         x.onclick = () => {
-            //버튼 밸류값 (언어값) 받아오기
-            let code = event.currentTarget.value;
-
-            // 언어코드에 따른 객체 데이터 읽어오기
-            let data = lang[code];
-
-            // 대메뉴 / 서브메뉴 변경
-            data["GNB"].forEach((val, idx) => gnb[idx].innerText = val);
-
-            // 우측 고정 배너
-            fixBan.forEach((idx) => idx.innerText = data["fixBan"]);
-
-            // 메인2
-            data["main2"].forEach((val, idx) => main2[idx].innerText = val);
-            // 메인3
-            data["main3"].forEach((val, idx) => main3[idx].innerText = val);
-            // 메인3 슬라이드 버튼
-            data["main3Btn"].forEach((val, idx) => main3Btn[idx].innerText = val);
-
-            // 메인4
-            data["main4"].forEach((val, idx) => main4[idx].innerText = val);
-            // 메인4 버튼
-            main4Btn.innerText = data["main4Btn"];
-            
-            // 하단 고객센터
-            data["btnMenu"].forEach((val, idx) => btnMenu[idx].innerText = val);
-            // 하단 회사정보
-            info.innerText = data["info"];
-
-        }; ///////// change 함수 /////////////////
+            translate(x.value);
+        };
     }
+    
+    // 번역 함수 
+    function translate(val) {
+        // 로컬 스토리지에 새로운 언어 저장
+        localStorage.setItem("lang", val);
+        // 언어코드에 따른 객체 데이터 읽어오기
+        let data = lang[val];
+        
+        // 대메뉴 / 서브메뉴 변경
+        data["GNB"].forEach((val, idx) => gnb[idx].innerText = val);
+
+        // 우측 고정 배너
+        fixBan.forEach((idx) => idx.innerText = data["fixBan"]);
+
+        // 메인2
+        data["main2"].forEach((val, idx) => main2[idx].innerText = val);
+        // 메인3
+        data["main3"].forEach((val, idx) => main3[idx].innerText = val);
+        // 메인3 슬라이드 버튼
+        data["main3Btn"].forEach((val, idx) => main3Btn[idx].innerText = val);
+
+        // 메인4
+        data["main4"].forEach((val, idx) => main4[idx].innerText = val);
+        // 메인4 버튼
+        main4Btn.innerText = data["main4Btn"];
+
+        // 하단 고객센터
+        data["btnMenu"].forEach((val, idx) => btnMenu[idx].innerText = val);
+        // 하단 회사정보
+        info.innerText = data["info"];
+    };
+
 
 }); ////////// 로드구역 ////////////////////////
