@@ -26,17 +26,25 @@ window.addEventListener("load", () => {
         }
     });
 
-    // 마우스 휠 상단 메뉴 보이기/숨기기
-    doc.on('mousewheel', function (val) {
-        let wheel = val.originalEvent.wheelDelta;
-        ////////////////////// 스크롤 올릴때 /////////////////////스크롤  내릴때 
-        // return (wheel > 0) ? top.removeClass('close') : top.addClass('close');
-        if (wheel > 0) {
-            top.removeClass('close');
-        } else {
-            top.addClass('close');
-            $('.topnavi').removeClass('on');
-        }
+    $(() => {
+        //마지막 스크롤 값 
+        let lastScroll = 0;
+        doc.scroll(function (event) {
+            // 현재 스크롤값 저장
+            let st = $(this).scrollTop();
+            if (st > lastScroll) {
+                // 스크롤 내릴 때 
+                // 현재 스크롤 값이 마지막 스크롤 값 보다 클 때 
+                top.addClass('close');
+                $('.topnavi').removeClass('on');
+            } else {
+                // 스크롤 올릴 때 
+                // 현재 스크롤 값이 마지막 스크롤 값 보다 작을 때 
+                top.removeClass('close');
+            }
+            // 스크롤 값 업데이트
+            lastScroll = st;
+        });
     });
 
     // 햄버거 버튼
