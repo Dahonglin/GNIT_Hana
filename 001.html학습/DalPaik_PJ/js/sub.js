@@ -8,7 +8,7 @@ let pm = location.href;
 if (pm.indexOf("?") === -1) {
     alert("비정상적인 접근입니다!");
     location.href = "index.html";
-} 
+}
 
 // 물음표와 이퀄로 자르고 값만 가져오기
 pm = pm.split("?")[1].split("=")[1];
@@ -22,14 +22,14 @@ $(() => {
     // 0. 카테고리별 해당 정보를 객체로 부터 세팅
     // const 에서 let 으로 재 할당 해준 이유(하단 if문)
     let data = sinfo[pm];
-    
+
     if (data == undefined) {
-    // 해당 임시 링크를 위해 변수 재선언을 해야하므로
-    // const에서 let으로 선언함.
+        // 해당 임시 링크를 위해 변수 재선언을 해야하므로
+        // const에서 let으로 선언함.
         data = sinfo['준비중'];
         console.log(data);
     }
-    
+
     // 상단 이미지 랜덤 배정
     const randImg = Math.floor(Math.random() * 8);
 
@@ -51,8 +51,7 @@ $(() => {
     // 타이틀 h2요소의 순번에 맞게 내용을 넣어준다!
     subDes.each((idx, ele) => {
         $(ele).html(data["subDes"][idx]);
-    }); 
-
+    });
 
 });
 
@@ -90,5 +89,37 @@ let sinfo = {
             "곧 새로운 모습으로 찾아 뵙겠습니다.",
             "빽다방"
         ]
+    },
+    "CEO Greeting": {
+        "tit": "CEO Greeting",
+        "subtit": "Paik's coffee a shop with reasonable prices and amazing quality.",
+        "subDes": [
+            "We will repay you with coffee and beverages of good quality and at an affordable price, feeling a great responsibility to not neglect the generations.",
+            "I want to always be by your side with a comfortable look like a friend. I hope you have a sweet day with the Paik's coffee."
+        ]
+    },
+    "Introduce": {
+        "tit": "Introduce",
+        "subtit": "Perfect beans from import to blending/roasting/freshness maintenance.",
+        "subDes": [
+            "The relationship between price and quality of coffee can be natural, but Bap Coffee is trying to break that preconceived notion.",
+            "The strong points of the coffee beans are the heavy body of Brazilian beans, the savory taste of almonds, and the subtle sweetness of milk chocolate."
+        ]
+    },
+    "Coffee story": {
+        "tit": "Coffee story",
+        "subtit": "COFFEE BEAN QUALITY & PROCESSING",
+        "subDes": [
+            "The systematic DOT processing of the Beloso farm in Brazil and the meeting of specialty beans!",
+            "Espresso blend with soft sweetness and heavy body."
+        ]
+    },
+    "404 Error": {
+        "tit": "Sorry, Out of service now.",
+        "subtit": "This page is currently being prepared.",
+        "subDes": [
+            "See you very soon.",
+            "Paik's coffee."
+        ]
     }
-}; 
+};
