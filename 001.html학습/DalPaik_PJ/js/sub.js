@@ -3,6 +3,8 @@
 // Get 방식으로 넘어온 값 받기
 let pm = location.href;
 
+// 로컬 스토리지에 있는 언어값 불러옴
+let langKey = localStorage.getItem("lang");
 
 // 에러 체크
 if (pm.indexOf("?") === -1) {
@@ -23,11 +25,13 @@ $(() => {
     // const 에서 let 으로 재 할당 해준 이유(하단 if문)
     let data = sinfo[pm];
 
-    if (data == undefined) {
+    if (data == undefined && langKey == 'ko') {
         // 해당 임시 링크를 위해 변수 재선언을 해야하므로
         // const에서 let으로 선언함.
         data = sinfo['준비중'];
-        console.log(data);
+    }
+    else {
+        data = sinfo['404 Error'];
     }
 
     // 상단 이미지 랜덤 배정
