@@ -25,13 +25,14 @@ $(() => {
     // const 에서 let 으로 재 할당 해준 이유(하단 if문)
     let data = sinfo[pm];
 
-    if (data == undefined && langKey == 'ko') {
+    if (data == undefined) {
         // 해당 임시 링크를 위해 변수 재선언을 해야하므로
         // const에서 let으로 선언함.
-        data = sinfo['준비중'];
-    }
-    else {
-        data = sinfo['404 Error'];
+        if (langKey == 'ko') {
+            data = sinfo['준비중'];
+        } else {
+            data = sinfo['404 Error'];
+        }
     }
 
     // 상단 이미지 랜덤 배정

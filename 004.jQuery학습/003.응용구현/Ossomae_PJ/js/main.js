@@ -1,73 +1,100 @@
 // 옷소매 갤러리 JS - main.js
 
-$(()=>{ /////////////// jQB ///////////////////////
+///////////////// 로딩구역 ///////////////////////
+$(() => {
 
     console.log("로딩완료!");
 
-    // 변경대상: .gbx -> 갤러리 부모박스
-    let gbx = $(".gbx");  
-    
     // 광클금지 상태변수
-    let prot = 0;//0-허용,1-막기
+    let prot = 0; // 0-허용,1-불허용
 
-    // 양쪽 이동버튼 클릭시 //////
-    // 대상: .abtn
-    $(".abtn").click(function(){
+    // 갤러리박스
+    let gbx = $(".gbx");
 
-        //////// 광클금지 //////////
-        if(prot) return;
-        prot = 1;//잠금!
-        setTimeout(()=>prot=0,400);
+    // 버튼통합구현 ////
+    // 이벤트대상: .abtn
+    $(".abtn").click(function () {
+
+        ///////// 광클금지 /////////
+        if (prot) return;
+        prot = 1; //잠금
+        setTimeout(() => prot = 0, 400);
         ////////////////////////////
 
-        console.log("오른쪽이냐?",$(this).is(".rb"));
+        // console.log("오른쪽인가?", $(this).is(".rb"))
+        // is()메서드 -> 선택자의 구분요소여부 true/false응답
+        // $(this).is(".rb") -> 클릭된버튼은 .rb인가? true/false
 
-        // 1. 오른쪽 버튼 클릭시
-        // 선택자.is(".rb") -> 클래스가 "rb"면 true
-        if($(this).is(".rb")){
-            // 오른쪽이동은 맨앞div요소를 맨뒤로 이동!
-            // 대상: .gbx -> gbx변수
+        // 분기문 /////
+        // 오른쪽버튼
+        if ($(this).is(".rb")) {
+            // 맨앞요소 맨뒤로 이동!
+            // append(요소)
             gbx.append(gbx.find("div").first());
-            // append(첫번째div)
-
-        } //////// if ///////////////
-        // 2. 왼쪽버튼 클릭시 ////////
-        else{ 
-            // 왼쪽이동은 맨뒤div를 맨앞으로 이동
-            // 대상: .gbx -> gbx변수
+        } /////////// if ////////
+        /// 왼쪽버튼 //////////
+        else {
+            // 맨뒤요소 맨앞으로 이동!
+            // prepend(요소)
             gbx.prepend(gbx.find("div").last());
-            // prepend(맨뒤div)
-        } ////////// else ////////////
+        } ///////// else /////////
 
-        // 자동넘김 지우기
-        clearInterval(autoI);
-        clearTimeout(autoT);//쓰나미실행방지!
-        // 일정시간후 자동호출!
-        autoT = setTimeout(autoCall,4000);
-        // 4초후 자동넘김함수 호출!
+        // 자동호출지우기
+        clearAuto();
 
-    }); /////////// click //////////////
+    }); /////////// click ///////////
 
+    /****************************** 
+            인터발 설정하기 
+    ******************************/
+    let autoI, // 인터발변수
+        autoT; // 타임아웃변수 
 
-    // 인터발용 변수
-    let autoI;
-    // 타임아웃용 변수
-    let autoT;
+    // 1.인터발함수
+    const autoSlide = () => {
+        autoI = setInterval(() =>
+            gbx.append(gbx.find("div").first()), 2000);
+    }; ///// autoSlide함수 //////
 
-    // 자동넘김 함수 /////
-    const autoCall = ()=>{
-        autoI = setInterval(()=>{
-            gbx.append(gbx.find("div").first());
-        },2000);
+    // 인터발 최초호출!
+    autoSlide();
 
-        // $(".rb").trigger("click");
-        // trigger(이벤트)->이벤트강제발생!
-
-    }; ///////// autoCall함수 //////
-
-    // 자동넘김함수 최초호출!
-    autoCall();
+    // 2.지우기함수
+    const clearAuto = () => {
+        clearInterval(autoI); // 인터발지움
+        clearTimeout(autoT); // 타임아웃지움
+        autoT = setTimeout(autoSlide, 3000); //3초후호출
+    }; ////// clearAuto 함수 ////////
 
 
 
-}); /////////////////// jQB ///////////////////////
+
+
+
+
+
+
+    // 오른쪽 버튼 클릭시
+    // 이벤트대상: .rb
+    // 변경대상: .gbx
+    // $(".rb").click(function () {
+
+    //     console.log("오른쪽!");
+    //     // 맨앞요소 맨뒤로 이동!
+    //     // append(요소)
+    //     gbx.append(gbx.find("div").first());
+    // }); ///////// click //////////////
+
+    // 왼쪽 버튼 클릭시
+    // 이벤트대상: .lb
+    // 변경대상: .gbx
+    // $(".lb").click(function () {
+    //     console.log("왼쪽!");
+    //     // 맨뒤요소 맨앞으로 이동!
+    //     // prepend(요소)
+    //     gbx.prepend(gbx.find("div").last());
+    // }); ///////// click //////////////
+
+
+}); ///////////// 로딩구역 //////////////////////
+/////////////////////////////////////////////////
