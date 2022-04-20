@@ -35,22 +35,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-        ///////////////// 로드구역 ///////////////////////
-        window.addEventListener("DOMContentLoaded", () => {
+       function my () {
+           alert("ㅇㅇ");
+       }
 
-            $("body").on('mousewheel', function (val) {
-                var wheel = val.originalEvent.wheelDelta;
+       let my1 = () => {
+        alert("ㅇㅇ");
+       }
 
-                if (wheel > 0) {
-                    //스크롤 올릴때 
-                    $(".top").removeClass('show');
-                } else {
-                    //스크롤  내릴때 
-                    $(".top").addClass('show');
-                }
-            });
-
-        }); //////////// 로드구역 ////////////////////////
+       let my3 => alert('d');
     </script>
 
 
