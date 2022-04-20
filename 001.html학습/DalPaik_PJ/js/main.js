@@ -15,7 +15,11 @@ window.addEventListener("load", () => {
         '커피': "coffee",
         '음료': "juice",
         '디저트': "dessert",
-        '빽스치노': "chino"
+        '빽스치노': "chino",
+        'Coffee': "coffee",
+        'Juice': "juice",
+        'Dessert': "dessert",
+        'Chino': "chino"
     };
     // 음료수 움직이는 부분
     const drinkBg = document.querySelector('.img-moving');

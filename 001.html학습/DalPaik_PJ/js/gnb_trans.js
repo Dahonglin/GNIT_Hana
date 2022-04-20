@@ -1,6 +1,6 @@
 ///// 전역변수 구역 ///////
 // 언어별 메뉴 글자 셋팅하기 ///
-let lang = {
+let lang_gnb = {
     //한국어
     "ko": {
         "GNB": [
@@ -69,26 +69,26 @@ window.addEventListener("load", () => {
 
     // 로컬 스토리지에 저장되어 있는 언어로 번역 함수 호출
     if (langKey === 'en') {
-        translate('en');
+        gnbTrans('en');
         console.log('영어');
     } else {
-        translate('ko');
+        gnbTrans('ko');
         console.log('한글');
     }
 
     // 상단 언어 아이콘 클릭 시 번역 함수 호출
     for (let x of sel) {
         x.onclick = () => {
-            translate(x.value);
+            gnbTrans(x.value);
         };
     }
 
     // 번역 함수 
-    function translate(val) {
+    function gnbTrans(val) {
         // 로컬 스토리지에 새로운 언어 저장
         localStorage.setItem("lang", val);
         // 언어코드에 따른 객체 데이터 읽어오기
-        let data = lang[val];
+        let data = lang_gnb[val];
 
         // 대메뉴 / 서브메뉴 변경
         data["GNB"].forEach((val, idx) => gnb[idx].innerText = val);
