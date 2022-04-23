@@ -229,7 +229,7 @@
 }
 
 .menuBtn li:hover button,
-.menuBtn li.on button {
+.menuBtn li button.on {
     background: var(--font-color-yellow);
 }
 

@@ -15,18 +15,14 @@ window.addEventListener("load", () => {
         '커피': "coffee",
         '음료': "juice",
         '디저트': "dessert",
-        '빽스치노': "chino",
-        'Coffee': "coffee",
-        'Juice': "juice",
-        'Dessert': "dessert",
-        'Chino': "chino"
+        '빽스치노': "chino"
     };
     // 음료수 움직이는 부분
     const drinkBg = document.querySelector('.img-moving');
 
     // 버튼들 선택자 저장
     // 배열 형태로 저장해서 가져옴.
-    let drinkBtn = document.querySelectorAll(".menuBtn li");
+    let drinkBtn = document.querySelectorAll(".menuBtn button");
 
     // 초기화(클래스지우기)
     const initBtn = () => {
@@ -37,7 +33,7 @@ window.addEventListener("load", () => {
     for (let i of drinkBtn) {
         // drinkName에 버튼에 설정 되어 있는 이름을 할당함.
         // drinkName으로 가져온 버튼에 저장 된 객체 데이터들을 저장함.
-        let drinkName = i.innerText;
+        let drinkName = i.value;
         // 버튼에 이름 목록 뿌려줌
         i.onclick = () => {
 
